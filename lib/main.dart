@@ -24,7 +24,16 @@ class _PhasmophobiaAssistantState extends State<PhasmophobiaAssistant> {
       selectOrb = true,
       selectWriting = true,
       selectSpiritBox = true,
-      everyone = false;
+      everyone = false,
+      paranormal = false,
+      below10 = false,
+      photoGhost = false,
+      photoSink = false,
+      sensor = false,
+      crusifix = false,
+      ghostEvent = false,
+      smudgeSticks = false,
+      salt = false;
 
   String fantasma;
 
@@ -39,10 +48,10 @@ class _PhasmophobiaAssistantState extends State<PhasmophobiaAssistant> {
         Card(
           child: ListTile(
               title: TextField(
-                decoration: InputDecoration(
-                  labelText: 'Ghost Name',
-                ),
-              )),
+            decoration: InputDecoration(
+              labelText: 'Ghost Name',
+            ),
+          )),
         ),
         Card(
           child: ListTile(
@@ -58,6 +67,145 @@ class _PhasmophobiaAssistantState extends State<PhasmophobiaAssistant> {
                 });
               },
             ),
+          ),
+        ),
+        Card(
+          child: Table(
+            children: [
+              TableRow(children: [
+                CheckboxListTile(
+                  title: Text("Paranormal"),
+                  value: paranormal,
+                  onChanged: (newValue) {
+                    setState(() {
+                      paranormal = newValue;
+                    });
+                  },
+                  controlAffinity:
+                      ListTileControlAffinity.leading, //  <-- leading Checkbox
+                ),
+                CheckboxListTile(
+                  title: Text("Below 10°"),
+                  value: below10,
+                  onChanged: (newValue) {
+                    setState(() {
+                      below10 = newValue;
+                    });
+                  },
+                  controlAffinity:
+                      ListTileControlAffinity.leading, //  <-- leading Checkbox
+                ),
+              ]),
+              TableRow(children: [
+                CheckboxListTile(
+                  title: Text("Dirty Water"),
+                  value: photoSink,
+                  onChanged: (newValue) {
+                    setState(() {
+                      photoSink = newValue;
+                    });
+                  },
+                  controlAffinity:
+                      ListTileControlAffinity.leading, //  <-- leading Checkbox
+                ),
+                CheckboxListTile(
+                  title: Text("Ghost Photo"),
+                  value: photoGhost,
+                  onChanged: (newValue) {
+                    setState(() {
+                      photoGhost = newValue;
+                    });
+                  },
+                  controlAffinity:
+                      ListTileControlAffinity.leading, //  <-- leading Checkbox
+                ),
+              ]),
+              TableRow(children: [
+                CheckboxListTile(
+                  title: Text("Motion Sensor"),
+                  value: sensor,
+                  onChanged: (newValue) {
+                    setState(() {
+                      sensor = newValue;
+                    });
+                  },
+                  controlAffinity:
+                      ListTileControlAffinity.leading, //  <-- leading Checkbox
+                ),
+                CheckboxListTile(
+                  title: Text("Crusifix"),
+                  value: crusifix,
+                  onChanged: (newValue) {
+                    setState(() {
+                      crusifix = newValue;
+                    });
+                  },
+                  controlAffinity:
+                      ListTileControlAffinity.leading, //  <-- leading Checkbox
+                ),
+              ]),
+              TableRow(children: [
+                CheckboxListTile(
+                  title: Text("Ghost Event"),
+                  value: ghostEvent,
+                  onChanged: (newValue) {
+                    setState(() {
+                      ghostEvent = newValue;
+                    });
+                  },
+                  controlAffinity:
+                      ListTileControlAffinity.leading, //  <-- leading Checkbox
+                ),
+                CheckboxListTile(
+                  title: Text("Smudge Sticks"),
+                  value: smudgeSticks,
+                  onChanged: (newValue) {
+                    setState(() {
+                      smudgeSticks = newValue;
+                    });
+                  },
+                  controlAffinity:
+                      ListTileControlAffinity.leading, //  <-- leading Checkbox
+                ),
+              ]),
+              TableRow(children: [
+                CheckboxListTile(
+                  title: Text("Salt Footprint"),
+                  value: salt,
+                  onChanged: (newValue) {
+                    setState(() {
+                      salt = newValue;
+                    });
+                  },
+                  controlAffinity:
+                      ListTileControlAffinity.leading, //  <-- leading Checkbox
+                ),
+                Container(
+                  margin: EdgeInsets.fromLTRB(30, 5, 30, 5),
+                  child: RaisedButton(
+                    color: Colors.blueAccent,
+                    child: Text(
+                      "CLEAR",
+                      style: TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.bold),
+                    ),
+                    onPressed: () {
+                      setState(() {
+                        paranormal = false;
+                        below10 = false;
+                        photoGhost = false;
+                        photoSink = false;
+                        sensor = false;
+                        crusifix = false;
+                        ghostEvent = false;
+                        smudgeSticks = false;
+                        salt = false;
+                      });
+                    },
+                  ),
+                )
+              ]),
+            ],
           ),
         ),
         Card(
