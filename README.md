@@ -1,16 +1,15 @@
-# phasmophobiaassistant
+# Phasmophobia Assistant
 
-A new Flutter application.
+The phasmophobia Assistant is a mobile app to assist players of the game Phasmophobia.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+This app have four features:
+    - Note the ghost name;
+    - Note if the ghost respond to everyone;
+    - Note secundary missions to do;
+    - Evidence filter;
+    
+The last build can be download in link below:
+https://drive.google.com/drive/folders/1AZ6a10vEgBAGgN_rK5rPFpmfI3Ti35tE?usp=sharing
+    
+The project has been based on website:    
+https://phass.herokuapp.com/?fbclid=IwAR0UQqTGkymvrOddyOrENZIV3eXCXUwklL873V2SnPNjRdWS8a_XetZOZ3I
