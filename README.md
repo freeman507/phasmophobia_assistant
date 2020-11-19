@@ -8,7 +8,7 @@ The phasmophobia Assistant is a mobile app to assist players of the game Phasmop
     3) Note secundary missions to do;
     4) Evidence filter;
     
-The app is in Google revision and soon will be in avaible on Google Play!    
+The app is in Google revision and soon will be in available on Google Play!   
     
 The last build can be download in link below: 
 
