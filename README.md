@@ -16,6 +16,8 @@ The project has been based on website:
 
 https://phass.herokuapp.com/?fbclid=IwAR0UQqTGkymvrOddyOrENZIV3eXCXUwklL873V2SnPNjRdWS8a_XetZOZ3I
 
+To report a bug, new ideas, insight or comments send an e-mail to felipezanella@gmail.com
+
 ### Last update 11 nov 2020 23:15 (BRT)
 
 * Ghost result feature: Now based on evidences, the app can deduce the ghost, the result is shown on bottom of evidences.
