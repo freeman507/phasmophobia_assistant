@@ -35,7 +35,7 @@ class _PhasmophobiaAssistantState extends State<PhasmophobiaAssistant> {
       smudgeSticks = false,
       salt = false;
 
-  String fantasma;
+  String ghosts = "";
 
   @override
   Widget build(BuildContext context) {
@@ -74,7 +74,7 @@ class _PhasmophobiaAssistantState extends State<PhasmophobiaAssistant> {
             children: [
               TableRow(children: [
                 CheckboxListTile(
-                  title: Text("Paranormal"),
+                  title: Text("EMF Reader"),
                   value: paranormal,
                   onChanged: (newValue) {
                     setState(() {
@@ -133,7 +133,7 @@ class _PhasmophobiaAssistantState extends State<PhasmophobiaAssistant> {
                       ListTileControlAffinity.leading, //  <-- leading Checkbox
                 ),
                 CheckboxListTile(
-                  title: Text("Crusifix"),
+                  title: Text("Crucifix"),
                   value: crusifix,
                   onChanged: (newValue) {
                     setState(() {
@@ -190,17 +190,7 @@ class _PhasmophobiaAssistantState extends State<PhasmophobiaAssistant> {
                           color: Colors.white, fontWeight: FontWeight.bold),
                     ),
                     onPressed: () {
-                      setState(() {
-                        paranormal = false;
-                        below10 = false;
-                        photoGhost = false;
-                        photoSink = false;
-                        sensor = false;
-                        crusifix = false;
-                        ghostEvent = false;
-                        smudgeSticks = false;
-                        salt = false;
-                      });
+                      clearMissions();
                     },
                   ),
                 )
@@ -304,29 +294,38 @@ class _PhasmophobiaAssistantState extends State<PhasmophobiaAssistant> {
             ),
           ),
         ),
+        Card(
+          child: ListTile(
+            title: Text("Ghost:"),
+            subtitle: Text(ghosts != null ? ghosts : ""),
+          ),
+        ),
       ],
     );
   }
 
+  void clearMissions() {
+    setState(() {
+      paranormal = false;
+      below10 = false;
+      photoGhost = false;
+      photoSink = false;
+      sensor = false;
+      crusifix = false;
+      ghostEvent = false;
+      smudgeSticks = false;
+      salt = false;
+    });
+  }
+
   verifyGhost() {
     String evidences = verifyEvidences();
-
     print(evidences);
-
     setState(() {
       changeTiles(true, true, true, true, true, true);
-      if (defineGhost(evidences).isEmpty) {
-        if (evidences.contains("emf")) {
-          emfEvidences(evidences);
-        } else if (evidences.contains("fingerprints")) {
-          fingerprintsEvidences(evidences);
-        } else if (evidences.contains("temperature")) {
-          temperatureEvidences(evidences);
-        } else if (evidences.contains("orb")) {
-          writingEvidences(evidences);
-        } else if (evidences.contains("writing")) {
-          spiritBoxEvidences(evidences);
-        }
+      ghosts = defineGhost(evidences);
+      if (ghosts.isEmpty) {
+        verifyAllEvidences(evidences);
       } else {
         emf = selectEmf;
         fingerprints = selectFingerpints;
@@ -336,6 +335,25 @@ class _PhasmophobiaAssistantState extends State<PhasmophobiaAssistant> {
         spiritBox = selectSpiritBox;
       }
     });
+  }
+
+  void verifyAllEvidences(String evidences) {
+    ghosts =
+        "Spirit | Wraith | Phantom | Poltergeist | Banshee | Jinn | Mare | Revenant | Shade | Demon | Yurei | Oni";
+
+    if (evidences.contains("emf")) {
+      emfEvidences(evidences);
+    } else if (evidences.contains("fingerprints")) {
+      fingerprintsEvidences(evidences);
+    } else if (evidences.contains("temperature")) {
+      temperatureEvidences(evidences);
+    } else if (evidences.contains("orb")) {
+      orbEvidences(evidences);
+    } else if (evidences.contains("writing")) {
+      writingEvidences(evidences);
+    } else if (evidences.contains("spiritBox")) {
+      spiritBoxEvidences(evidences);
+    }
   }
 
   String defineGhost(String evidences) {
@@ -463,164 +481,102 @@ class _PhasmophobiaAssistantState extends State<PhasmophobiaAssistant> {
   }
 
   void spiritBoxEvidences(String evidences) {
-    if (evidences.contains("spiritBox")) {
-      selectEmf = true;
-      selectFingerpints = true;
-      selectTemperature = true;
-      selectOrb = false;
-      selectWriting = true;
-      selectSpiritBox = true;
-
-      orb = false;
-    }
+    ghosts = "Spirit | Wraith | Poltergeist | Jinn | Mare | Demon | Oni";
   }
 
   void writingEvidences(String evidences) {
+    ghosts = "Spirit | Revenant | Shade | Demon | Yurei | Oni";
+    if (evidences.contains("spiritBox")) {
+      changeTiles(true, true, true, false, true, true);
+      orb = false;
+      ghosts = "Spirit | Demon | Oni";
+    }
+  }
+
+  void orbEvidences(String evidences) {
+    ghosts = "Spirit | Revenant | Shade | Demon | Yurei | Oni";
     if (evidences.contains("writing")) {
-      selectEmf = true;
-      selectFingerpints = false;
-      selectTemperature = true;
-      selectOrb = true;
-      selectWriting = true;
-      selectSpiritBox = false;
-
+      changeTiles(true, false, true, true, true, false);
       spiritBox = false;
+      ghosts = "Shade | Yurei";
     } else if (evidences.contains("spiritBox")) {
-      selectEmf = true;
-      selectFingerpints = true;
-      selectTemperature = true;
-      selectOrb = true;
-      selectWriting = false;
-      selectSpiritBox = true;
-
+      changeTiles(true, true, true, true, false, true);
       writing = false;
+      ghosts = "Poltergeist | Jinn | Mare";
     }
   }
 
   void temperatureEvidences(String evidences) {
+    ghosts = "Wraith | Phantom | Banshee | Mare | Demon | Yurei";
+
     if (evidences.contains("orb")) {
-      selectEmf = true;
-      selectFingerpints = false;
-      selectTemperature = true;
-      selectOrb = true;
-      selectWriting = true;
-      selectSpiritBox = true;
-
+      changeTiles(true, false, true, true, true, true);
       fingerprints = false;
+      ghosts = "Phantom | Mare | Yurei";
     } else if (evidences.contains("writing")) {
-      selectEmf = false;
-      selectFingerpints = false;
-      selectTemperature = true;
-      selectOrb = true;
-      selectWriting = true;
-      selectSpiritBox = true;
-
+      changeTiles(false, false, true, true, true, true);
       emf = false;
       fingerprints = false;
+      ghosts = "Demon | Yurei";
     } else if (evidences.contains("spiritBox")) {
-      selectEmf = false;
-      selectFingerpints = true;
-      selectTemperature = true;
-      selectOrb = true;
-      selectWriting = true;
-      selectSpiritBox = true;
-
+      changeTiles(false, true, true, true, true, true);
       emf = false;
+      ghosts = "Wraith | Mare | Demon";
     }
   }
 
   void fingerprintsEvidences(String evidences) {
-    if (evidences.contains("temperature")) {
-      selectEmf = true;
-      selectFingerpints = true;
-      selectTemperature = true;
-      selectOrb = false;
-      selectWriting = false;
-      selectSpiritBox = true;
+    ghosts = "Spirit | Wraith | Poltergeist | Banshee | Revenant";
 
+    if (evidences.contains("temperature")) {
+      changeTiles(true, true, true, false, false, true);
       orb = false;
       writing = false;
+      ghosts = "Wraith | Banshee";
     } else if (evidences.contains("orb")) {
-      selectEmf = false;
-      selectFingerpints = true;
-      selectTemperature = false;
-      selectOrb = true;
-      selectWriting = false;
-      selectSpiritBox = true;
-
+      changeTiles(false, true, false, true, false, true);
       emf = false;
       writing = false;
+      spiritBox = true;
+      ghosts = "Poltergeist";
     } else if (evidences.contains("writing")) {
-      selectEmf = true;
-      selectFingerpints = true;
-      selectTemperature = false;
-      selectOrb = false;
-      selectWriting = true;
-      selectSpiritBox = true;
-
+      changeTiles(true, true, false, false, true, true);
       temperature = false;
       orb = false;
+      ghosts = "Spirit | Revenant";
     } else if (evidences.contains("spiritBox")) {
-      selectEmf = false;
-      selectFingerpints = true;
-      selectTemperature = true;
-      selectOrb = true;
-      selectWriting = true;
-      selectSpiritBox = true;
-
+      changeTiles(false, true, true, true, true, true);
       emf = false;
+      ghosts = "Spirit | Wraith | Poltergeist";
     }
   }
 
   void emfEvidences(String evidences) {
-    if (evidences.contains("fingerprints")) {
-      selectEmf = true;
-      selectFingerpints = true;
-      selectTemperature = true;
-      selectOrb = false;
-      selectWriting = true;
-      selectSpiritBox = false;
+    ghosts = "Phantom | Banshee | Jinn | Revenant | Shade | Oni";
 
+    if (evidences.contains("fingerprints")) {
+      changeTiles(true, true, true, false, true, false);
       orb = false;
       spiritBox = false;
+      ghosts = "Banshee | Revenant";
     } else if (evidences.contains("temperature")) {
-      selectEmf = true;
-      selectFingerpints = true;
-      selectTemperature = true;
-      selectOrb = true;
-      selectWriting = false;
-      selectSpiritBox = false;
-
+      changeTiles(true, true, true, true, false, false);
       writing = false;
       spiritBox = false;
+      ghosts = "Phantom | Banshee";
     } else if (evidences.contains("orb")) {
-      selectEmf = true;
-      selectFingerpints = false;
-      selectTemperature = true;
-      selectOrb = true;
-      selectWriting = true;
-      selectSpiritBox = true;
-
+      changeTiles(true, false, true, true, true, true);
       fingerprints = false;
+      ghosts = "Phantom | Jinn | Shade";
     } else if (evidences.contains("writing")) {
-      selectEmf = true;
-      selectFingerpints = true;
-      selectTemperature = false;
-      selectOrb = true;
-      selectWriting = true;
-      selectSpiritBox = true;
-
+      changeTiles(true, true, false, true, true, true);
       temperature = false;
+      ghosts = "Revenant | Shade | Oni";
     } else if (evidences.contains("spiritBox")) {
-      selectEmf = true;
-      selectFingerpints = false;
-      selectTemperature = false;
-      selectOrb = true;
-      selectWriting = true;
-      selectSpiritBox = true;
-
+      changeTiles(true, false, false, true, true, true);
       fingerprints = false;
       temperature = false;
+      ghosts = "Jinn | Oni";
     }
   }
 
