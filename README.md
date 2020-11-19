@@ -23,3 +23,5 @@ https://phass.herokuapp.com/?fbclid=IwAR0UQqTGkymvrOddyOrENZIV3eXCXUwklL873V2SnP
 * Reference website addded on bottom of the app.
 
 * Name and icon added to the app.
+
+* The objective called "Paranormal" as changed to "EMF Reader".
