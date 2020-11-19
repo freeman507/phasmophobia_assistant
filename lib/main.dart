@@ -1,4 +1,7 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -35,7 +38,7 @@ class _PhasmophobiaAssistantState extends State<PhasmophobiaAssistant> {
       smudgeSticks = false,
       salt = false;
 
-  String ghosts = "";
+  String ghosts = "Spirit | Wraith | Phantom | Poltergeist | Banshee | Jinn | Mare | Revenant | Shade | Demon | Yurei | Oni";
 
   @override
   Widget build(BuildContext context) {
@@ -298,6 +301,16 @@ class _PhasmophobiaAssistantState extends State<PhasmophobiaAssistant> {
           child: ListTile(
             title: Text("Ghost:"),
             subtitle: Text(ghosts != null ? ghosts : ""),
+          ),
+        ),
+        Card(
+          color: Colors.transparent,
+          child: ListTile(
+            title: Text("This app is based on web site:", style: TextStyle(color: Colors.white),),
+            subtitle: InkWell(
+                child: Text('https://phass.herokuapp.com/?fbclid=IwAR0UQqTGkymvrOddyOrENZIV3eXCXUwklL873V2SnPNjRdWS8a_XetZOZ3I', style: TextStyle(color: Colors.blue),),
+                onTap: () => launch(
+                    'https://phass.herokuapp.com/?fbclid=IwAR0UQqTGkymvrOddyOrENZIV3eXCXUwklL873V2SnPNjRdWS8a_XetZOZ3I')),
           ),
         ),
       ],
