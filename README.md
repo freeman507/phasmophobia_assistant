@@ -15,3 +15,11 @@ https://drive.google.com/drive/folders/1AZ6a10vEgBAGgN_rK5rPFpmfI3Ti35tE?usp=sha
 The project has been based on website: 
 
 https://phass.herokuapp.com/?fbclid=IwAR0UQqTGkymvrOddyOrENZIV3eXCXUwklL873V2SnPNjRdWS8a_XetZOZ3I
+
+### Last update 11 nov 2020 23:15 (BRT)
+
+* Ghost result feature: Now based on evidences, the app can deduce the ghost, the result is shown on bottom of evidences.
+
+* Reference website addded on bottom of the app.
+
+* Name and icon added to the app.
