@@ -16,7 +16,7 @@ The project has been based on website:
 
 https://phass.herokuapp.com/?fbclid=IwAR0UQqTGkymvrOddyOrENZIV3eXCXUwklL873V2SnPNjRdWS8a_XetZOZ3I
 
-To report a bug, new ideas, insight or comments send an e-mail to felipezanella@gmail.com
+To report a bug, new ideas, insight or comments send an e-mail to felipeszanella@gmail.com
 
 ### Last update 11 nov 2020 23:15 (BRT)
 
