@@ -2,11 +2,12 @@
 
 The phasmophobia Assistant is a mobile app to assist players of the game Phasmophobia.
 
-    This app have four features:
-    1) Note the ghost name;
-    2) Note if the ghost respond to everyone;
-    3) Note secundary missions to do;
+    This app have five features:
+    1) Mark the ghost name;
+    2) Mark if the ghost respond to everyone;
+    3) Mark secundary missions to do;
     4) Evidence filter;
+    5) Ghost result;
     
 The app is in Google revision and soon will be in available on Google Play!   
     
