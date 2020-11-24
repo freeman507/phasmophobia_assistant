@@ -9,7 +9,8 @@ The phasmophobia Assistant is a mobile app to assist players of the game Phasmop
     4) Evidence filter;
     5) Ghost result;
     
-Download at Play Store:
+The app is already available in the play store, however the app still doesn't have enough downloads to appear in the search, but you can download the app via the link: 
+
 https://play.google.com/store/apps/details?id=br.com.pacientevirtual.phasmophobiaassistant
     
 The last build can be download in link below: 
