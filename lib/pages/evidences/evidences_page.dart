@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:phasmophobiaassistant/i18n/i18n.dart';
 import 'package:phasmophobiaassistant/models/Banshee.dart';
 import 'package:phasmophobiaassistant/models/Demon.dart';
 import 'package:phasmophobiaassistant/models/EmfLevelFive.dart';
@@ -22,26 +23,6 @@ import 'package:phasmophobiaassistant/models/Wraith.dart';
 import 'package:phasmophobiaassistant/models/Yurei.dart';
 import 'package:phasmophobiaassistant/pages/evidence_detail/evidence_detail_page.dart';
 import 'package:phasmophobiaassistant/pages/ghost_detail/ghost_detail_page.dart';
-import 'package:phasmophobiaassistant/pages/objectives/objectives_page.dart';
-
-const EMF = "EMF Level 5",
-    FINGERPRINTS = "Fingerprints",
-    TEMPERATURE = "Freezing Temperatures",
-    ORBS = "Ghost Orbs",
-    WRITING = "Ghost Writing",
-    SPIRIT_BOX = "Spirit Box",
-    SPIRIT = "Spirit",
-    BANSHEE = "Banshee",
-    WRAITH = "Wraith",
-    PHANTOM = "Phantom",
-    POLTERGEIST = "Poltergeist",
-    JINN = "Jinn",
-    MARE = "Mare",
-    REVENANT = "Revenant",
-    SHADE = "Shade",
-    DEMON = "Demon",
-    YUREI = "Yurei",
-    ONI = "Oni";
 
 class EvidencesPage extends StatefulWidget {
   @override
@@ -64,7 +45,26 @@ class _EvidencesPageState extends State<EvidencesPage>
       discardSpiritBox = false;
 
   String ghosts =
-      "Spirit | Wraith | Phantom | Poltergeist | Banshee | Jinn | Mare | Revenant | Shade | Demon | Yurei | Oni";
+      "spirit | wraith | phantom | poltergeist | banshee | jinn | mare | revenant | shade | demon | yurei | oni";
+
+  var EMF = i("emf.level.5"),
+      FINGERPRINTS = i("fingerprints"),
+      TEMPERATURE = i("freezing.temperatures"),
+      ORBS = i("ghost.orbs"),
+      WRITING = i("ghost.writing"),
+      SPIRIT_BOX = i("spirit.box"),
+      SPIRIT = i("spirit"),
+      BANSHEE = i("banshee"),
+      WRAITH = i("wraith"),
+      PHANTOM = i("phantom"),
+      POLTERGEIST = i("poltergeist"),
+      JINN = i("jinn"),
+      MARE = i("mare"),
+      REVENANT = i("revenant"),
+      SHADE = i("shade"),
+      DEMON = i("demon"),
+      YUREI = i("yurei"),
+      ONI = i("oni");
 
   @override
   bool get wantKeepAlive => true;
@@ -93,7 +93,7 @@ class _EvidencesPageState extends State<EvidencesPage>
     return Container(
       margin: EdgeInsets.fromLTRB(15, 10, 15, 10),
       child: RaisedButton(
-        child: Text("RESET"),
+        child: Text(i("clear")),
         onPressed: () {
           setState(() {
             resetButton();
@@ -136,7 +136,7 @@ class _EvidencesPageState extends State<EvidencesPage>
                 color: Colors.blueAccent,
               ),
               Text(
-                " Selected",
+                " " + i("selected"),
               ),
             ],
           ),
@@ -147,7 +147,7 @@ class _EvidencesPageState extends State<EvidencesPage>
                 color: Colors.redAccent,
               ),
               Text(
-                " Discarded",
+                " " + i("discarded"),
               ),
             ],
           ),
@@ -163,7 +163,7 @@ class _EvidencesPageState extends State<EvidencesPage>
       chips.add(Chip(
         //backgroundColor: Colors.blueAccent,
         label: InkWell(
-          child: Text(ghost),
+          child: Text(i(ghost.toLowerCase())),
           onTap: () {
             goToGhostDatailPage(ghost);
           },
@@ -187,11 +187,12 @@ class _EvidencesPageState extends State<EvidencesPage>
         borderRadius: BorderRadius.circular(5),
       ),
       margin: EdgeInsets.fromLTRB(10, 5, 10, 5),
+      semanticContainer: true,
       color: color,
       child: ListTile(
         dense: selected,
         title: Text(
-          evidence,
+          i(evidence),
         ),
 //        leading: Icon(
 //          Icons.person,
@@ -226,7 +227,7 @@ class _EvidencesPageState extends State<EvidencesPage>
 
   void verifyAllEvidences(String evidences) {
     ghosts =
-        "Spirit | Wraith | Phantom | Poltergeist | Banshee | Jinn | Mare | Revenant | Shade | Demon | Yurei | Oni";
+        "spirit | wraith | phantom | poltergeist | banshee | jinn | mare | revenant | shade | demon | yurei | oni";
 
     if (evidences.contains("emf")) {
       emfEvidences(evidences);
@@ -247,37 +248,37 @@ class _EvidencesPageState extends State<EvidencesPage>
     String ghostFound = "";
     if (isSpirit(evidences)) {
       changeTiles(false, true, false, false, true, true);
-      ghostFound = "Spirit";
+      ghostFound = "spirit";
     } else if (isWraith(evidences)) {
       changeTiles(false, true, true, false, false, true);
-      ghostFound = "Wraith";
+      ghostFound = "wraith";
     } else if (isPhantom(evidences)) {
       changeTiles(true, false, true, true, false, false);
-      ghostFound = "Phantom";
+      ghostFound = "phantom";
     } else if (isPoltergeist(evidences)) {
       changeTiles(false, true, false, true, false, true);
-      ghostFound = "Poltergeist";
+      ghostFound = "poltergeist";
     } else if (isBanshee(evidences)) {
       changeTiles(true, true, true, false, false, false);
-      ghostFound = "Banshee";
+      ghostFound = "banshee";
     } else if (isJinn(evidences)) {
       changeTiles(true, false, false, true, false, true);
-      ghostFound = "Jinn";
+      ghostFound = "jinn";
     } else if (isMare(evidences)) {
       changeTiles(false, false, true, true, false, true);
-      ghostFound = "Mare";
+      ghostFound = "mare";
     } else if (isRevenant(evidences)) {
       changeTiles(true, true, false, false, true, false);
-      ghostFound = "Revenant";
+      ghostFound = "revenant";
     } else if (isShade(evidences)) {
       changeTiles(true, false, false, true, true, false);
-      ghostFound = "Shade";
+      ghostFound = "shade";
     } else if (isDemon(evidences)) {
       changeTiles(false, false, true, false, true, true);
-      ghostFound = "Demon";
+      ghostFound = "demon";
     } else if (isYurei(evidences)) {
       changeTiles(false, false, true, true, true, false);
-      ghostFound = "Yurei";
+      ghostFound = "yurei";
     } else if (isOni(evidences)) {
       changeTiles(true, false, false, false, true, true);
       ghostFound = "oni";
@@ -368,102 +369,102 @@ class _EvidencesPageState extends State<EvidencesPage>
   }
 
   void spiritBoxEvidences(String evidences) {
-    ghosts = "Spirit | Wraith | Poltergeist | Jinn | Mare | Demon | Oni";
+    ghosts = "spirit | wraith | poltergeist | jinn | mare | demon | oni";
   }
 
   void writingEvidences(String evidences) {
-    ghosts = "Spirit | Revenant | Shade | Demon | Yurei | Oni";
+    ghosts = "spirit | revenant | shade | demon | yurei | oni";
     if (evidences.contains("spiritBox")) {
       changeTiles(true, true, true, false, true, true);
       orb = false;
-      ghosts = "Spirit | Demon | Oni";
+      ghosts = "spirit | demon | oni";
     }
   }
 
   void orbEvidences(String evidences) {
-    ghosts = "Spirit | Poltergeist | Revenant | Shade | Demon | Yurei | Oni";
+    ghosts = "spirit | poltergeist | revenant | shade | demon | yurei | oni";
     if (evidences.contains("writing")) {
       changeTiles(true, false, true, true, true, false);
       spiritBox = false;
-      ghosts = "Shade | Yurei";
+      ghosts = "shade | yurei";
     } else if (evidences.contains("spiritBox")) {
       changeTiles(true, true, true, true, false, true);
       writing = false;
-      ghosts = "Poltergeist | Jinn | Mare";
+      ghosts = "poltergeist | jinn | mare";
     }
   }
 
   void temperatureEvidences(String evidences) {
-    ghosts = "Wraith | Phantom | Banshee | Mare | Demon | Yurei";
+    ghosts = "wraith | phantom | banshee | mare | demon | yurei";
 
     if (evidences.contains("orb")) {
       changeTiles(true, false, true, true, true, true);
       fingerprints = false;
-      ghosts = "Phantom | Mare | Yurei";
+      ghosts = "phantom | mare | yurei";
     } else if (evidences.contains("writing")) {
       changeTiles(false, false, true, true, true, true);
       emf = false;
       fingerprints = false;
-      ghosts = "Demon | Yurei";
+      ghosts = "demon | yurei";
     } else if (evidences.contains("spiritBox")) {
       changeTiles(false, true, true, true, true, true);
       emf = false;
-      ghosts = "Wraith | Mare | Demon";
+      ghosts = "wraith | mare | demon";
     }
   }
 
   void fingerprintsEvidences(String evidences) {
-    ghosts = "Spirit | Wraith | Poltergeist | Banshee | Revenant";
+    ghosts = "spirit | wraith | poltergeist | banshee | revenant";
 
     if (evidences.contains("temperature")) {
       changeTiles(true, true, true, false, false, true);
       orb = false;
       writing = false;
-      ghosts = "Wraith | Banshee";
+      ghosts = "wraith | banshee";
     } else if (evidences.contains("orb")) {
       changeTiles(false, true, false, true, false, true);
       emf = false;
       writing = false;
       spiritBox = true;
-      ghosts = "Poltergeist";
+      ghosts = "poltergeist";
     } else if (evidences.contains("writing")) {
       changeTiles(true, true, false, false, true, true);
       temperature = false;
       orb = false;
-      ghosts = "Spirit | Revenant";
+      ghosts = "spirit | revenant";
     } else if (evidences.contains("spiritBox")) {
       changeTiles(false, true, true, true, true, true);
       emf = false;
-      ghosts = "Spirit | Wraith | Poltergeist";
+      ghosts = "spirit | wraith | poltergeist";
     }
   }
 
   void emfEvidences(String evidences) {
-    ghosts = "Phantom | Banshee | Jinn | Revenant | Shade | Oni";
+    ghosts = "phantom | banshee | jinn | revenant | shade | oni";
 
     if (evidences.contains("fingerprints")) {
       changeTiles(true, true, true, false, true, false);
       orb = false;
       spiritBox = false;
-      ghosts = "Banshee | Revenant";
+      ghosts = "banshee | Revenant";
     } else if (evidences.contains("temperature")) {
       changeTiles(true, true, true, true, false, false);
       writing = false;
       spiritBox = false;
-      ghosts = "Phantom | Banshee";
+      ghosts = "phantom | Banshee";
     } else if (evidences.contains("orb")) {
       changeTiles(true, false, true, true, true, true);
       fingerprints = false;
-      ghosts = "Phantom | Jinn | Shade";
+      ghosts = "phantom | jinn | Shade";
     } else if (evidences.contains("writing")) {
       changeTiles(true, true, false, true, true, true);
       temperature = false;
-      ghosts = "Revenant | Shade | Oni";
+      ghosts = "revenant | shade | oni";
     } else if (evidences.contains("spiritBox")) {
       changeTiles(true, false, false, true, true, true);
       fingerprints = false;
       temperature = false;
-      ghosts = "Jinn | Oni";
+      ghosts = "jinn | oni";
     }
   }
 
@@ -527,11 +528,13 @@ class _EvidencesPageState extends State<EvidencesPage>
     discardWriting = writing;
     discardSpiritBox = spiritBox;
     ghosts =
-        "Spirit | Wraith | Phantom | Poltergeist | Banshee | Jinn | Mare | Revenant | Shade | Demon | Yurei | Oni";
+        "spirit | wraith | phantom | poltergeist | banshee | jinn | mare | revenant | shade | demon | yurei | oni";
   }
 
   void goToGhostDatailPage(String ghostName) {
     Ghost ghost;
+
+    ghostName = i(ghostName);
 
     if (ghostName == SPIRIT) {
       ghost = Spirit();

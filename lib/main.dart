@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:phasmophobiaassistant/pages/about/about_page.dart';
-import 'package:phasmophobiaassistant/pages/evidences/evidences_page.dart';
-import 'package:phasmophobiaassistant/pages/objectives/objectives_page.dart';
+import 'package:phasmophobiaassistant/i18n/i18n.dart';
+import 'package:phasmophobiaassistant/widgets/main_tab.dart';
 
 void main() {
   String title = "Phasmophobia Assistant";
@@ -28,61 +27,4 @@ void main() {
     ),
     home: MainTab(),
   ));
-}
-
-class MainTab extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 2,
-      child: Scaffold(
-        appBar: AppBar(
-          title: Image.asset("assets/background.png"),
-          actions: <Widget>[
-            Container(
-              margin: EdgeInsets.only(right: 15),
-              child: InkWell(
-                child: Icon(Icons.info_outline),
-                onTap: () {
-                  goToAboutPage(context);
-                },
-              ),
-            ),
-          ],
-          centerTitle: true,
-          bottom: TabBar(
-            tabs: <Widget>[
-              Container(
-                margin: EdgeInsets.all(10),
-                child: Text(
-                  "Objectives",
-                  style: TextStyle(fontSize: 16),
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.all(10),
-                child: Text(
-                  "Evidences",
-                  style: TextStyle(fontSize: 16),
-                ),
-              )
-            ],
-          ),
-        ),
-        body: TabBarView(
-          children: <Widget>[
-            ObjectivesPage(),
-            EvidencesPage(),
-          ],
-        ),
-      ),
-    );
-  }
-
-  void goToAboutPage(BuildContext context) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => AboutPage()),
-    );
-  }
 }

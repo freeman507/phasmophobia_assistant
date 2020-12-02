@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:phasmophobiaassistant/i18n/i18n.dart';
 import 'package:phasmophobiaassistant/models/CrucifixObjective.dart';
 import 'package:phasmophobiaassistant/models/DirtWater.dart';
 import 'package:phasmophobiaassistant/models/EmfReaderObjective.dart';
@@ -10,16 +11,6 @@ import 'package:phasmophobiaassistant/models/Objective.dart';
 import 'package:phasmophobiaassistant/models/SaltFootprint.dart';
 import 'package:phasmophobiaassistant/models/SmudgeSticksObjective.dart';
 import 'package:phasmophobiaassistant/pages/objective_detail/objective_detail.dart';
-
-const EMF_READER = "EMF Reader",
-    LOW_TEMPERATURE = "Below 10°C or 50°F",
-    DIRT_WATER = "Dirt Water",
-    SENSOR = "Motion Sensor",
-    CRUCIFIX = "Crucifix",
-    GHOST_PHOTO = "Ghost Photo",
-    GHOST_EVENT = "Ghost Event",
-    SMUDGE_STICKS = "Smudge Sticks",
-    SALT_FOOTPRINT = "Salt Footprint";
 
 class ObjectivesPage extends StatefulWidget {
   @override
@@ -40,6 +31,16 @@ class _ObjectivesPageState extends State<ObjectivesPage>
       smudgeSticks = false,
       saltFootprint = false;
 
+  var EMF_READER = i("emf.reader"),
+      LOW_TEMPERATURE = i("below.10c.50f"),
+      DIRT_WATER = i("dirt.water"),
+      SENSOR = i("motion.sensor"),
+      CRUCIFIX = i("crucifix"),
+      GHOST_PHOTO = i("ghost.photo"),
+      GHOST_EVENT = i("ghost.event"),
+      SMUDGE_STICKS = i("smudge.sticks"),
+      SALT_FOOTPRINT = i("salt.footprint");
+
   @override
   bool get wantKeepAlive => true;
 
@@ -57,7 +58,7 @@ class _ObjectivesPageState extends State<ObjectivesPage>
             child: ListTile(
                 title: TextField(
                   controller: _textEditingController,
-                  decoration: InputDecoration(labelText: "Ghost Name"),
+                  decoration: InputDecoration(labelText: i("ghost.name")),
                 ),
                 trailing: ToggleButtons(
                   children: <Widget>[
@@ -106,7 +107,7 @@ class _ObjectivesPageState extends State<ObjectivesPage>
           margin: EdgeInsets.fromLTRB(15, 10, 15, 10),
           child: RaisedButton(
             //isExtended: true,
-            child: Text("RESET"),
+            child: Text(i("clear")),
             onPressed: () {
               setState(() {
                 resetButton();
@@ -119,7 +120,6 @@ class _ObjectivesPageState extends State<ObjectivesPage>
   }
 
   Card buildObjectiveItem(String objective, bool selected) {
-
     return Card(
       color: selected ? Colors.blueAccent : Colors.white10,
       child: ListTile(
@@ -142,7 +142,6 @@ class _ObjectivesPageState extends State<ObjectivesPage>
   }
 
   void goToObjectiveDetail(String nameObjective) {
-
     Objective objective;
 
     if (nameObjective == EMF_READER) {
@@ -207,4 +206,3 @@ class _ObjectivesPageState extends State<ObjectivesPage>
     }
   }
 }
-

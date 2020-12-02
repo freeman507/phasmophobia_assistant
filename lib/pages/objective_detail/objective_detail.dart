@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:phasmophobiaassistant/i18n/i18n.dart';
 import 'package:phasmophobiaassistant/models/Objective.dart';
 import 'package:phasmophobiaassistant/widgets/detail_page.dart';
 
@@ -17,11 +18,11 @@ class ObjectiveDetail extends DetailPage {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            buildTitle("OBJECTIVE"),
+            buildTitle(i("objective").toUpperCase()),
             buildText(_objective.name()),
-            buildTitle("DESCRIPTION"),
+            buildTitle(i("description").toUpperCase()),
             buildText(_objective.description()),
-            buildTitle("DETAILS"),
+            buildTitle(i("details").toUpperCase()),
             buildText(_objective.details()),
             buildBackButton(context)
           ],

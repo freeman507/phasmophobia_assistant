@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:phasmophobiaassistant/i18n/i18n.dart';
 
 abstract class DetailPage extends StatelessWidget {
   @override
@@ -10,7 +11,7 @@ abstract class DetailPage extends StatelessWidget {
     return Container(
       margin: EdgeInsets.all(10),
       child: RaisedButton(
-        child: Text("BACK"),
+        child: Text(i("back")),
         onPressed: () {
           Navigator.pop(context);
         },

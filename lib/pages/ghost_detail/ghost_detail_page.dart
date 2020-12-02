@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:phasmophobiaassistant/i18n/i18n.dart';
 import 'package:phasmophobiaassistant/models/Ghost.dart';
 import 'package:phasmophobiaassistant/widgets/detail_page.dart';
 
@@ -16,15 +17,15 @@ class GhostDetailPage extends DetailPage {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          buildTitle("GHOST"),
+          buildTitle(i("ghost")),
           buildText(_ghost.name()),
-          buildTitle("DESCRIPTION"),
+          buildTitle(i("description")),
           buildListDescription(_ghost.descriptions()),
-          buildTitle("STRENGTHS"),
+          buildTitle(i("strengths")),
           buildText(_ghost.strength()),
-          buildTitle("WEAKNESS"),
+          buildTitle(i("weakness")),
           buildText(_ghost.weakness()),
-          buildTitle("EVIDENCES"),
+          buildTitle(i("evidences")),
           buildText(_ghost.evidences()),
           buildBackButton(context)
         ],

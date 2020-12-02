@@ -9,7 +9,7 @@ class EmfLevelFive implements Evidence {
   ];
 
   List<String> _howItWorks = [
-    "A ghost will have a 25% chance to produce an EMF level 5 emission when the ghost interacts with the environment (see EMF Ghost Interaction), such as when it causes the phone to ring in a classroom.",
+    "A ghost will have a 25% chance to produce an EMF level 5 emission when the ghost interacts with the environment, such as when it causes the phone to ring in a classroom.",
     "If a Revenant or Oni manifests itself, the reader will register EMF Level 5.",
     "The EMF Reader will still pick up Level 5 readings when thrown, and has a larger radius of which it will pick it up from.",
     "Taking a picture of a Level 5 reading will count as an interaction picture, and will count as a separate interaction between 2, 3, and 4.",

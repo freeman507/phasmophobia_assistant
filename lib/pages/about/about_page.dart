@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:phasmophobiaassistant/i18n/i18n.dart';
 import 'package:phasmophobiaassistant/widgets/detail_page.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -12,17 +13,17 @@ class AboutPage extends DetailPage {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          buildTitle("ABOUT"),
+          buildTitle(i("about").toUpperCase()),
           buildText(
-              "The Phasmophobia Assistant app is a tool to help players of Phasmophobia in your journeys. The app dosen't need internet acess or any authorization device to use. This project is open source and don't have any finantial intent. This is for Phasmophobia community."),
+              "The Phasmophobia Assistant app is a tool to help players of Phasmophobia in your journeys. The app doesn't need internet acess or any authorization device to use. This project is open source and don't have any finantial intent. This is for Phasmophobia community."),
           buildText("Enjoy Phasmophobia Assistant!"),
-          buildTitle("CONTENT REFERENCE"),
+          buildText(i("content.reference").toUpperCase()),
           buildLink("https://phasmophobia.fandom.com/wiki/Phasmophobia_Wiki"),
-          buildTitle("THIS APP IS BASED ON"),
+          buildText(i("app.based.on").toUpperCase()),
           buildLink("https://github.com/Beatusvir/phasmophobia-assistant"),
-          buildTitle("SOURCE CODE"),
+          buildText(i("source.code").toUpperCase()),
           buildLink("https://github.com/freeman507/phasmophobia_assistant"),
-          buildTitle("MAINTEINERS"),
+          buildText(i("maintainers").toUpperCase()),
           buildText("Felipe Zanella - Developer"),
           buildText("Maycon Yamamotto - UI Designer"),
           buildText("Bruno Augusto - UX Designer"),

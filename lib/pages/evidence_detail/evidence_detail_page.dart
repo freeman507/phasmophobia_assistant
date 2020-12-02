@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:phasmophobiaassistant/i18n/i18n.dart';
 import 'package:phasmophobiaassistant/models/Evidence.dart';
 import 'package:phasmophobiaassistant/widgets/detail_page.dart';
 
@@ -16,13 +17,13 @@ class EvidenceDetailPage extends DetailPage {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          buildTitle("EVIDENCE"),
+          buildTitle(i("evidence").toUpperCase()),
           buildText(_evidence.name()),
-          buildTitle("DESCRIPTIONS"),
+          buildTitle(i("descriptions").toUpperCase()),
           buildListDescription(_evidence.descriptions()),
-          buildTitle("HOW IT WORKS"),
+          buildTitle(i("how.it.works")),
           buildListDescription(_evidence.howItWorks()),
-          buildTitle("POSSIBLE GHOSTS"),
+          buildTitle(i("possible.ghosts")),
           buildText(_evidence.ghosts()),
           buildBackButton(context)
         ],
