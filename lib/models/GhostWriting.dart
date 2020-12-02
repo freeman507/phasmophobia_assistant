@@ -1,18 +1,18 @@
 import 'package:phasmophobiaassistant/models/Evidence.dart';
 
 class GhostWriting implements Evidence {
-  String _name = "Ghost Writing";
+  String _name = "ghost.writing";
 
   List<String> _descriptions = [
-    "Ghost Writing is Evidence used to determine which ghost is haunting the location. It can be obtained by using a Ghost Writing Book.",
+    "ghost.writing.description1",
   ];
 
   List<String> _howItWorks = [
-    "If Ghost Writing is a piece of evidence, the ghost has a 5-in-12 chance to interact with the Ghost Writing Book. You can increase the Ghost Activity in the room to increase the chance of this occuring.",
-    "Taking a photograph of the Ghost Writing Book after it has been written in with a Photo Camera will count as an Interaction for Photo Evidence.",
+    "ghost.writing.howitworks1",
+    "ghost.writing.howitworks2",
   ];
 
-  String _ghosts = "Demon | Oni | Revenant | Shade | Spirit | Yurei";
+  String _ghosts = "ghost.writing.ghosts";
 
   @override
   List<String> descriptions() {

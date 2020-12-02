@@ -1,21 +1,21 @@
 import 'package:phasmophobiaassistant/models/Evidence.dart';
 
 class EmfLevelFive implements Evidence {
-  String _name = "EMF Level 5";
+  String _name = "emf.level.5";
 
   List<String> _descriptions = [
-    "EMF Level 5 is a piece of Evidence used to determine which type of Ghost is haunting the location.",
-    "You can determine the current EMF Level using an EMF Reader."
+    "emf.level.5.description1",
+    "emf.level.5.description2",
   ];
 
   List<String> _howItWorks = [
-    "A ghost will have a 25% chance to produce an EMF level 5 emission when the ghost interacts with the environment, such as when it causes the phone to ring in a classroom.",
-    "If a Revenant or Oni manifests itself, the reader will register EMF Level 5.",
-    "The EMF Reader will still pick up Level 5 readings when thrown, and has a larger radius of which it will pick it up from.",
-    "Taking a picture of a Level 5 reading will count as an interaction picture, and will count as a separate interaction between 2, 3, and 4.",
+    "emf.level.5.howitworks1",
+    "emf.level.5.howitworks2",
+    "emf.level.5.howitworks3",
+    "emf.level.5.howitworks4",
   ];
 
-  String _ghosts = "Banshee | Jinn | Oni | Phantom | Revenant | Shade";
+  String _ghosts = "emf.level.5.ghosts";
 
   @override
   String ghosts() {

@@ -2,9 +2,9 @@ import 'package:phasmophobiaassistant/models/Objective.dart';
 
 class EmfReaderObjective implements Objective {
 
-  String _name = "EMF Reader";
-  String _description = "Find evidence of the paranormal with an EMF Reader";
-  String _details = "The EMF Reader is a purchasable piece of Equipment used to read the strength of Electro-Magnetic Fields in the nearby environment.";
+  String _name = "emf.reader";
+  String _description = "emf.reader.description";
+  String _details = "emf.reader.details";
 
   @override
   String description() {

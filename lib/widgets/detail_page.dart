@@ -35,7 +35,7 @@ abstract class DetailPage extends StatelessWidget {
     return Container(
       margin: EdgeInsets.all(10),
       child: Text(
-        text,
+        i(text),
         textAlign: TextAlign.center,
         style: TextStyle(
             fontSize: 14, fontWeight: FontWeight.bold, color: Colors.white70),

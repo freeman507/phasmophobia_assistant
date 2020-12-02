@@ -1,20 +1,18 @@
 import 'package:phasmophobiaassistant/models/Ghost.dart';
 
 class Revenant implements Ghost {
-  String _name = "Revenant";
+  String _name = "revenant";
 
   List<String> _descriptions = [
-    "The Revenant is one of twelve Ghost types in Phasmophobia. It is a slow, but violent ghost that will attack indiscriminately. It is said to travel at higher speeds when hunting.",
-    "Unlike other Ghosts, who will often have a specific target selected when starting a Hunt they will hone in on, Revenants can freely switch targets if there is another player that is closer by - and especially one that is in plain view and available, making its goal of killing players more convenient."
+    "revenant.description1",
+    "revenant.description2",
   ];
 
-  String _strength =
-      "A Revenant will travel at a significantly faster speed when hunting a victim. Additionally, the Revenant can freely switch whoever it is targeting during a Hunt.";
+  String _strength = "revenant.strength";
 
-  String _weakness =
-      "Hiding from the Revenant will cause it to move very slowly.";
+  String _weakness = "revenant.weakness";
 
-  String _evidences = "EMF Level 5 | Fingerprints | Ghost Writing";
+  String _evidences = "revenant.evidences";
 
   @override
   List<String> descriptions() {

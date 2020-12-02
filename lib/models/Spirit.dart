@@ -2,17 +2,17 @@ import 'package:phasmophobiaassistant/models/Ghost.dart';
 
 class Spirit implements Ghost {
 
-  String _name = "Spirit";
+  String _name = "spirit";
 
   List<String> _descriptions = [
-    "A Spirit is the most common Ghost you will come across however it is still very powerful and dangerous. They are usually discovered at one of their hunting grounds after an unexplained death."
+    "spirit.description1",
   ];
 
-  String _strength = "The spirit has no discernible strengths, however it is known to increase its hunting as your sanity drops.";
+  String _strength = "spirit.strength";
 
-  String _weakness = "Using Smudge Sticks on a Spirit will stop it attacking for 120 seconds instead of 90.";
+  String _weakness = "spirit.weakness";
 
-  String _evidences = "Ghost Writing | Fingerprints | Spirit Box";
+  String _evidences = "spirit.evidences";
 
   @override
   List<String> descriptions() {

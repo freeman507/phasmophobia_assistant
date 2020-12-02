@@ -2,18 +2,18 @@ import 'package:phasmophobiaassistant/models/Ghost.dart';
 
 class Phantom implements Ghost {
 
-  String _name = "Phantom";
+  String _name = "phantom";
 
   List<String> _descriptions = [
-    "A Phantom is a Ghost that can possess the living, most commonly summoned by a Ouija Board. It also induces fear into those around it.",
-    "Phantoms are one of the 12 types of Ghosts that can be encountered in Phasmophobia, and the third one described in the Journal. Contrary to popular belief, the Phantom cannot possess ghost-hunters after using a Ouija Board.",
+    "phantom.description1",
+    "phantom.description2",
   ];
 
-  String _strength = "Looking at a Phantom will considerably drop your Sanity. This refers to any visible manifestations of the Phantom, including during a Hunt.";
+  String _strength = "phantom.strength";
 
-  String _weakness = "Taking a photo of the Phantom will make it temporarily disappear. This, however, will not stop a Hunt.";
+  String _weakness = "phantom.weakness";
 
-  String _evidences = "EMF Level 5 | Freezing Temperatures | Ghost Orb";
+  String _evidences = "phantom.evidences";
 
   @override
   List<String> descriptions() {

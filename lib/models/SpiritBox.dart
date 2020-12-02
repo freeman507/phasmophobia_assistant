@@ -1,16 +1,16 @@
 import 'package:phasmophobiaassistant/models/Evidence.dart';
 
 class SpiritBox implements Evidence {
-  String _name = "Spirit Box";
+  String _name = "spirit.box";
 
   List<String> _descriptions = [
-    "The Spirit Box is a piece of Equipment, as well as a type of Evidence, that can be used to ask the Ghost questions to get more information. Only certain Ghosts will respond via the Spirit Box, which can be used as Evidence when identifying the Ghost.",
+    "spirit.box.description1",
   ];
 
   List<String> _howItWorks = [
-    "To use the Spirit Box, you must be in the same room as the Ghost, or within 3 meters if not in the same room, for it to answer. The lights must be off; additionally, shy ghosts will require you to be the only person in the room (although they will sometimes respond when a group is entering a room due to initially only detecting one player).",
-    "The Spirit Box will work if thrown on the ground as long as it is left on and you are within range to ask questions and hear the responses. Sometimes, Ghosts respond to Spirit Boxes placed on the ground without players directly trying to get a response with voice commands. While Ghosts can hear when you are talking no matter what, you must be using proximity chat for the Spirit Box to hear you.",
-    "Note that there is evidence that the Spirit Box might work in any location, but the person asking the questions must be near the Ghost. Some ghost hunters have suggested that using broadcast (global chat) to ask questions can work from any location.",
+    "spirit.box.howitworks1",
+    "spirit.box.howitworks2",
+    "spirit.box.howitworks3",
     "---",
     "*** Difficulty Questions ***",
     "---",
@@ -78,7 +78,7 @@ class SpiritBox implements Evidence {
     "Are you a woman?",
   ];
 
-  String _ghosts = "Demon | Jinn | Mare | Oni | Poltergeist | Spirit | Wraith";
+  String _ghosts = "spirit.box.ghosts";
 
   @override
   List<String> descriptions() {

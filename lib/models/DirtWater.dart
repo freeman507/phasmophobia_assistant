@@ -2,11 +2,11 @@ import 'package:phasmophobiaassistant/models/Objective.dart';
 
 class DirtWater implements Objective {
 
-  String _name = "Dirt Water";
+  String _name = "dirt.water";
 
-  String _description = "Capture a photo of Dirty Water in a sink.";
+  String _description = "dirt.water.description";
 
-  String _details = "A Ghost can create dirty water in one of two ways: interacting with a sink already filled with water, or by activating an empty sink. This can be useful for tracking the Ghost's general location.";
+  String _details = "dirt.water.details";
 
   @override
   String description() {

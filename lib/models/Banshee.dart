@@ -2,18 +2,18 @@ import 'package:phasmophobiaassistant/models/Ghost.dart';
 
 class Banshee implements Ghost {
 
-  String _name = "Banshee";
+  String _name = "banshee";
 
   List<String> _description = [
-    "The Banshee is one of twelve types of Ghosts in Phasmophobia. The Banshee is a natural hunter and will attack anything. It has been known to stalk its prey one at a time until it makes its kill.",
-    "Unlike other ghosts, who will often change their selected target between Hunts, Banshees will always target the same player every time it hunts until it successfully kills them. While this means other players are safe from the Banshee's power so long as its target is alive, it makes carrying out objectives by the targeted player more difficult."
+    "banshee.description1",
+    "banshee.description2",
   ];
 
-  String _strength = "A Banshee will focus on one player at a time until it kills them.";
+  String _strength = "banshee.strength";
 
-  String _weakness = "Banshees fear the Crucifix, which boosts the Hunt-stopping range of one from 3 meters to 5 meters against it.";
+  String _weakness = "banshee.weakness";
 
-  String _evidences = "EMF Level 5 | Fingerprints | Freezing Temperatures";
+  String _evidences = "banshee.evidences";
 
   @override
   List<String> descriptions() {

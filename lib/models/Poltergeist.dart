@@ -2,18 +2,18 @@ import 'package:phasmophobiaassistant/models/Ghost.dart';
 
 class Poltergeist implements Ghost {
 
-  String _name = "Poltergeist";
+  String _name = "poltergeist";
 
   List<String> _descriptions = [
-    "One of the most famous Ghosts, a Poltergeist, also known as a noisy ghost can manipulate objects around it to spread fear into it's victims.",
-    "Poltergeists are one of the 12 types of ghosts that can be encountered in Phasmophobia."
+    "poltergeist.description1",
+    "poltergeist.description2",
   ];
 
-  String _strength = "A Poltergeist is capable of influencing more objects at once than any other Ghosts, and is capable of shutting multiple doors at once.";
+  String _strength = "poltergeist.strength";
 
-  String _weakness = "A Poltergeist is almost ineffective in an empty room.";
+  String _weakness = "poltergeist.weakness";
 
-  String _evidences = "Ghost Orb | Fingerprints | Spirit Box";
+  String _evidences = "poltergeist.evidences";
 
   @override
   List<String> descriptions() {
