@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:phasmophobiaassistant/i18n/i18n.dart';
 import 'package:phasmophobiaassistant/widgets/main_tab.dart';
 
 void main() {
