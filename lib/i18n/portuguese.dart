@@ -61,8 +61,7 @@ const Map<String, String> portuguese = {
       "Uma Banshee se concentrará em um jogador por vez até matá-los.",
   "banshee.weakness":
       "Banshees temem o crucifixo, o que aumenta o alcance do crucifixo de 3 para 5 metros.",
-  "banshee.evidences":
-      "EMF Nível 5 | Impressões digitais | Temperatura Baixa",
+  "banshee.evidences": "EMF Nível 5 | Impressões digitais | Temperatura Baixa",
   "crucifix.description": "Impeça o fantasma de caçar com um Crucifixo.",
   "crucifix.details":
       "Para que o crucifixo evite com sucesso uma caça, ele deve estar nas proximidades do fantasma quando ele começa a caçar. O crucifixo tem um alcance de 3 metros para a maioria dos fantasmas e 5 metros para a Banshee. Quando o fantasma inicia a caça, ele verifica se está ao alcance de um crucifixo. Se estiver, a caça não começa, desligando todas as luzes e levando uma das duas cargas do crucifixo. ",
@@ -74,8 +73,7 @@ const Map<String, String> portuguese = {
       "Os demônios são os mais agressivos e entram mais no modo de caça.",
   "demon.weakness":
       "Fazer perguntas bem-sucedidas a um Demônio no Tabuleiro Ouija não diminuirá a sanidade do usuário.",
-  "demon.evidences":
-      "Temperatura baixa | Escrita fantasma | Spirit Box",
+  "demon.evidences": "Temperatura baixa | Escrita fantasma | Spirit Box",
   "dirt.water.description": "Tire uma foto de água suja em uma pia.",
   "dirt.water.details":
       "Um fantasma pode criar água suja de duas maneiras: interagindo com uma pia já cheia de água ou ativando uma pia vazia. Isso pode ser útil para rastrear a localização geral do fantasma.",
@@ -91,9 +89,9 @@ const Map<String, String> portuguese = {
       "O leitor EMF ainda pegará leituras de Nível 5 quando solto e tem um raio maior do qual ele pegará.",
   "emf.level.5.howitworks4":
       "Tirar uma foto de uma leitura de Nível 5 contará como uma foto de interação e contará como uma interação separada entre 2, 3 e 4.",
-  "emf.level.5.ghosts": "Banshee | Jinn | Oni | Espectro | Revenant | Assombração",
-  "emf.reader.description":
-      "Encontre evidências paranormais com um leitor EMF",
+  "emf.level.5.ghosts":
+      "Banshee | Jinn | Oni | Espectro | Revenant | Assombração",
+  "emf.reader.description": "Encontre evidências paranormais com um leitor EMF",
   "emf.reader.details":
       "O Leitor EMF é um equipamento comprado para ler a força dos campos eletromagnéticos no ambiente próximo.",
   "fingerprints.description1":
@@ -120,12 +118,13 @@ const Map<String, String> portuguese = {
   "ghost.event.description":
       "Faça com que um membro de sua equipe testemunhe um evento paranormal.",
   "ghost.event.details":
-      "Um evento fantasma refere-se a qualquer evento em que o fantasma se manifestSa fora de uma caçada. Isso inclui aparências visuais, vozes, portas fechadas e desligamento de interruptores de luz.",
+      "Um evento fantasma refere-se a qualquer evento em que o fantasma se manifesta fora de uma caçada. Isso inclui aparências visuais, vozes, portas fechadas e desligamento de interruptores de luz.",
   "ghost.orbs.description1":
       "Orbes Fantasmas são um tipo de evidência que são usados ​​para ajudar a determinar que tipo de fantasma está assombrando o local.",
   "ghost.orbs.howitworks1":
       "Eles são emitidos na sala do fantasma e se parecem com pequenas esferas amarelas que deslizam pela tela, geralmente uma de cada vez. Elas podem ser vistas na tela do computador usando uma câmera de vídeo ou um Câmera montada na cabeça com visão noturna. Dependendo do local assombrado, orbes fantasmas às vezes podem ser detectados de fora antes de entrar em um prédio e iniciar a contagem regressiva da fase. ",
-  "ghost.orbs.ghosts": "Jinn | Mare | Espectro | Poltergeist | Assombração | Yurei",
+  "ghost.orbs.ghosts":
+      "Jinn | Mare | Espectro | Poltergeist | Assombração | Yurei",
   "ghost.photo.description": "Capture uma foto do fantasma",
   "ghost.photo.details":
       "Use a câmera fotográfica para tirar uma foto do fantasma. A câmera piscará uma luz com o dobro do tamanho de uma lanterna normal com 3 vezes o alcance do bastão de UV. Ela pode tirar fotos através das paredes, portas, portas de garagem, janelas e quase todas as superfícies, se a lente conseguir passar por elas. ",
@@ -135,7 +134,8 @@ const Map<String, String> portuguese = {
       "Se a escrita fantasma for uma evidência, o fantasma tem 5 em 12 chances de interagir com o caderno de escrita fantasma. Você pode aumentar a atividade do fantasma na sala para aumentar a chance do fantasma escrever. ",
   "ghost.writing.howitworks2":
       "Tirar uma fotografia do caderno de escrita fantasma depois que ele foi escrito com uma câmera fotográfica contará como uma interação para evidência fotográfica.",
-  "ghost.writing.ghosts": "Demônio | Oni | Revenant | Assombração | Espírito | Yurei",
+  "ghost.writing.ghosts":
+      "Demônio | Oni | Revenant | Assombração | Espírito | Yurei",
   "jinn.description1":
       "O Jinn é um dos doze tipos de fantasmas em Phasmophobia. É um fantasma territorial que ataca quando é ameaçado. Também é conhecido por viajar a uma velocidade significativa durante as caçadas.",
   "jinn.description2":
@@ -208,8 +208,7 @@ const Map<String, String> portuguese = {
   "shade.weakness":
       "Por outro lado, um Assombração raramente iniciará uma caçada quando os jogadores estiverem agrupados.",
   "shade.evidences": "EMF Nível 5 | Orbes Fantasma | Escrita fantasma",
-  "smudge.sticks.description":
-      "Limpe a área perto do fantasma usando incenso.",
+  "smudge.sticks.description": "Limpe a área perto do fantasma usando incenso.",
   "smudge.sticks.details":
       "Os incensos começarão a fumegar por cerca de 15 segundos e se o fantasma estiver a 6 metros, a Atividade do fantasma será aumentada marginalmente e o fantasma não será capaz de entrar em uma caçada por 90 segundos (180 para o Espírito). Isso não interromperá uma caçada ativa. Os incensos funcionarão tanto na mão quanto no chão. ",
   "spirit.description1":
@@ -227,6 +226,18 @@ const Map<String, String> portuguese = {
       "A Spirit Box funcionará se for jogada no chão, contanto que seja deixada ligada e você esteja ao alcance para fazer perguntas e ouvir as respostas. Às vezes, fantasmas respondem a Spirit Box colocadas no chão sem os jogadores diretamente tentando obter uma resposta. Embora fantasmas possam ouvir quando você está falando, você deve usar o chat de proximidade para que a Spirit Box ouça você. ",
   "spirit.box.howitworks3":
       "Observe que há evidências de que a Spirit Box pode funcionar em qualquer local, mas a pessoa que faz as perguntas deve estar perto do fantasma. Alguns caçadores de fantasmas sugeriram o uso de transmissão (chat global) para perguntar as perguntas podem funcionar em qualquer local. ",
+  "spirit.box.howitworks4": "Perguntas de dificuldade",
+  "spirit.box.howitworks5":
+      "O que você quer? | Por que você está aqui? | Você quer nos machucar? | Você está com raiva? | Você nos quer aqui? | Vamos embora? | Devemos sair? | Quer que saiamos? | O que devemos fazer? | Podemos ajudar? | Algo errado? | Você é amigável? ",
+  "spirit.box.howitworks6": "Questões de localização",
+  "spirit.box.howitworks7":
+      "Onde você está? | Você está perto? | Você pode se mostrar? | Dê-nos um sinal. | Avise-nos que você está aqui. | Mostre-se. | Você pode falar? | Fale com nós. | Você está aqui? | Você está conosco? | Alguém conosco? | Alguém está aqui? | Alguém na sala? | Alguém aqui? | Há um espírito aqui? | Há um fantasma aqui? | Qual a sua localização?",
+  "spirit.box.howitworks8": "Questões de idade",
+  "spirit.box.howitworks9":
+      "Quantos anos você tem? | Qual é a sua idade? | Quando você nasceu? | Você é uma criança? | Você é velho? | Você é jovem?",
+  "spirit.box.howitworks10": "Perguntas pessoais",
+  "spirit.box.howitworks11":
+      "Você é uma menina? | Você é um menino? | Você é homem? | Você é mulher? | Quem é você? | O que é você? | Quem é? | De quem estamos falando? | Com quem estou falando? | Olá? | Qual é o seu nome? | Você pode me dizer seu nome? | Qual é o seu gênero? | Você é homem ou mulher? | Você é homem? | Você é uma mulher?",
   "spirit.box.ghosts":
       "Demônio | Jinn | Mare | Oni | Poltergeist | Espírito | Wraith",
   "wraith.description1":
@@ -237,8 +248,7 @@ const Map<String, String> portuguese = {
       "Os Wraiths quase nunca tocam o solo, o que significa que os sons das pegadas são raros ou inexistentes. Eles podem atravessar paredes e portas sem abri-los. No entanto, o fantasma deixará pegadas no sal se pisar.",
   "wraith.weakness":
       "Wraiths têm uma reação tóxica ao Sal. Se um Wraith entrar em contato com uma pilha de sal, ele irá parar de atacar imediatamente.",
-  "wraith.evidences":
-      "Impressões digitais | Temperatura Baixa | Spirit Box",
+  "wraith.evidences": "Impressões digitais | Temperatura Baixa | Spirit Box",
   "yurei.description1":
       "O Yurei é um dos doze tipos de fantasmas em Phasmophobia. É um fantasma que voltou ao mundo físico, geralmente com o propósito de vingança ou ódio. Embora não tenha nenhum bônus implícito para sea habilidade de caçar, seu principal diferencial é o constante ataque à sanidade dos caçadores; se os caçadores forem descuidados com sua sanidade, ele se tornará agressivo muito rapidamente. ",
   "yurei.strength":
@@ -246,4 +256,7 @@ const Map<String, String> portuguese = {
   "yurei.weakness":
       "Usar incenso na sala do fantasma fará com que ele não vagueie pelo local por aproximadamente 90 segundos.",
   "yurei.evidences": "Temperaturaa baixa | Orbes Fantasma | Escrita fantasma",
+  "about.description":
+      "O app Phasmophobia Assistant é uma ferramenta para ajudar os jogadores de Phasmophobia em suas jornadas. O app não precisa de acesso à internet e nem de permissões extras. Este projeto é open source e não possui nenhuma intenção monetária. Isto é para a comunidade Phasmophobia. ",
+  "enjoy.phasmophobia": "Aproveite Phasmophobia Assistant!",
 };

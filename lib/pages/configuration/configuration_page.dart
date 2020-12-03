@@ -13,45 +13,51 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Image.asset("assets/background.png"),
-          centerTitle: true,
-        ),
-        body: ListView(
-          children: <Widget>[
-            Card(
+      appBar: AppBar(
+        title: Image.asset("assets/background.png"),
+        centerTitle: true,
+      ),
+      body: ListView(
+        children: <Widget>[
+          Card(
+            margin: EdgeInsets.all(10),
+            child: Container(
               margin: EdgeInsets.all(10),
-              child: Container(
-                margin: EdgeInsets.all(10),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Text(
-                      i("language"),
-                      style: TextStyle(fontSize: 18),
-                    ),
-                    Divider(),
-                    buildDropdownButton(),
-                  ],
-                ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text(
+                    i("language"),
+                    style: TextStyle(fontSize: 18),
+                  ),
+                  Divider(),
+                  buildDropdownButton(),
+                ],
               ),
             ),
-            Container(
-              margin: EdgeInsets.fromLTRB(10, 5, 10, 10),
-              child: RaisedButton(
-                child: Text(i("save")),
-                onPressed: () {
-                  saveLanguage(dropdownValue.toLowerCase());
-                  showDialog(
-                    context: context,
-                    builder: (_) => buildAlertDialog(),
-                    barrierDismissible: false,
-                  );
-                },
-              ),
-            )
-          ],
-        ));
+          ),
+        ],
+      ),
+      bottomSheet: Row(
+        children: <Widget>[
+          Expanded(
+            child: Container(
+                margin: EdgeInsets.all(10),
+                child: RaisedButton(
+                  child: Text(i("save")),
+                  onPressed: () {
+                    saveLanguage(dropdownValue.toLowerCase());
+                    showDialog(
+                      context: context,
+                      builder: (_) => buildAlertDialog(),
+                      barrierDismissible: false,
+                    );
+                  },
+                )),
+          ),
+        ],
+      ),
+    );
   }
 
   AlertDialog buildAlertDialog() {

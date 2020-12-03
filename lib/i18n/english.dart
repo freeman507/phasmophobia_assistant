@@ -224,6 +224,14 @@ const Map<String, String> english = {
       "The Spirit Box will work if thrown on the ground as long as it is left on and you are within range to ask questions and hear the responses. Sometimes, Ghosts respond to Spirit Boxes placed on the ground without players directly trying to get a response with voice commands. While Ghosts can hear when you are talking no matter what, you must be using proximity chat for the Spirit Box to hear you.",
   "spirit.box.howitworks3":
       "Note that there is evidence that the Spirit Box might work in any location, but the person asking the questions must be near the Ghost. Some ghost hunters have suggested that using broadcast (global chat) to ask questions can work from any location.",
+  "spirit.box.howitworks4": "Difficulty Questions",
+  "spirit.box.howitworks5": "What do you want? | Why are you here? | Do you want to hurt us? | Are you angry? | Do you want us here? | Shall we leave? | Should we leave? | Do you want us to leave? | What should we do? | Can we help? | Is anything wrong? | Are you friendly?",
+  "spirit.box.howitworks6": "Location questions",
+  "spirit.box.howitworks7": "Where are you? | Are you close? | Can you show yourself? | Give us a sign. | Let us know you are here. | Show yourself. | Can you talk? | Speak to us. | Are you here? | Are you with us? | Anybody with us? | Is anyone here? | Anybody in the room? | Anybody here? | Is there a spirit here? | Is there a Ghost here? | What is your location?",
+  "spirit.box.howitworks8": "Age questions",
+  "spirit.box.howitworks9": "How old are you? | How young are you? | What is your age? | When were you born? | Are you a child? | Are you old? | Are you young?",
+  "spirit.box.howitworks10": "Personal questions",
+  "spirit.box.howitworks11": "Are you a girl? | Are you a boy? | Are you male? | Are you female? | Who are you? | What are you? | Who is this? | Who are we talking to? | Who am I talking to? | Hello? | What is your name? | Can you give me your name? | What is your gender? | What gender? | Are you male or female? | Are you a man? | Are you a woman?",
   "spirit.box.ghosts":
       "Demon | Jinn | Mare | Oni | Poltergeist | Spirit | Wraith",
   "wraith.description1":
@@ -242,4 +250,6 @@ const Map<String, String> english = {
   "yurei.weakness":
       "Using Smudge Sticks on the Yurei's Ghost Room will cause it to not wander around the location for ~90 seconds.",
   "yurei.evidences": "Freezing Temperatures | Ghost Orb | Ghost Writing",
+  "about.description": "The Phasmophobia Assistant app is a tool to help Phasmophobia players on their journey. The application does not need internet access or extra access. This project is open source and has no monetary intent. This is for the Fasmophobia community.",
+  "enjoy.phasmophobia": "Enjoy Phasmophobia Assistant!",
 };

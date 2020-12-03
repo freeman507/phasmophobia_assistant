@@ -14,9 +14,8 @@ class AboutPage extends DetailPage {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           buildTitle(i("about").toUpperCase()),
-          buildText(
-              "The Phasmophobia Assistant app is a tool to help players of Phasmophobia in your journeys. The app doesn't need internet acess or any authorization device to use. This project is open source and don't have any finantial intent. This is for Phasmophobia community."),
-          buildText("Enjoy Phasmophobia Assistant!"),
+          buildText(i("about.description")),
+          buildText(i("enjoy.phasmophobia")),
           buildText(i("content.reference").toUpperCase()),
           buildLink("https://phasmophobia.fandom.com/wiki/Phasmophobia_Wiki"),
           buildText(i("app.based.on").toUpperCase()),
