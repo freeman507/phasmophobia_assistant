@@ -75,12 +75,16 @@ class _EvidencesPageState extends State<EvidencesPage>
       margin: EdgeInsets.fromLTRB(0, 15, 0, 0),
       child: ListView(
         children: <Widget>[
-          BuildEvidenceItem(EMF, emf, discardEmf),
-          BuildEvidenceItem(FINGERPRINTS, fingerprints, discardFingerpints),
-          BuildEvidenceItem(TEMPERATURE, temperature, discardTemperature),
-          BuildEvidenceItem(ORBS, orb, discardOrb),
-          BuildEvidenceItem(WRITING, writing, discardWriting),
-          BuildEvidenceItem(SPIRIT_BOX, spiritBox, discardSpiritBox),
+          BuildEvidenceItem(Icons.signal_cellular_alt, EMF, emf, discardEmf),
+          BuildEvidenceItem(Icons.fingerprint, FINGERPRINTS, fingerprints,
+              discardFingerpints),
+          BuildEvidenceItem(
+              Icons.thermostat_outlined, TEMPERATURE, temperature, discardTemperature),
+          BuildEvidenceItem(Icons.wb_sunny, ORBS, orb, discardOrb),
+          BuildEvidenceItem(
+              Icons.menu_book, WRITING, writing, discardWriting),
+          BuildEvidenceItem(
+              Icons.radio, SPIRIT_BOX, spiritBox, discardSpiritBox),
           buildEvidenceSubtitle(),
           buildGhostChipsList(),
           buildResetButton(),
@@ -173,7 +177,8 @@ class _EvidencesPageState extends State<EvidencesPage>
     return chips;
   }
 
-  Card BuildEvidenceItem(String evidence, bool selected, bool discarded) {
+  Card BuildEvidenceItem(
+      IconData iconData, String evidence, bool selected, bool discarded) {
     var color = Colors.white10;
     if (discarded) {
       color = Colors.redAccent;
@@ -194,9 +199,9 @@ class _EvidencesPageState extends State<EvidencesPage>
         title: Text(
           i(evidence),
         ),
-//        leading: Icon(
-//          Icons.person,
-//        ),
+        leading: Icon(
+          iconData,
+        ),
         trailing: InkWell(
           child: Icon(
             Icons.help_outline,
