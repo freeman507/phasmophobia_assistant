@@ -387,7 +387,7 @@ class _EvidencesPageState extends State<EvidencesPage>
   }
 
   void orbEvidences(String evidences) {
-    ghosts = "spirit | poltergeist | revenant | shade | demon | yurei | oni";
+    ghosts = "spirit | poltergeist | revenant | shade | demon | yurei";
     if (evidences.contains("writing")) {
       changeTiles(true, false, true, true, true, false);
       spiritBox = false;
