@@ -8,7 +8,7 @@ class ConfigurationPage extends StatefulWidget {
 }
 
 class _ConfigurationPageState extends State<ConfigurationPage> {
-  var dropdownValue = language.toUpperCase();
+  var dropdownValue = language.toUpperCase() ?? "english";
 
   @override
   Widget build(BuildContext context) {
@@ -81,8 +81,15 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
   DropdownButton<String> buildDropdownButton() {
     return DropdownButton(
       value: dropdownValue,
-      items: <String>["ENGLISH", "PORTUGUESE"]
-          .map<DropdownMenuItem<String>>((String value) {
+      items: <String>[
+        "ENGLISH",
+        "PORTUGUESE",
+        "GERMANY",
+        "SPANISH",
+        "POLISH",
+        "RUSSIAN",
+        "UKRANIAN",
+      ].map<DropdownMenuItem<String>>((String value) {
         return DropdownMenuItem<String>(
           value: value,
           child: Text(i(value.toLowerCase())),
