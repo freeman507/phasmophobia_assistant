@@ -26,6 +26,8 @@ class AboutPage extends DetailPage {
           buildText("Felipe Zanella - Developer"),
           buildText("Maycon Yamamotto - UI Designer"),
           buildText("Bruno Augusto - UX Designer"),
+          buildText(i("support.contact")),
+          buildText("felipeszanella@gmail.com"),
           buildBackButton(context)
         ],
       ),
