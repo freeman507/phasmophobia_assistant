@@ -89,6 +89,7 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
         "POLISH",
         "RUSSIAN",
         "UKRANIAN",
+        "FRENCH",
       ].map<DropdownMenuItem<String>>((String value) {
         return DropdownMenuItem<String>(
           value: value,
