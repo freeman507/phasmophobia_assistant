@@ -14,64 +14,33 @@ String i(String keyWord) {
   String result = keyWord;
 
   if (language == "english") {
-    english.forEach((key, value) {
-      if (keyWord == key) {
-        result = value;
-        return;
-      }
-    });
+    result = searchWord(keyWord, result, english);
   } else if (language == "portuguese") {
-    portuguese.forEach((key, value) {
-      if (keyWord == key) {
-        result = value;
-        return;
-      }
-    });
+    result = searchWord(keyWord, result, portuguese);
   } else if (language == "germany") {
-    germany.forEach((key, value) {
-      if (keyWord == key) {
-        result = value;
-        return;
-      }
-    });
+    result = searchWord(keyWord, result, germany);
   } else if (language == "spanish") {
-    spanish.forEach((key, value) {
-      if (keyWord == key) {
-        result = value;
-        return;
-      }
-    });
+    result = searchWord(keyWord, result, spanish);
   } else if (language == "french") {
-    french.forEach((key, value) {
-      if (keyWord == key) {
-        result = value;
-        return;
-      }
-    });
+    result = searchWord(keyWord, result, french);
   } else if (language == "polish") {
-    polish.forEach((key, value) {
-      if (keyWord == key) {
-        result = value;
-        return;
-      }
-    });
+    result = searchWord(keyWord, result, polish);
   } else if (language == "russian") {
-    russian.forEach((key, value) {
-      if (keyWord == key) {
-        result = value;
-        return;
-      }
-    });
+    result = searchWord(keyWord, result, russian);
   } else if (language == "ukranian") {
-    ukranian.forEach((key, value) {
-      if (keyWord == key) {
-        result = value;
-        return;
-      }
-    });
+    result = searchWord(keyWord, result, ukranian);
   }
 
+  return result;
+}
 
+String searchWord(String keyWord, String result, Map map) {
+  map.forEach((key, value) {
+    if (keyWord == key) {
+      result = value;
+      return;
+    }
+  });
   return result;
 }
 
