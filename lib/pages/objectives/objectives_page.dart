@@ -11,6 +11,7 @@ import 'package:phasmophobiaassistant/models/Objective.dart';
 import 'package:phasmophobiaassistant/models/SaltFootprint.dart';
 import 'package:phasmophobiaassistant/models/SmudgeSticksObjective.dart';
 import 'package:phasmophobiaassistant/pages/objective_detail/objective_detail.dart';
+import 'package:phasmophobiaassistant/widgets/timer_text.dart';
 
 class ObjectivesPage extends StatefulWidget {
   @override
@@ -19,8 +20,16 @@ class ObjectivesPage extends StatefulWidget {
 
 class _ObjectivesPageState extends State<ObjectivesPage>
     with AutomaticKeepAliveClientMixin<ObjectivesPage> {
+  Stopwatch stopwatch = new Stopwatch();
+
   List<bool> _selections = List.generate(2, (_) => false);
+
+  List<bool> _timerSelections = [true, false];
+
   TextEditingController _textEditingController = TextEditingController();
+
+  TimerText timerText;
+
   bool emfReader = false,
       lowTemperature = false,
       dirtWater = false,
@@ -41,6 +50,10 @@ class _ObjectivesPageState extends State<ObjectivesPage>
       SMUDGE_STICKS = i("smudge.sticks"),
       SALT_FOOTPRINT = i("salt.footprint");
 
+  _ObjectivesPageState() {
+    timerText = TimerText(stopwatch, 120000);
+  }
+
   @override
   bool get wantKeepAlive => true;
 
@@ -56,24 +69,25 @@ class _ObjectivesPageState extends State<ObjectivesPage>
           child: Padding(
             padding: EdgeInsets.fromLTRB(10, 0, 0, 5),
             child: ListTile(
-                title: TextField(
-                  controller: _textEditingController,
-                  decoration: InputDecoration(labelText: i("ghost.name")),
-                ),
-                trailing: ToggleButtons(
-                  children: <Widget>[
-                    Icon(Icons.person),
-                    Icon(Icons.people),
-                  ],
-                  isSelected: _selections,
-                  borderRadius: BorderRadius.circular(30),
-                  onPressed: (int index) {
-                    setState(() {
-                      _selections = List.generate(2, (_) => false);
-                      _selections[index] = true;
-                    });
-                  },
-                )),
+              title: TextField(
+                controller: _textEditingController,
+                decoration: InputDecoration(labelText: i("ghost.name")),
+              ),
+              trailing: ToggleButtons(
+                children: <Widget>[
+                  Icon(Icons.person),
+                  Icon(Icons.people),
+                ],
+                isSelected: _selections,
+                borderRadius: BorderRadius.circular(30),
+                onPressed: (int index) {
+                  setState(() {
+                    _selections = List.generate(2, (_) => false);
+                    _selections[index] = true;
+                  });
+                },
+              ),
+            ),
           ),
         ),
         Container(
@@ -101,6 +115,53 @@ class _ObjectivesPageState extends State<ObjectivesPage>
                 Container(),
               ]),
             ],
+          ),
+        ),
+        Card(
+          margin: EdgeInsets.fromLTRB(10, 10, 10, 5),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10.0),
+          ),
+          child: Padding(
+            padding: EdgeInsets.fromLTRB(10, 5, 0, 5),
+            child: ListTile(
+              leading: ToggleButtons(
+                children: <Widget>[
+                  Text("2:00"),
+                  Text("5:00"),
+                ],
+                isSelected: _timerSelections,
+                borderRadius: BorderRadius.circular(30),
+                onPressed: (int index) {
+                  setState(() {
+                    _timerSelections = List.generate(2, (_) => false);
+                    _timerSelections[index] = true;
+                    defineDuration();
+                    //handleStopButton();
+                  });
+                },
+              ),
+              title: timerText,
+              trailing: Wrap(
+                children: [
+                  IconButton(
+                      icon: Icon(Icons.play_arrow),
+                      onPressed: () {
+                        handlePlayButton();
+                      }),
+                  IconButton(
+                      icon: Icon(Icons.pause),
+                      onPressed: () {
+                        handlePauseButton();
+                      }),
+                  IconButton(
+                      icon: Icon(Icons.stop),
+                      onPressed: () {
+                        handleStopButton();
+                      }),
+                ],
+              ),
+            ),
           ),
         ),
         Container(
@@ -182,6 +243,7 @@ class _ObjectivesPageState extends State<ObjectivesPage>
     ghostEvent = false;
     smudgeSticks = false;
     saltFootprint = false;
+    handleStopButton();
   }
 
   void changeObjectiveState(String objective) {
@@ -204,5 +266,33 @@ class _ObjectivesPageState extends State<ObjectivesPage>
     } else if (objective == SALT_FOOTPRINT) {
       saltFootprint = !saltFootprint;
     }
+  }
+
+  void handlePlayButton() {
+    setState(() {
+      if (!stopwatch.isRunning) {
+        stopwatch.start();
+      }
+    });
+  }
+
+  void handlePauseButton() {
+    setState(() {
+      if (stopwatch.isRunning) {
+        stopwatch.stop();
+      }
+    });
+  }
+
+  void handleStopButton() {
+    setState(() {
+      stopwatch.reset();
+      stopwatch.stop();
+      timerText.duration = _timerSelections[0] ? 120000 : 300000;
+    });
+  }
+
+  int defineDuration() {
+    timerText.duration = _timerSelections[0] ? 120000 : 300000;
   }
 }
