@@ -55,6 +55,8 @@ class TimerTextState extends State<TimerText> {
 
     if (time <= 0) {
       stopwatch.stop();
+      stopwatch.reset();
+      time = 0;
     }
 
     String formattedTime = format(time);

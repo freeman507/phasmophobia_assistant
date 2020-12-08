@@ -26,8 +26,6 @@ class _ObjectivesPageState extends State<ObjectivesPage>
 
   List<bool> _selections = List.generate(2, (_) => false);
 
-  List<bool> _timerSelections = [true, false];
-
   TextEditingController _textEditingController = TextEditingController();
 
   TimerText timerText;
@@ -341,11 +339,8 @@ class _ObjectivesPageState extends State<ObjectivesPage>
     setState(() {
       stopwatch.reset();
       stopwatch.stop();
-      timerText.duration = _timerSelections[0] ? 300000 : 120000;
+      timerText.duration =
+          _character == SingingCharacter.amateur ? 300000 : 120000;
     });
-  }
-
-  int defineDuration() {
-    timerText.duration = _timerSelections[0] ? 300000 : 120000;
   }
 }
