@@ -78,11 +78,10 @@ class _EvidencesPageState extends State<EvidencesPage>
           BuildEvidenceItem(Icons.signal_cellular_alt, EMF, emf, discardEmf),
           BuildEvidenceItem(Icons.fingerprint, FINGERPRINTS, fingerprints,
               discardFingerpints),
-          BuildEvidenceItem(
-              Icons.thermostat_outlined, TEMPERATURE, temperature, discardTemperature),
+          BuildEvidenceItem(Icons.thermostat_outlined, TEMPERATURE, temperature,
+              discardTemperature),
           BuildEvidenceItem(Icons.wb_sunny, ORBS, orb, discardOrb),
-          BuildEvidenceItem(
-              Icons.menu_book, WRITING, writing, discardWriting),
+          BuildEvidenceItem(Icons.menu_book, WRITING, writing, discardWriting),
           BuildEvidenceItem(
               Icons.radio, SPIRIT_BOX, spiritBox, discardSpiritBox),
           buildEvidenceSubtitle(),
@@ -179,45 +178,45 @@ class _EvidencesPageState extends State<EvidencesPage>
 
   Card BuildEvidenceItem(
       IconData iconData, String evidence, bool selected, bool discarded) {
-    var color = Colors.white10;
+    var color = Colors.black12;
     if (discarded) {
       color = Colors.redAccent;
       selected = true;
     } else if (selected) {
       color = Colors.blueAccent;
     }
-
     return Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(5),
-      ),
-      margin: EdgeInsets.fromLTRB(10, 5, 10, 5),
-      semanticContainer: true,
-      color: color,
-      child: ListTile(
-        dense: selected,
-        title: Text(
-          i(evidence),
-        ),
-        leading: Icon(
-          iconData,
-        ),
-        trailing: InkWell(
-          child: Icon(
-            Icons.help_outline,
+        margin: EdgeInsets.fromLTRB(10, 5, 10, 5),
+        child: AnimatedContainer(
+          decoration: BoxDecoration(
+            color: color,
+            borderRadius: BorderRadius.circular(5),
           ),
-          onTap: () {
-            goToEvidenceDetailPage(evidence);
-          },
-        ),
-        onTap: () {
-          changeEvidenceState(evidence);
-          setState(() {
-            verifyGhost();
-          });
-        },
-      ),
-    );
+          duration: Duration(seconds: 1),
+          child: ListTile(
+            dense: selected,
+            title: Text(
+              i(evidence),
+            ),
+            leading: Icon(
+              iconData,
+            ),
+            trailing: InkWell(
+              child: Icon(
+                Icons.help_outline,
+              ),
+              onTap: () {
+                goToEvidenceDetailPage(evidence);
+              },
+            ),
+            onTap: () {
+              changeEvidenceState(evidence);
+              setState(() {
+                verifyGhost();
+              });
+            },
+          ),
+        ));
   }
 
   verifyGhost() {

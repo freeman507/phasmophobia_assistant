@@ -266,4 +266,6 @@ const Map<String, String> portuguese = {
       "O app Phasmophobia Assistant é uma ferramenta para ajudar os jogadores de Phasmophobia em suas jornadas. O app não precisa de acesso à internet e nem de permissões extras. Este projeto é open source e não possui nenhuma intenção monetária. Isto é para a comunidade Phasmophobia. ",
   "enjoy.phasmophobia": "Aproveite Phasmophobia Assistant!",
   "support.contact": "CONTATO DE SUPORTE",
+  "amateur": "Amador",
+  "intermediate": "Intermediário",
 };

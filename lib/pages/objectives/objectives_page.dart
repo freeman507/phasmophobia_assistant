@@ -13,6 +13,8 @@ import 'package:phasmophobiaassistant/models/SmudgeSticksObjective.dart';
 import 'package:phasmophobiaassistant/pages/objective_detail/objective_detail.dart';
 import 'package:phasmophobiaassistant/widgets/timer_text.dart';
 
+enum SingingCharacter { amateur, intermediate }
+
 class ObjectivesPage extends StatefulWidget {
   @override
   _ObjectivesPageState createState() => _ObjectivesPageState();
@@ -29,6 +31,8 @@ class _ObjectivesPageState extends State<ObjectivesPage>
   TextEditingController _textEditingController = TextEditingController();
 
   TimerText timerText;
+
+  SingingCharacter _character = SingingCharacter.amateur;
 
   bool emfReader = false,
       lowTemperature = false,
@@ -51,7 +55,7 @@ class _ObjectivesPageState extends State<ObjectivesPage>
       SALT_FOOTPRINT = i("salt.footprint");
 
   _ObjectivesPageState() {
-    timerText = TimerText(stopwatch, 120000);
+    timerText = TimerText(stopwatch, 300000);
   }
 
   @override
@@ -122,46 +126,56 @@ class _ObjectivesPageState extends State<ObjectivesPage>
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10.0),
           ),
-          child: Padding(
-            padding: EdgeInsets.fromLTRB(10, 5, 0, 5),
-            child: ListTile(
-              leading: ToggleButtons(
-                children: <Widget>[
-                  Text("2:00"),
-                  Text("5:00"),
-                ],
-                isSelected: _timerSelections,
-                borderRadius: BorderRadius.circular(30),
-                onPressed: (int index) {
-                  setState(() {
-                    _timerSelections = List.generate(2, (_) => false);
-                    _timerSelections[index] = true;
-                    defineDuration();
-                    //handleStopButton();
-                  });
-                },
+          child: Row(
+            children: [
+              Expanded(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Radio(
+                      value: SingingCharacter.amateur,
+                      activeColor: Colors.blueAccent,
+                      groupValue: _character,
+                      onChanged: radioButtonChange,
+                    ),
+                    Text(i("amateur")),
+                  ],
+                ),
               ),
-              title: timerText,
-              trailing: Wrap(
-                children: [
-                  IconButton(
-                      icon: Icon(Icons.play_arrow),
-                      onPressed: () {
-                        handlePlayButton();
-                      }),
-                  IconButton(
-                      icon: Icon(Icons.pause),
-                      onPressed: () {
-                        handlePauseButton();
-                      }),
-                  IconButton(
-                      icon: Icon(Icons.stop),
-                      onPressed: () {
-                        handleStopButton();
-                      }),
-                ],
+              Expanded(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Radio(
+                      value: SingingCharacter.intermediate,
+                      activeColor: Colors.blueAccent,
+                      groupValue: _character,
+                      onChanged: radioButtonChange,
+                    ),
+                    Text(i("intermediate")),
+                  ],
+                ),
               ),
-            ),
+            ],
+          ),
+        ),
+        Card(
+          margin: EdgeInsets.fromLTRB(10, 10, 10, 5),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10.0),
+          ),
+          child: Row(
+            children: [
+              Expanded(
+                child: timerText,
+              ),
+              Expanded(
+                child: Wrap(
+                  alignment: WrapAlignment.center,
+                  children: buildTimeButtons(),
+                ),
+              ),
+            ],
           ),
         ),
         Container(
@@ -180,24 +194,63 @@ class _ObjectivesPageState extends State<ObjectivesPage>
     );
   }
 
+  void radioButtonChange(SingingCharacter value) {
+    setState(
+      () {
+        _character = value;
+        timerText.duration =
+            value == SingingCharacter.amateur ? 300000 : 120000;
+      },
+    );
+  }
+
+  List<Widget> buildTimeButtons() {
+    return [
+      IconButton(
+        icon: Icon(Icons.play_arrow),
+        onPressed: () {
+          handlePlayButton();
+        },
+      ),
+      IconButton(
+        icon: Icon(Icons.pause),
+        onPressed: () {
+          handlePauseButton();
+        },
+      ),
+      IconButton(
+        icon: Icon(Icons.stop),
+        onPressed: () {
+          handleStopButton();
+        },
+      ),
+    ];
+  }
+
   Card buildObjectiveItem(String objective, bool selected) {
     return Card(
-      color: selected ? Colors.blueAccent : Colors.white10,
-      child: ListTile(
-        dense: true,
-        title: Text(objective),
-        //leading: Icon(Icons.person),
-        trailing: InkWell(
-          child: Icon(Icons.help_outline),
+      child: AnimatedContainer(
+        decoration: BoxDecoration(
+          color: selected ? Colors.blueAccent : Colors.black12,
+          borderRadius: BorderRadius.circular(5),
+        ),
+        duration: Duration(seconds: 1),
+        child: ListTile(
+          dense: true,
+          title: Text(objective),
+          //leading: Icon(Icons.person),
+          trailing: InkWell(
+            child: Icon(Icons.help_outline),
+            onTap: () {
+              goToObjectiveDetail(objective);
+            },
+          ),
           onTap: () {
-            goToObjectiveDetail(objective);
+            setState(() {
+              changeObjectiveState(objective);
+            });
           },
         ),
-        onTap: () {
-          setState(() {
-            changeObjectiveState(objective);
-          });
-        },
       ),
     );
   }
@@ -288,11 +341,11 @@ class _ObjectivesPageState extends State<ObjectivesPage>
     setState(() {
       stopwatch.reset();
       stopwatch.stop();
-      timerText.duration = _timerSelections[0] ? 120000 : 300000;
+      timerText.duration = _timerSelections[0] ? 300000 : 120000;
     });
   }
 
   int defineDuration() {
-    timerText.duration = _timerSelections[0] ? 120000 : 300000;
+    timerText.duration = _timerSelections[0] ? 300000 : 120000;
   }
 }
