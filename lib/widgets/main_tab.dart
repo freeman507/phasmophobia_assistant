@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:phasmophobiaassistant/config/config.dart';
 import 'package:phasmophobiaassistant/i18n/i18n.dart';
 import 'package:phasmophobiaassistant/pages/about/about_page.dart';
 import 'package:phasmophobiaassistant/pages/configuration/configuration_page.dart';
@@ -6,10 +7,16 @@ import 'package:phasmophobiaassistant/pages/evidences/evidences_page.dart';
 import 'package:phasmophobiaassistant/pages/objectives/objectives_page.dart';
 
 class MainTab extends StatelessWidget {
+
+  Future<void> loadSettings() async {
+    await loadLanguage();
+    await loadConfig();
+  }
+
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-      future: loadLanguage(),
+      future: loadSettings(),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.done) {
           return buildDefaultTabController(context);

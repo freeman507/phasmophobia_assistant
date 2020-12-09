@@ -1,4 +1,8 @@
+import 'package:phasmophobiaassistant/models/EmfLevelFive.dart';
+import 'package:phasmophobiaassistant/models/Evidence.dart';
 import 'package:phasmophobiaassistant/models/Ghost.dart';
+import 'package:phasmophobiaassistant/models/GhostOrb.dart';
+import 'package:phasmophobiaassistant/models/SpiritBox.dart';
 
 class Jinn implements Ghost {
   String _name = "jinn";
@@ -12,7 +16,7 @@ class Jinn implements Ghost {
 
   String _weakness = "jinn.weakness";
 
-  String _evidences = "jinn.evidences";
+  List<Evidence> _evidences = [EmfLevelFive(), GhostOrb(), SpiritBox()];
 
   @override
   List<String> descriptions() {
@@ -20,7 +24,7 @@ class Jinn implements Ghost {
   }
 
   @override
-  String evidences() {
+  List<Evidence> evidences() {
     return _evidences;
   }
 

@@ -264,4 +264,6 @@ const Map<String, String> russian = {
       "The Phasmophobia Assistant app is a tool to help Phasmophobia players on their journey. The application does not need internet access or extra access. This project is open source and has no monetary intent. This is for the Fasmophobia community.",
   "enjoy.phasmophobia": "Enjoy Phasmophobia Assistant!",
   "support.contact": "SUPPORT CONTACT",
+  "discard.evidence": "Discard evidence (not recomended)",
+  "enable.discard.evidence.long.press": "Enable to discard evidences manually using long press.",
 };

@@ -1,4 +1,8 @@
+import 'package:phasmophobiaassistant/models/Evidence.dart';
+import 'package:phasmophobiaassistant/models/Fingerprints.dart';
 import 'package:phasmophobiaassistant/models/Ghost.dart';
+import 'package:phasmophobiaassistant/models/GhostOrb.dart';
+import 'package:phasmophobiaassistant/models/SpiritBox.dart';
 
 class Poltergeist implements Ghost {
 
@@ -13,7 +17,7 @@ class Poltergeist implements Ghost {
 
   String _weakness = "poltergeist.weakness";
 
-  String _evidences = "poltergeist.evidences";
+  List<Evidence> _evidences = [GhostOrb(), Fingerprints(), SpiritBox()];
 
   @override
   List<String> descriptions() {
@@ -21,7 +25,7 @@ class Poltergeist implements Ghost {
   }
 
   @override
-  String evidences() {
+  List<Evidence> evidences() {
     return _evidences;
   }
 

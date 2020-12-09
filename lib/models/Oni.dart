@@ -1,4 +1,8 @@
+import 'package:phasmophobiaassistant/models/EmfLevelFive.dart';
+import 'package:phasmophobiaassistant/models/Evidence.dart';
 import 'package:phasmophobiaassistant/models/Ghost.dart';
+import 'package:phasmophobiaassistant/models/GhostWriting.dart';
+import 'package:phasmophobiaassistant/models/SpiritBox.dart';
 
 class Oni implements Ghost {
   String _name = "oni";
@@ -13,7 +17,7 @@ class Oni implements Ghost {
 
   String _weakness = "oni.weakness";
 
-  String _evidences = "oni.evidences";
+  List<Evidence> _evidences = [EmfLevelFive(), GhostWriting(), SpiritBox()];
 
   @override
   List<String> descriptions() {
@@ -21,7 +25,7 @@ class Oni implements Ghost {
   }
 
   @override
-  String evidences() {
+  List<Evidence> evidences() {
     return _evidences;
   }
 

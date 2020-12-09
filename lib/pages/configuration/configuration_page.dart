@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:phasmophobiaassistant/config/config.dart';
 import 'package:phasmophobiaassistant/i18n/i18n.dart';
 
 class ConfigurationPage extends StatefulWidget {
@@ -19,23 +20,8 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
       ),
       body: ListView(
         children: <Widget>[
-          Card(
-            margin: EdgeInsets.all(10),
-            child: Container(
-              margin: EdgeInsets.all(10),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Text(
-                    i("language"),
-                    style: TextStyle(fontSize: 18),
-                  ),
-                  Divider(),
-                  buildDropdownButton(),
-                ],
-              ),
-            ),
-          ),
+          buildCardLanguage(),
+          buildCardDiscardEvidence(),
         ],
       ),
       bottomSheet: Row(
@@ -47,6 +33,7 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
                   child: Text(i("save")),
                   onPressed: () {
                     saveLanguage(dropdownValue.toLowerCase());
+                    saveConfig(enableDiscardEvidence);
                     showDialog(
                       context: context,
                       builder: (_) => buildAlertDialog(),
@@ -56,6 +43,57 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
                 )),
           ),
         ],
+      ),
+    );
+  }
+
+  Card buildCardDiscardEvidence() {
+    return Card(
+      margin: EdgeInsets.all(10),
+      child: Container(
+        margin: EdgeInsets.all(10),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Text(
+              i("discard.evidence"),
+              style: TextStyle(fontSize: 18),
+            ),
+            Divider(),
+            CheckboxListTile(
+              title: Text(i("enable.discard.evidence.long.press")),
+              value: enableDiscardEvidence,
+              activeColor: Colors.blueAccent,
+              onChanged: (newValue) {
+                setState(() {
+                  enableDiscardEvidence = newValue;
+                });
+              },
+              controlAffinity:
+              ListTileControlAffinity.leading, //  <-- leading Checkbox
+            )
+          ],
+        ),
+      ),
+    );
+  }
+
+  Card buildCardLanguage() {
+    return Card(
+      margin: EdgeInsets.all(10),
+      child: Container(
+        margin: EdgeInsets.all(10),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Text(
+              i("language"),
+              style: TextStyle(fontSize: 18),
+            ),
+            Divider(),
+            buildDropdownButton(),
+          ],
+        ),
       ),
     );
   }

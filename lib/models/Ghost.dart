@@ -1,3 +1,5 @@
+import 'package:phasmophobiaassistant/models/Evidence.dart';
+
 abstract class Ghost {
 
   String name();
@@ -8,6 +10,6 @@ abstract class Ghost {
 
   String weakness();
 
-  String evidences();
+  List<Evidence> evidences();
 
 }

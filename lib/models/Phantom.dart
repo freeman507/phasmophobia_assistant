@@ -1,4 +1,8 @@
+import 'package:phasmophobiaassistant/models/EmfLevelFive.dart';
+import 'package:phasmophobiaassistant/models/Evidence.dart';
+import 'package:phasmophobiaassistant/models/FreezingTemperatures.dart';
 import 'package:phasmophobiaassistant/models/Ghost.dart';
+import 'package:phasmophobiaassistant/models/GhostOrb.dart';
 
 class Phantom implements Ghost {
 
@@ -13,7 +17,11 @@ class Phantom implements Ghost {
 
   String _weakness = "phantom.weakness";
 
-  String _evidences = "phantom.evidences";
+  List<Evidence> _evidences = [
+    EmfLevelFive(),
+    FreezingTemperatures(),
+    GhostOrb()
+  ];
 
   @override
   List<String> descriptions() {
@@ -21,7 +29,7 @@ class Phantom implements Ghost {
   }
 
   @override
-  String evidences() {
+  List<Evidence> evidences() {
     return _evidences;
   }
 

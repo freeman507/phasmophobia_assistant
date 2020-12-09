@@ -1,7 +1,10 @@
+import 'package:phasmophobiaassistant/models/EmfLevelFive.dart';
+import 'package:phasmophobiaassistant/models/Evidence.dart';
+import 'package:phasmophobiaassistant/models/Fingerprints.dart';
+import 'package:phasmophobiaassistant/models/FreezingTemperatures.dart';
 import 'package:phasmophobiaassistant/models/Ghost.dart';
 
 class Banshee implements Ghost {
-
   String _name = "banshee";
 
   List<String> _description = [
@@ -13,7 +16,11 @@ class Banshee implements Ghost {
 
   String _weakness = "banshee.weakness";
 
-  String _evidences = "banshee.evidences";
+  List<Evidence> _evidences = [
+    EmfLevelFive(),
+    Fingerprints(),
+    FreezingTemperatures()
+  ];
 
   @override
   List<String> descriptions() {
@@ -21,7 +28,7 @@ class Banshee implements Ghost {
   }
 
   @override
-  String evidences() {
+  List<Evidence> evidences() {
     return _evidences;
   }
 
@@ -39,5 +46,4 @@ class Banshee implements Ghost {
   String weakness() {
     return _weakness;
   }
-
 }
