@@ -270,4 +270,9 @@ const Map<String, String> portuguese = {
   "intermediate": "Intermediário",
   "discard.evidence": "Descartar evidências (não recomendado)",
   "enable.discard.evidence.long.press": "Habilite para poder descartar evidências usando toque longo.",
+  "cant.select.discarded.evidence": "Você não pode selecionar uma evidência descartada.",
+  "cant.discard.selected.evidence": "Você não pode descartar uma evidência selecionada.",
+  "no.ghosts.found": "Nenhum fantasma encontrado.",
+  "cant.discard.evidence": "Você não pode descartar essa evidência.",
+  "cant.select.evidence": "Você não pode selecionar essa evidência.",
 };

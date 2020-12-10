@@ -85,52 +85,64 @@ class EvidenceController {
   String ghosts =
       "spirit | wraith | phantom | poltergeist | banshee | jinn | mare | revenant | shade | demon | yurei | oni";
 
-  void selectEvidence(String evidence) {
-    if (evidence == emf) {
+  bool selectEvidence(String evidence) {
+    bool selected = true;
+
+    if (evidence == emf && !emfDiscarded) {
       emfSelected = !emfSelected;
       emfDiscarded = false;
-    } else if (evidence == fingerprints) {
+    } else if (evidence == fingerprints && !fingerprintsDiscarded) {
       fingerprintsSelected = !fingerprintsSelected;
       fingerprintsDiscarded = false;
-    } else if (evidence == temperature) {
+    } else if (evidence == temperature && !temperatureDiscarded) {
       temperatureSelected = !temperatureSelected;
       temperatureDiscarded = false;
-    } else if (evidence == orbs) {
+    } else if (evidence == orbs && !orbDiscarded) {
       orbSelected = !orbSelected;
       orbDiscarded = false;
-    } else if (evidence == writing) {
+    } else if (evidence == writing && !writingDiscarded) {
       writingSelected = !writingSelected;
       writingDiscarded = false;
-    } else if (evidence == spiritBox) {
+    } else if (evidence == spiritBox && !spiritBoxDiscarded) {
       spiritBoxSelected = !spiritBoxSelected;
       spiritBoxDiscarded = false;
+    } else {
+      selected = false;
     }
+
+    return selected;
   }
 
-  void discardEvidence(String evidence) {
+  bool discardEvidence(String evidence) {
+    bool discarded = true;
+
     if (enableDiscardEvidence) {
-      if (evidence == emf) {
+      if (evidence == emf && !emfSelected) {
         emfSelected = false;
         emfDiscarded = !emfDiscarded;
-      } else if (evidence == fingerprints) {
+      } else if (evidence == fingerprints && !fingerprintsSelected) {
         fingerprintsSelected = false;
         fingerprintsDiscarded = !fingerprintsDiscarded;
-      } else if (evidence == temperature) {
+      } else if (evidence == temperature && !temperatureSelected) {
         temperatureSelected = false;
         temperatureDiscarded = !temperatureDiscarded;
-      } else if (evidence == orbs) {
+      } else if (evidence == orbs && !orbSelected) {
         orbSelected = false;
         orbDiscarded = !orbDiscarded;
-      } else if (evidence == writing) {
+      } else if (evidence == writing && !writingSelected) {
         writingSelected = false;
         writingDiscarded = !writingDiscarded;
-      } else if (evidence == spiritBox) {
+      } else if (evidence == spiritBox && !spiritBoxSelected) {
         spiritBoxSelected = false;
         spiritBoxDiscarded = !spiritBoxDiscarded;
+      } else {
+        discarded = false;
       }
     } else {
-      selectEvidence(evidence);
+      discarded = selectEvidence(evidence);
     }
+
+    return discarded;
   }
 
   String verifyEvidencesSelected() {
@@ -193,34 +205,34 @@ class EvidenceController {
     return evidences.trim();
   }
 
-  verifyGhost() {
+  bool verifyGhost() {
     String evidencesSelected = verifyEvidencesSelected();
     String evidencesDiscarded = verifyEvidencesDiscarded();
     ghosts = defineGhost(evidencesSelected, evidencesDiscarded);
+    return ghosts.isNotEmpty;
   }
 
   String defineGhost(String evidencesSelected, String evidencesDiscarded) {
-    List<String> selectedEvidencesList = evidencesSelected.split(" ");
-    List<String> selectedDiscardedList = evidencesDiscarded.split(" ");
-    List<String> possibleEvidences = [];
-    List<Ghost> ghostsList = getAllGhosts();
-    List<Ghost> selectedGhostsList = [];
-    List<Ghost> possibleGhostsList = [];
+    List<String> selectedEvidencesList = evidencesSelected.isNotEmpty
+        ? evidencesSelected.split(" ")
+        : [];
 
-    filterSelectedGhosts(ghostsList, selectedEvidencesList, selectedGhostsList);
+    List<Ghost> possibleGhostsList =
+    filterSelectedGhosts(getAllGhosts(), selectedEvidencesList);
 
     if (enableDiscardEvidence) {
-      filterDiscardedGhosts(
-          selectedGhostsList, selectedDiscardedList, possibleGhostsList);
-    } else {
-      possibleGhostsList = selectedGhostsList;
+      List<String> selectedDiscardedList = evidencesDiscarded.split(" ");
+
+      possibleGhostsList =
+          filterDiscardedGhosts(possibleGhostsList, selectedDiscardedList);
     }
 
-    determinePossibleEvidences(possibleGhostsList, possibleEvidences);
+    List<String> possibleEvidences =
+    determinePossibleEvidences(possibleGhostsList);
 
-    discardEvidences(possibleEvidences);
-
-    //verifyLastEvidence(possibleGhostsList);
+    if (possibleGhostsList.isNotEmpty) {
+      discardEvidences(possibleEvidences);
+    }
 
     return getGhostsNames(possibleGhostsList);
   }
@@ -320,8 +332,9 @@ class EvidenceController {
     ];
   }
 
-  void determinePossibleEvidences(
-      List<Ghost> possibleGhostsList, List<String> possibleEvidences) {
+  List<String> determinePossibleEvidences(List<Ghost> possibleGhostsList) {
+    List<String> possibleEvidences = [];
+
     if (possibleGhostsList.isNotEmpty) {
       for (Ghost ghost in possibleGhostsList) {
         for (Evidence evidence in ghost.evidences()) {
@@ -335,6 +348,7 @@ class EvidenceController {
         possibleEvidences.add(element.name());
       });
     }
+    return possibleEvidences;
   }
 
   List<Ghost> getAllGhosts() {
@@ -354,8 +368,9 @@ class EvidenceController {
     ];
   }
 
-  void filterDiscardedGhosts(List<Ghost> selectedGhostsList,
-      List<String> selectedDiscardedList, List<Ghost> possibleGhostsList) {
+  List<Ghost> filterDiscardedGhosts(List<Ghost> selectedGhostsList,
+      List<String> selectedDiscardedList) {
+    List<Ghost> possibleGhostsList = [];
     if (selectedGhostsList.isEmpty) {
       selectedGhostsList = getAllGhosts();
     }
@@ -379,6 +394,7 @@ class EvidenceController {
         possibleGhostsList.add(ghost);
       }
     }
+    return possibleGhostsList;
   }
 
   String getGhostsNames(List<Ghost> selectedGhostsList) {
@@ -392,8 +408,10 @@ class EvidenceController {
     return ghostFound.trim();
   }
 
-  void filterSelectedGhosts(List<Ghost> ghostsList,
-      List<String> selectedEvidencesList, List<Ghost> selectedGhostsList) {
+  List<Ghost> filterSelectedGhosts(List<Ghost> ghostsList,
+      List<String> selectedEvidencesList) {
+    List<Ghost> selectedGhostsList = [];
+
     if (selectedEvidencesList.isNotEmpty) {
       for (Ghost ghost in ghostsList) {
         bool possibleGhost = true;
@@ -415,7 +433,11 @@ class EvidenceController {
           selectedGhostsList.add(ghost);
         }
       }
+    } else {
+      selectedGhostsList = ghostsList;
     }
+
+    return selectedGhostsList;
   }
 
   void reset() {

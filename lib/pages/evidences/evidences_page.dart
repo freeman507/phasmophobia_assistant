@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:phasmophobiaassistant/config/config.dart';
 import 'package:phasmophobiaassistant/controllers/evidence_controller.dart';
 import 'package:phasmophobiaassistant/i18n/i18n.dart';
 import 'package:phasmophobiaassistant/models/Banshee.dart';
@@ -196,18 +197,45 @@ class _EvidencesPageState extends State<EvidencesPage>
             ),
             onTap: () {
               setState(() {
-                evidenceController.selectEvidence(evidence);
-                evidenceController.verifyGhost();
+                selectEvidence(evidence);
               });
             },
             onLongPress: () {
               setState(() {
-                evidenceController.discardEvidence(evidence);
-                evidenceController.verifyGhost();
+                discardEvidence(evidence);
               });
             },
           ),
         ));
+  }
+
+  void discardEvidence(String evidence) {
+    if (evidenceController.discardEvidence(evidence)) {
+      var oldGhosts = evidenceController.ghosts;
+      if (!evidenceController.verifyGhost()) {
+        showSnackBar(i("no.ghosts.found"), context);
+      } else {
+        if (oldGhosts == evidenceController.ghosts) {
+          showSnackBar(i("cant.discard.evidence"), context);
+        }
+      }
+    } else {
+      if (enableDiscardEvidence) {
+        showSnackBar(i("cant.discard.selected.evidence"), context);
+      } else {
+        showSnackBar(i("cant.select.discarded.evidence"), context);
+      }
+    }
+  }
+
+  void selectEvidence(String evidence) {
+    if (evidenceController.selectEvidence(evidence)) {
+      if (!evidenceController.verifyGhost()) {
+        showSnackBar(i("no.ghosts.found"), context);
+      }
+    } else {
+      showSnackBar(i("cant.select.discarded.evidence"), context);
+    }
   }
 
   void goToGhostDatailPage(String ghostName) {
@@ -266,6 +294,20 @@ class _EvidencesPageState extends State<EvidencesPage>
     Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => EvidenceDetailPage(evidence)),
+    );
+  }
+
+  void showSnackBar(String message, BuildContext context) {
+    Scaffold.of(context).showSnackBar(
+      SnackBar(
+        content: Text(
+          message,
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
+        backgroundColor: Colors.black54,
+      ),
     );
   }
 }

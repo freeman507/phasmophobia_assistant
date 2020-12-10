@@ -266,4 +266,9 @@ const Map<String, String> french = {
   "support.contact": "SUPPORT CONTACT",
   "discard.evidence": "Discard evidence (not recomended)",
   "enable.discard.evidence.long.press": "Enable to discard evidences manually using long press.",
+  "cant.select.discarded.evidence": "You can't select a discarded evidence.",
+  "cant.discard.selected.evidence": "You can't discard a selected evidence.",
+  "no.ghosts.found": "No ghosts found.",
+  "cant.discard.evidence": "You can't discard this evidence.",
+  "cant.select.evidence": "You can't select this evidence.",
 };
