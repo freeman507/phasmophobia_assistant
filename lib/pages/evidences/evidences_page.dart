@@ -216,7 +216,7 @@ class _EvidencesPageState extends State<EvidencesPage>
         showSnackBar(i("no.ghosts.found"), context);
       } else {
         if (oldGhosts == evidenceController.ghosts) {
-          showSnackBar(i("cant.discard.evidence"), context);
+          showSnackBar(i("cant.change.evidence"), context);
         }
       }
     } else {

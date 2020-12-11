@@ -268,4 +268,5 @@ const Map<String, String> english = {
   "no.ghosts.found": "No ghosts found.",
   "cant.discard.evidence": "You can't discard this evidence.",
   "cant.select.evidence": "You can't select this evidence.",
+  "cant.change.evidence": "You cannot change this evidence.",
 };

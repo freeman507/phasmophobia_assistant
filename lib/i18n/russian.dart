@@ -277,4 +277,5 @@ const Map<String, String> russian = {
   "no.ghosts.found": "Призраков не обнаружено.",
   "cant.discard.evidence": "Вы не можете отбросить это свидетельство.",
   "cant.select.evidence": "Вы не можете выбрать это доказательство.",
+  "cant.change.evidence": "You cannot change this evidence.",
 };

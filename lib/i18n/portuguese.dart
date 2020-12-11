@@ -275,4 +275,5 @@ const Map<String, String> portuguese = {
   "no.ghosts.found": "Nenhum fantasma encontrado.",
   "cant.discard.evidence": "Você não pode descartar essa evidência.",
   "cant.select.evidence": "Você não pode selecionar essa evidência.",
+  "cant.change.evidence": "Você não pode mudar essa evidência.",
 };
