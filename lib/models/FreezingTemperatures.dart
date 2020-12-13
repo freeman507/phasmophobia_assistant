@@ -15,6 +15,10 @@ class FreezingTemperatures implements Evidence {
 
   String _ghosts = "freezing.temperatures.ghosts";
 
+  List<String> _images = [
+    "assets/freezing.temperature.jpg",
+  ];
+
   @override
   List<String> descriptions() {
     return _descriptions;
@@ -33,5 +37,10 @@ class FreezingTemperatures implements Evidence {
   @override
   String name() {
     return _name;
+  }
+
+  @override
+  List<String> images() {
+    return _images;
   }
 }

@@ -23,6 +23,11 @@ class SpiritBox implements Evidence {
 
   String _ghosts = "spirit.box.ghosts";
 
+  List<String> _images = [
+    "assets/spirit.box1.jpg",
+    "assets/spirit.box2.jpg",
+  ];
+
   @override
   List<String> descriptions() {
     return _descriptions;
@@ -41,5 +46,10 @@ class SpiritBox implements Evidence {
   @override
   String name() {
     return _name;
+  }
+
+  @override
+  List<String> images() {
+    return _images;
   }
 }

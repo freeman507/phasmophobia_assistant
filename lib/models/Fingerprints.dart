@@ -16,6 +16,11 @@ class Fingerprints implements Evidence {
 
   String _ghosts = "fingerprints.ghosts";
 
+  List<String> _images = [
+    "assets/fingerprints1.jpg",
+    "assets/fingerprints2.jpg",
+  ];
+
   @override
   List<String> descriptions() {
     return _descriptions;
@@ -34,5 +39,10 @@ class Fingerprints implements Evidence {
   @override
   String name() {
     return _name;
+  }
+
+  @override
+  List<String> images() {
+    return _images;
   }
 }

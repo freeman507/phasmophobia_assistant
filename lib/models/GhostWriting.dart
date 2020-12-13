@@ -14,6 +14,11 @@ class GhostWriting implements Evidence {
 
   String _ghosts = "ghost.writing.ghosts";
 
+  List<String> _images = [
+    "assets/ghost.writing1.jpg",
+    "assets/ghost.writing2.jpg",
+  ];
+
   @override
   List<String> descriptions() {
     return _descriptions;
@@ -32,5 +37,10 @@ class GhostWriting implements Evidence {
   @override
   String name() {
     return _name;
+  }
+
+  @override
+  List<String> images() {
+    return _images;
   }
 }

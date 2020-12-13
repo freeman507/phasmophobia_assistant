@@ -8,4 +8,6 @@ abstract class Evidence {
 
   String ghosts();
 
+  List<String> images();
+
 }

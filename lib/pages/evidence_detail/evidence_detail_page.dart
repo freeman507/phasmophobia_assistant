@@ -19,6 +19,7 @@ class EvidenceDetailPage extends DetailPage {
         children: <Widget>[
           buildTitle(i("evidence").toUpperCase()),
           buildText(_evidence.name()),
+          buildWrapImages(_evidence.images()),
           buildTitle(i("descriptions").toUpperCase()),
           buildListDescription(_evidence.descriptions()),
           buildTitle(i("how.it.works")),

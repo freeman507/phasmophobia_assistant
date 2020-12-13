@@ -13,6 +13,10 @@ class GhostOrb implements Evidence {
 
   String _ghosts = "ghost.orbs.ghosts";
 
+  List<String> _images = [
+    "assets/ghost.orb.jpg",
+  ];
+
   @override
   List<String> descriptions() {
     return _descriptions;
@@ -31,5 +35,10 @@ class GhostOrb implements Evidence {
   @override
   String name() {
     return _name;
+  }
+
+  @override
+  List<String> images() {
+    return _images;
   }
 }

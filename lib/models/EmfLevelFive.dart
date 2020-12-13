@@ -15,6 +15,10 @@ class EmfLevelFive implements Evidence {
     "emf.level.5.howitworks4",
   ];
 
+  List<String> _images = [
+    "assets/emf5.jpg"
+  ];
+
   String _ghosts = "emf.level.5.ghosts";
 
   @override
@@ -35,5 +39,10 @@ class EmfLevelFive implements Evidence {
   @override
   List<String> descriptions() {
     return _descriptions;
+  }
+
+  @override
+  List<String> images() {
+    return _images;
   }
 }

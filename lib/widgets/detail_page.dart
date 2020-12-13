@@ -54,4 +54,23 @@ abstract class DetailPage extends StatelessWidget {
       children: list,
     );
   }
+
+  Wrap buildWrapImages(List<String> imageNames) {
+    List<Widget> images = [];
+
+    imageNames.forEach((element) {
+      images.add(Container(
+        child: Image.asset(element, height: 150),
+      ));
+    });
+
+    return Wrap(
+      spacing: 5,
+      runSpacing: 5,
+      alignment: WrapAlignment.center,
+      runAlignment: WrapAlignment.center,
+      crossAxisAlignment: WrapCrossAlignment.center,
+      children: images,
+    );
+  }
 }
