@@ -2,14 +2,16 @@
 
 The phasmophobia Assistant is a mobile app to assist players of the game Phasmophobia.
 
-    This app have five features:
+    This app have the features:
     1) Mark the ghost name;
     2) Mark if the ghost respond to everyone;
     3) Mark secundary missions to do;
     4) Evidence filter;
     5) Ghost result;
+    6) Documentation for objectives, evidences and ghosts;
+    7) Timer for amateur and intermediate missions;
     
-The app is already available in the play store, however the app still doesn't have enough downloads to appear in the search, but you can download the app via the link: 
+The app is available in the play store: 
 
 https://play.google.com/store/apps/details?id=br.com.pacientevirtual.phasmophobiaassistant
     
@@ -22,6 +24,16 @@ The project has been based on website:
 https://phass.herokuapp.com/?fbclid=IwAR0UQqTGkymvrOddyOrENZIV3eXCXUwklL873V2SnPNjRdWS8a_XetZOZ3I
 
 To report a bug, new ideas, insight or comments send an e-mail to felipeszanella@gmail.com
+
+### Last update 13 dec 2020 20:00 (BRT)
+
+* Added new languages: Russian, French and Portuguese.
+
+* Added a timer for amateur and intermediate missions.
+
+* Added images for evidences and objectives.
+
+* Changed the About page to show name of tradutors and contact support.
 
 ### Last update 01 dec 2020 20:17 (BRT)
 
