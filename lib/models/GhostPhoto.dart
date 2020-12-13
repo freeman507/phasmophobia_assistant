@@ -8,6 +8,11 @@ class GhostPhoto implements Objective {
 
   String _details = "ghost.photo.details";
 
+  List<String> _images = [
+    "assets/ghost.photo1.jpg",
+    "assets/ghost.photo2.jpg",
+  ];
+
   @override
   String description() {
     return _description;
@@ -21,6 +26,11 @@ class GhostPhoto implements Objective {
   @override
   String name() {
     return _name;
+  }
+
+  @override
+  List<String> images() {
+    return _images;
   }
 
 }

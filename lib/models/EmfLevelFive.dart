@@ -16,7 +16,7 @@ class EmfLevelFive implements Evidence {
   ];
 
   List<String> _images = [
-    "assets/emf5.jpg"
+    "assets/emf.level.five1.jpg"
   ];
 
   String _ghosts = "emf.level.5.ghosts";

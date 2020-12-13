@@ -6,4 +6,6 @@ abstract class Objective {
 
   String details();
 
+  List<String> images();
+
 }

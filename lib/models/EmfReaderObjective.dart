@@ -6,6 +6,10 @@ class EmfReaderObjective implements Objective {
   String _description = "emf.reader.description";
   String _details = "emf.reader.details";
 
+  List<String> _images = [
+    "assets/emf.reader1.jpg",
+  ];
+
   @override
   String description() {
     return _description;
@@ -19,6 +23,11 @@ class EmfReaderObjective implements Objective {
   @override
   String name() {
     return _name;
+  }
+
+  @override
+  List<String> images() {
+    return _images;
   }
 
 }

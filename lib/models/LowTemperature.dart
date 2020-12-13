@@ -8,6 +8,11 @@ class LowTemperature implements Objective {
 
   String _details = "low.temperature.details";
 
+  List<String> _images = [
+    "assets/low.temperature1.jpg",
+    "assets/low.temperature2.jpg",
+  ];
+
   @override
   String description() {
     return _description;
@@ -21,6 +26,11 @@ class LowTemperature implements Objective {
   @override
   String name() {
     return _name;
+  }
+
+  @override
+  List<String> images() {
+    return _images;
   }
 
 }

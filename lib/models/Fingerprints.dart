@@ -19,6 +19,7 @@ class Fingerprints implements Evidence {
   List<String> _images = [
     "assets/fingerprints1.jpg",
     "assets/fingerprints2.jpg",
+    "assets/fingerprints3.jpg",
   ];
 
   @override

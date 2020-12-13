@@ -8,6 +8,11 @@ class SmudgeSticksObjective implements Objective {
 
   String _details = "smudge.sticks.details";
 
+  List<String> _images = [
+    "assets/smudge.sticks1.jpg",
+    "assets/smudge.sticks2.jpg",
+  ];
+
   @override
   String description() {
     return _description;
@@ -21,6 +26,11 @@ class SmudgeSticksObjective implements Objective {
   @override
   String name() {
     return _name;
+  }
+
+  @override
+  List<String> images() {
+    return _images;
   }
 
 }

@@ -56,13 +56,31 @@ flutter:
     - assets/background.png
     - assets/spirit.box1.jpg
     - assets/spirit.box2.jpg
+    - assets/spirit.box3.jpg
     - assets/ghost.writing1.jpg
     - assets/ghost.writing2.jpg
-    - assets/ghost.orb.jpg
-    - assets/freezing.temperature.jpg
+    - assets/ghost.orb1.jpg
+    - assets/freezing.temperature1.jpg
     - assets/fingerprints1.jpg
     - assets/fingerprints2.jpg
-    - assets/emf5.jpg
+    - assets/fingerprints3.jpg
+    - assets/emf.level.five1.jpg
+    - assets/dirt.water1.jpg
+    - assets/dirt.water2.jpg
+    - assets/emf.reader1.jpg
+    - assets/ghost.photo1.jpg
+    - assets/ghost.photo2.jpg
+    - assets/ghost.salt1.jpg
+    - assets/ghost.salt2.jpg
+    - assets/motion.sensor1.jpg
+    - assets/motion.sensor2.jpg
+    - assets/motion.sensor3.jpg
+    - assets/crucifix1.jpg
+    - assets/crucifix2.jpg
+    - assets/low.temperature1.jpg
+    - assets/low.temperature2.jpg
+    - assets/smudge.sticks1.jpg
+    - assets/smudge.sticks2.jpg
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

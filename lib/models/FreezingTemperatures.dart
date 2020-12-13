@@ -16,7 +16,7 @@ class FreezingTemperatures implements Evidence {
   String _ghosts = "freezing.temperatures.ghosts";
 
   List<String> _images = [
-    "assets/freezing.temperature.jpg",
+    "assets/freezing.temperature1.jpg",
   ];
 
   @override

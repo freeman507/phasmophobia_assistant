@@ -8,6 +8,11 @@ class CrucifixObjective implements Objective {
 
   String _details = "crucifix.details";
 
+  List<String> _images = [
+    "assets/crucifix1.jpg",
+    "assets/crucifix2.jpg",
+  ];
+
   @override
   String description() {
     return _description;
@@ -21,6 +26,11 @@ class CrucifixObjective implements Objective {
   @override
   String name() {
     return _name;
+  }
+
+  @override
+  List<String> images() {
+    return _images;
   }
 
 }

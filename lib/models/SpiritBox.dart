@@ -25,6 +25,7 @@ class SpiritBox implements Evidence {
 
   List<String> _images = [
     "assets/spirit.box1.jpg",
+    "assets/spirit.box3.jpg",
     "assets/spirit.box2.jpg",
   ];
 

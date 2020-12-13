@@ -1,4 +1,3 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:phasmophobiaassistant/i18n/i18n.dart';
 import 'package:phasmophobiaassistant/models/Objective.dart';
@@ -20,6 +19,7 @@ class ObjectiveDetail extends DetailPage {
           children: <Widget>[
             buildTitle(i("objective").toUpperCase()),
             buildText(_objective.name()),
+            buildWrapImages(_objective.images()),
             buildTitle(i("description").toUpperCase()),
             buildText(_objective.description()),
             buildTitle(i("details").toUpperCase()),

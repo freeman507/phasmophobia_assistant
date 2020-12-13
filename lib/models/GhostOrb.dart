@@ -14,7 +14,7 @@ class GhostOrb implements Evidence {
   String _ghosts = "ghost.orbs.ghosts";
 
   List<String> _images = [
-    "assets/ghost.orb.jpg",
+    "assets/ghost.orb1.jpg",
   ];
 
   @override
