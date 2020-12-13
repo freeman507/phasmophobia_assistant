@@ -33,6 +33,8 @@ To report a bug, new ideas, insight or comments send an e-mail to felipeszanella
 
 * Added images for evidences and objectives.
 
+* Added the option for discard evidences manually.
+
 * Changed the About page to show name of tradutors and contact support.
 
 ### Last update 01 dec 2020 20:17 (BRT)
