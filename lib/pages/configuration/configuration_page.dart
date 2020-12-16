@@ -123,7 +123,7 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
         "ENGLISH",
         "PORTUGUESE",
 //        "GERMANY",
-//        "SPANISH",
+        "SPANISH",
 //        "POLISH",
         "RUSSIAN",
 //        "UKRANIAN",
