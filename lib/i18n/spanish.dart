@@ -149,7 +149,7 @@ const Map<String, String> spanish = {
   "jinn.description1":
   "El Jinn es uno de los doce tipos de fantasmas en la Fasmofobia. Es un fantasma territorial que ataca cuando es amenazado. También se sabe que viaja a una velocidad significativa durante las cacerías.",
   "jinn.description2":
-  "Los Jinns tienden a interactuar con objetos electrónicos más que cualquier otro fantasma. Pueden hacer que suenen los teléfonos, se activen las radios, se enciendan los televisores o se activen las alarmas de los coches con mayor frecuencia. Esto también se extiende a los interruptores de luz, que pueden causar que los investigadores inseguros confundan a un Jinn con un Mare o Poltergeist; aunque los Mares también tienen el poder de apagar las luces, a menudo no encienden las luces como lo hacen los Jinn, y los Poltergeists son propensos a perturbar los objetos no electrónicos como las puertas. ",
+  "Los Jinns tienden a interactuar con objetos electrónicos más que cualquier otro fantasma. Pueden hacer que suenen los teléfonos, se activen las radios, se enciendan los televisores o se activen las alarmas de los coches con mayor frecuencia. Esto también se extiende a los interruptores de luz, que pueden causar que los investigadores inseguros confundan a un Jinn con un Pesadilla o Poltergeist; aunque los Pesadilla también tienen el poder de apagar las luces, a menudo no encienden las luces como lo hacen los Jinn, y los Poltergeists son propensos a perturbar los objetos no electrónicos como las puertas. ",
   "jinn.strength":
   "Un Jinn viajará a una velocidad más rápida si su víctima está lejos.",
   "jinn.weakness":
@@ -161,7 +161,7 @@ const Map<String, String> spanish = {
   "low.temperature.details":
   "El termómetro lee la temperatura en un radio de 6 metros en la dirección en que el jugador está mirando, lo que lo convierte en una herramienta direccional. La temperatura registrada varía dentro de un rango de ± 2 grados, tanto en grados Celsius como en Fahrenheit. ",
   "mare.description1":
-  "Mare es uno de los doce tipos de fantasmas en la Fasmofobia. Es la fuente de todas las pesadillas, lo que lo hace más poderoso en la oscuridad. La yegua tiene más posibilidades de empezar la caza cuando los jugadores están a oscuras, sobre todo si se apagan las luces en la habitación fantasma. Tiende a apagar las luces y la caja de fusibles más que cualquier otro tipo de fantasma cuando está activo, aunque si un fantasma vuelve a encender las luces, es mucho más probable que sea un Poltergeist o Jinn . Una yegua activa que persigue a los jugadores con poca cordura tiene la capacidad de iniciar la caza con unos pocos momentos de juego, permitiéndoles parecerse incluso a los Demonios. ",
+  "Pesadilla es uno de los doce tipos de fantasmas en la Fasmofobia. Es la fuente de todas las pesadillas, lo que lo hace más poderoso en la oscuridad. La yegua tiene más posibilidades de empezar la caza cuando los jugadores están a oscuras, sobre todo si se apagan las luces en la habitación fantasma. Tiende a apagar las luces y la caja de fusibles más que cualquier otro tipo de fantasma cuando está activo, aunque si un fantasma vuelve a encender las luces, es mucho más probable que sea un Poltergeist o Jinn . Una yegua activa que persigue a los jugadores con poca cordura tiene la capacidad de iniciar la caza con unos pocos momentos de juego, permitiéndoles parecerse incluso a los Demonios. ",
   "mare.strength":
   "Mayor posibilidad de ataque en la oscuridad. Así que harás lo que puedas para lograrlo, como apagar las luces y apagar la caja de fusibles.",
   "mare.weakness": "Encender las luces disminuirá la posibilidad de ataque.",
@@ -172,7 +172,7 @@ const Map<String, String> spanish = {
   "motion.sensor.details":
   "El sensor de movimiento es un artículo de apoyo que se puede comprar. Es el equipo más caro del juego, cuesta 100 dólares, pero puede ser muy útil para rastrear el movimiento del Fantasma, proporcionando una punta visual y sonora cuando el Fantasma se mueve a través de él. El sensor de movimiento también se muestra en el mapa, permitiendo que el movimiento del fantasma sea detectado con seguridad en la furgoneta. ",
   "oni.description1":
-  "Oni es uno de los doce tipos de fantasmas en la Fasmofobia. Es similar al Diablo y como tal es mucho más activo y agresivo cuando los jugadores se agrupan, con una mayor probabilidad de iniciar las cacerías. Esto puede hacer que los jugadores lo confundan con un demonio, siempre y cuando permanezcan juntos durante toda la búsqueda y nunca se separen. Sin embargo, este poder también trabaja en su contra; es uno de los fantasmas más activos en el juego y entregará más fácilmente las pruebas a un grupo de investigadores, lo que puede resultar en investigaciones generosas y rápidas si un Oni se apresura a revelar las pruebas necesarias. ",
+  "Oni es uno de los doce tipos de fantasmas en la Fasmofobia. Es similar al Demonio y como tal es mucho más activo y agresivo cuando los jugadores se agrupan, con una mayor probabilidad de iniciar las cacerías. Esto puede hacer que los jugadores lo confundan con un Demonio, siempre y cuando permanezcan juntos durante toda la búsqueda y nunca se separen. Sin embargo, este poder también trabaja en su contra; es uno de los fantasmas más activos en el juego y entregará más fácilmente las pruebas a un grupo de investigadores, lo que puede resultar en investigaciones generosas y rápidas si un Oni se apresura a revelar las pruebas necesarias. ",
   "oni.description2":
   "A diferencia de la mayoría de los otros tipos de fantasmas, la división es el mejor método de defensa cuando se busca un Oni, ya que es mucho menos activa mientras los jugadores están solos. Aunque esta puede ser una estrategia desventajosa, especialmente si el fantasma se revela como un Banshee, también puede permitir a los jugadores encontrar la habitación del fantasma más rápido, así como evitar que se amontonen en los escondites durante la caza. ",
   "oni.description3":
@@ -184,13 +184,13 @@ const Map<String, String> spanish = {
   "oni.evidences":
   "EMF Nivel 5 | Escritura de Fantasmas | Caja de Espíritus (Spirit Box )",
   "phantom.description1":
-  "Un Espectro es un fantasma que puede poseer a los vivos, más comúnmente convocados por una Junta Ouija. También induce miedo a los que están a su alrededor.",
+  "Un Ente es un fantasma que puede poseer a los vivos, más comúnmente convocados por una Junta Ouija. También induce miedo a los que están a su alrededor.",
   "phantom.description2":
-  "Los espectros son uno de los 12 tipos de fantasmas que se pueden encontrar en la Fasmofobia, es el tercero que se describe en la revista. Contrariamente a la creencia popular, Spectra no puede poseer cazafantasmas después de usar una tabla Ouija. ",
+  "Los entes son uno de los 12 tipos de fantasmas que se pueden encontrar en la Fasmofobia, es el tercero que se describe en la revista. Contrariamente a la creencia popular, Spectra no puede poseer cazafantasmas después de usar una tabla Ouija. ",
   "phantom.strength":
-  "Mirar a un fantasma disminuirá considerablemente su cordura. Esto se refiere a cualquier manifestación visible del fantasma, incluso durante una cacería.",
+  "Mirar a un Ente disminuirá considerablemente su cordura. Esto se refiere a cualquier manifestación visible del fantasma, incluso durante una cacería.",
   "phantom.weakness":
-  "Tomar una foto del Espectro lo hará desaparecer temporalmente. Eso, sin embargo, no interrumpirá una cacería.",
+  "Tomar una foto del Ente lo hará desaparecer temporalmente. Eso, sin embargo, no interrumpirá una cacería.",
   "phantom.evidences": "EMF Nível 5| Baja temperatura | Orbe Fantasma",
   "poltergeist.description1":
   "Uno de los fantasmas más famosos, un Poltergeist, también conocido como un fantasma ruidoso, puede manipular los objetos a su alrededor para sembrar el miedo en sus víctimas.",
@@ -215,9 +215,9 @@ const Map<String, String> spanish = {
   "salt.footprint.details":
   "Un fantasma sólo puede pisar la sal cada 10 segundos y no la pisará durante la caza. Si un fantasma entra en contacto con la sal, dejará de atacar inmediatamente, a costa de aumentar permanentemente la actividad fantasmal. ",
   "shade.description1":
-  "Notados como tímidos fantasmas, los inquietantes disminuyen su actividad en presencia de varios investigadores. Debido a su temperamento, puede ser más difícil encontrar actividad de fantasmas cuando están juntos. Sin embargo, como todos los fantasmas del juego, los Hauntings son más propensos a cazar cuando la cordura de los jugadores es baja.. ",
+  "Notados como tímidos fantasmas, las Sombras disminuyen su actividad en presencia de varios investigadores. Debido a su temperamento, puede ser más difícil encontrar actividad de fantasmas cuando están juntos. Sin embargo, como todos los fantasmas del juego, los Hauntings son más propensos a cazar cuando la cordura de los jugadores es baja.. ",
   "shade.description2":
-  "Si un inquietantes ya está cazando, preferirá disparar a los jugadores que están solos. El inquietante sigue la definición general de \"solo\", en el sentido de que un jugador está solo en una habitación, aunque otros jugadores estén físicamente cerca. ",
+  "Si una Sombra ya está cazando, preferirá disparar a los jugadores que están solos. La Sombra sigue la definición general de \"solo\", en el sentido de que un jugador está solo en una habitación, aunque otros jugadores estén físicamente cerca. ",
   "shade.strength":
   "Como un fantasma tímido, un Haunting rara vez realiza acciones en presencia de dos o más personas, lo que dificulta su detección.",
   "shade.weakness":
@@ -258,13 +258,13 @@ const Map<String, String> spanish = {
   "spirit.box.ghosts":
   " Demonio, Jinn, Mare, Oni, Poltergeist, Espíritu, Wraith.",
   "wraith.description1":
-  "Un Wraith es uno de los fantasmas más peligrosos con los que te encontrarás. También es el único fantasma conocido que tiene la capacidad de volar y a veces cruza las paredes.",
+  "Un Espectro es uno de los fantasmas más peligrosos con los que te encontrarás. También es el único fantasma conocido que tiene la capacidad de volar y a veces cruza las paredes.",
   "wraith.description2":
-  "Los Wraiths son uno de los doce tipos de fantasmas que se pueden encontrar en Phasmophobia, es el segundo que se describe en la revista. Es más conocido por ser capaz de volar, ya que no produce pasos cuando se mueve (en su mayoría) y puede ver a través de las puertas y armarios cuando  caza los jugadores , lo que requiere más creativos escondites o pies muy rápidos. ",
+  "Los Espectro son uno de los doce tipos de fantasmas que se pueden encontrar en Phasmophobia, es el segundo que se describe en la revista. Es más conocido por ser capaz de volar, ya que no produce pasos cuando se mueve (en su mayoría) y puede ver a través de las puertas y armarios cuando  caza los jugadores , lo que requiere más creativos escondites o pies muy rápidos. ",
   "wraith.strength":
-  "Los Wraith casi nunca tocan el suelo, lo que significa que los sonidos de las huellas son raros o inexistentes. Pueden atravesar paredes y puertas sin abrirlas. Sin embargo, el fantasma dejará huellas en la sal si la pisa.",
+  "Los Espectro casi nunca tocan el suelo, lo que significa que los sonidos de las huellas son raros o inexistentes. Pueden atravesar paredes y puertas sin abrirlas. Sin embargo, el fantasma dejará huellas en la sal si la pisa.",
   "wraith.weakness":
-  "Los Wraiths tienen una reacción tóxica a la Sal. Si un Wraith entra en contacto con un montón de sal, inmediatamente dejará de atacar.",
+  "Los Espectro tienen una reacción tóxica a la Sal. Si un Wraith entra en contacto con un montón de sal, inmediatamente dejará de atacar.",
   "wraith.evidences":
   "Huellas digitales | Baja temperatura | Caja de espíritus ( Spirit Box)",
   "yurei.description1":
