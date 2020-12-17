@@ -49,7 +49,7 @@ const Map<String, String> germany = {
   "portuguese": "Português",
   "spanish": "Español",
   "french": "Français",
-  "germany": "Deutsche",
+  "germany": "Deutsch",
   "polish": "Polskie",
   "russian": "Pусский",
   "ukranian": "Український",
@@ -61,215 +61,219 @@ const Map<String, String> germany = {
   "source.code": "Quellcode",
   "maintainers": "Betreuer",
   "banshee.description1":
-      "The Banshee is one of twelve types of Ghosts in Phasmophobia. The Banshee is a natural hunter and will attack anything. It has been known to stalk its prey one at a time until it makes its kill.",
+  "Banshee ist einer der zwöf Geister in Phasmophobia. Die Banshee ist ein Jäger und wird alles attackieren. Es ist bekannt seine Opfer zu stalken bis es jemanden tötet.",
   "banshee.description2":
-      "Unlike other ghosts, who will often change their selected target between Hunts, Banshees will always target the same player every time it hunts until it successfully kills them. While this means other players are safe from the Banshee's power so long as its target is alive, it makes carrying out objectives by the targeted player more difficult.",
-  "banshee.strength":
-      "A Banshee will focus on one player at a time until it kills them.",
+  "Im Gegensatz zu anderen Geistern, die häufig ihr ausgewähltes Ziel zwischen den Jagden wechseln, zielen Banshees bei jeder Jagd immer auf denselben Spieler, bis sie erfolgreich getötet wurden. Das bedutet, dass andere Spieler vor der Macht die Banshee sicher sind, solange ihr Ziel lebt. Dies erschwert aber auch die Ausführung von Zielen durch den Zielspieler.",
+  "banshee.strength": "Ein Banshee wird jeweils nur eine Person jagen.",
   "banshee.weakness":
-      "Banshees fear the Crucifix, which boosts the Hunt-stopping range of one from 3 meters to 5 meters against it.",
-  "banshee.evidences": "EMF Level 5 | Fingerprints | Freezing Temperatures",
-  "crucifix.description": "Prevent the Ghost from hunting with a Crucifix.",
+  "Basnhees fürchten das Kruzifix und sind weniger aggressiv in seinem Umkreis.",
+  "banshee.evidences": "EMF Level 5 | Fingerabdrücke | Gefriertemperaturen",
+  "crucifix.description": "Das Kruzifix verhindert, dass der Geist dich jagt.",
   "crucifix.details":
-      "For the Crucifix to successfully prevent a hunt, it must be in the vicinity of the ghost when it starts the hunt. The Crucifix has a range of 3 meters for most ghosts, and 5 meters for the Banshee. When the ghost initiates the hunt, it checks to see if it is in range of a crucifix. If it is, the hunt does not begin, turning all the lights off and taking one of two charges the Crucifix has.",
+  "Damit das Kruzifix eine Jagd erfolgreich verhindern kann, muss es sich zu Beginn der Jagd in der Nähe des Geistes befinden. Das Kruzifix hat eine Reichweite von 3 Metern für die meisten Geister und 5 Metern für die Banshee. Wenn der Geist die Jagd einleitet, prüft er, ob er sich in Reichweite eines Kruzifixes befindet. Wenn dies der Fall ist, beginnt die Jagd nicht, schaltet alle Lichter aus und nimmt eine von zwei Verwendungen, die das Kruzifix hat.",
   "demon.description1":
-      "Demons are one of the twelve types of Ghosts in Phasmophobia. It is generally regarded as the most dangerous type of ghost to encounter; noted for being highly aggressive, it will attack more often than any other ghost, and usually without warning. Though it may frequently hinder more conventional methods of investigation, it will also allow ghost hunters to use the Ouija Board without reducing their sanity if a question is answered successfully, allowing for critical information to be obtained with a bit of safety to sanity.",
+  "Dämon ist einer der zwöf Geister in Phasmophobia. Ein Dämon ist mit einer der schlimmsten Geister die man finden kann. Er ist bekannt dafür, ohne Sinn und Verstand anzugreifen und ohne jegliche Vorwarnung. Obwohl dies häufig konventionellere Untersuchungsmethoden behindert, können Geisterjäger das Ouija-Board auch nutzen, ohne ihre geistige Gesundheit zu verringern.",
   "demon.description2":
-      "If the investigation and objectives are not dealt with quickly, Demons can grow to be the most challenging ghost. They are notorious for initiating hunts frequently, a trait that is exacerbated by lower sanity levels, and compounded by higher difficulties like Professional where hunts last much longer. Taking all of these factors into account, Demons at their most aggressive will hunt in intervals as short as half-minutes, forcing the players to spend more total time hiding than investigating.",
-  "demon.strength": "Demons are the most aggressive and enter hunt mode more.",
+  "Wenn die Ermittlungen und Ziele nicht schnell erledigt werden, können Dämonen zum herausforderndsten Geist werden. Sie sind dafür berüchtigt, häufig Jagden zu initiieren, eine Eigenschaft, die durch niedrigere geistige Gesundheit noch verstärkt wird und durch höhere Schwierigkeiten wie im Profi-Modus verstärkt wird, bei denen Jagden viel länger dauern. Unter Berücksichtigung all dieser Faktoren jagen Dämonen in ihrer aggressivsten Form in Intervallen von nur einer halben Minute, was die Spieler dazu zwingt, mehr Zeit damit zu verbringen, sich zu verstecken als nachzuforschen.",
+  "demon.strength": "Dämonen greifen viel öfter an, als andere Geister.",
   "demon.weakness":
-      "Asking a Demon successful questions on the Ouija Board won't lower the user's sanity.",
-  "demon.evidences": "Freezing Temperatures | Ghost Writing | Spirit Box",
-  "dirt.water.description": "Capture a photo of Dirty Water in a sink.",
+  "Erfolgreiche Befragungen des Ouija-Boards über den Dämon verringernnicht den Geisterzustand.",
+  "demon.evidences": "Gefriertemperaturen | Geisterbruch | Geisterbox",
+  "dirt.water.description":
+  "Fotografieren sie dreckiges Wasser in einem Waschbecken.",
   "dirt.water.details":
-      "A Ghost can create dirty water in one of two ways: interacting with a sink already filled with water, or by activating an empty sink. This can be useful for tracking the Ghost's general location.",
+  "Ein Geist kann auf zwei Arten schmutziges Wasser erzeugen: durch Interaktion mit einer bereits mit Wasser gefüllten Becken oder durch Aktivierung eines leeren. Dies kann nützlich sein, um den allgemeinen Standort des Geistes zu finden.",
   "emf.level.5.description1":
-      "EMF Level 5 is a piece of Evidence used to determine which type of Ghost is haunting the location.",
+  "EMF Level 5 ist ein Beweis, mit dem bestimmt wird, welche Art von Geist den Ort heimgesucht hat.",
   "emf.level.5.description2":
-      "You can determine the current EMF Level using an EMF Reader.",
+  "Mit dem EMF-Reader kannst du den aktuellen EMF-Pegel (Magnetfeld) ermitteln.",
   "emf.level.5.howitworks1":
-      "A ghost will have a 25% chance to produce an EMF level 5 emission when the ghost interacts with the environment, such as when it causes the phone to ring in a classroom.",
+  "Ein Geist hat eine 25%ige Chance, ein EMF Level 5 zu erzeugen, wenn der Geist mit der Umgebung interagiert, z. B. wenn das Telefon in einem Raum klingelt.",
   "emf.level.5.howitworks2":
-      "If a Revenant or Oni manifests itself, the reader will register EMF Level 5.",
+  "Wenn sich ein Revenant oder Oni manifestiert, registriert der EMF-Reader Level 5.",
   "emf.level.5.howitworks3":
-      "The EMF Reader will still pick up Level 5 readings when thrown, and has a larger radius of which it will pick it up from.",
+  "Der EMF-Reader erfasst beim Werfen weiterhin Messwerte der Stufe 5 und hat einen größeren Radius den er erfasst.",
   "emf.level.5.howitworks4":
-      "Taking a picture of a Level 5 reading will count as an interaction picture, and will count as a separate interaction between 2, 3, and 4.",
-  "emf.level.5.ghosts": "Banshee | Jinn | Oni | Phantom | Revenant | Shade",
+  "Das Aufnehmen eines Bildes eines EMF Level 5 zählt als Interaktionsbild und wird als separate Interaktion zwischen 2, 3 und 4 gewertet.",
+  "emf.level.5.ghosts": "Banshee | Dschinn | Oni | Phantom | Revenant | Shade",
   "emf.reader.description":
-      "Find evidence of the paranormal with an EMF Reader",
+  "Mit einem EMF-Reader findest du Hinweise auf das Paranormale",
   "emf.reader.details":
-      "The EMF Reader is a purchasable piece of Equipment used to read the strength of Electro-Magnetic Fields in the nearby environment.",
+  "Der EMF-Reader ist ein käufliches Gerät, mit dem die Stärke elektromagnetischer Felder in der näheren Umgebung gemessen werden kann.",
   "fingerprints.description1":
-      "Fingerprints (or Handprints) are a type of Evidence created by Ghosts that help to indicate which type of Ghost is haunting the location. They are left behind by when they interact with the location's environment. You can see Fingerprints by using the UV Flashlight or the Glowstick.",
+  "Fingerabdrücke sind eine Art von Beweisen der Geister, um herauszufinden um welche Art von Geist es sich handelt. Sie bleiben zurück, wenn sie mit der Umgebung des Standorts interagieren. Sie können Fingerabdrücke mit der UV-Taschenlampe oder dem Leuchtstab sehen.",
   "fingerprints.howitworks1":
-      "A ghost will leave behind Fingerprints when it interacts with the environment, the most reliable being the following: Interacting with a door; Interacting with a light switch; Knocking on a window.",
+  "Ein Geist hinterlässt Fingerabdrücke, wenn er mit der Umgebung interagiert. Die häufigsten Orte sind folgende: Interaktion mit einer Tür; Interaktion mit einem Lichtschalter; An ein Fenster klopfen.",
   "fingerprints.howitworks2":
-      "Note that when the ghost flickers the lights or touches the Fuse Box, they will not always leave behind Fingerprints.",
+  "Beachten Sie, dass der Geist nicht immer Fingerabdrücke hinterlässt wenn er die Lichter flackern lässt oder den Sicherungskasten benutzt.",
   "fingerprints.howitworks3":
-      "Sometimes, ghosts can leave fingerprints in strange places, such as the outside of the windows at Brownstone High School, though this is likely due to being a bug.",
+  "Manchmal hinterlassen Geister Fingerabdrücke an seltsamen Stellen, z. B. an der Außenseite der Fenster der Brownstone High School, obwohl dies eher auf einen Bug zurückzuführen ist.",
   "fingerprints.howitworks4":
-      "Fingerprints do not have to be visible when being photographed by a Photo Camera, and will be labeled as \"Fingerprints\" in the Journal. This allows for Fingerprints to be discovered accidentally with an errant photograph.",
-  "fingerprints.ghosts": "Banshee | Poltergeist | Revenant | Spirit | Wraith",
+  "Fingerabdrücke müssen beim Fotografieren mit einer Fotokamera nicht sichtbar sein und werden im Journal als \"Fingerabdrücke\" gekennzeichnet. Dadurch können Fingerabdrücke versehentlich mit einem fehlerhaften Foto entdeckt werden.",
+  "fingerprints.ghosts": "Banshee | Poltergeist | Revenant | Spirit | Gespenst",
   "freezing.temperatures.description1":
-      "Freezing Temperatures are a piece of Evidence used to determine which type of Ghost is haunting the location.",
+  "Gefriertemperaturen sind ein Beweis, mit dem bestimmt wird, welche Art von Geist den Ort heimgesucht hat.",
   "freezing.temperatures.description2":
-      "Temperature can be read by using a Thermometer; evidence-wise, Freezing Temperatures are anything below 0°C/32°F on the Thermometer.",
+  "Die Temperatur kann mit einem Thermometer abgelesen werden. Gefriertemperaturen liegen nachweislich unter 0°C/32°F auf dem Thermometer.",
   "freezing.temperatures.howitworks1":
-      "Temperature will start to decrease in a room that a ghost occupies; if Freezing Temperatures is a piece of evidence, the temperature will drop three times as fast. When a Ghost is present in a room where Freezing Temperatures is not a piece of evidence, it can only reduce the temperature to 5°C/40.9°F. However, there is an error margin of 2° on the Thermometer, so a room can appear to be as low as 3°C/37.9°F if the ghost does not cause Freezing Temperatures.",
+  "In einem Raum wo sich ein Geist aufhält beginnt die Temperatur zu sinken. Wenn Gefriertemperaturen ein Beweis sind, sinkt die Temperatur dreimal so schnell. Wenn sich ein Geist in einem Raum befindet, in dem Gefriertemperaturen kein Beweis ist, kann er die Temperatur nur auf 5°C senken. Es gibt jedoch eine Fehlergrenze von 2° am Thermometer, sodass ein Raum so niedrig wie 3°C erscheinen kann, wenn der Geist keine Gefriertemperaturen verursacht.",
   "freezing.temperatures.howitworks2":
-      "Freezing Temperatures will also cause investigators to release visible exhalations both on camera and in person once the temperature drops low enough. This can be used as evidence in lieu of having a Thermometer active, taking care to ensure that the \"breath\" is not being confused with smoke from a Smudge Stick.",
+  "Gefriertemperaturen führen auch dazu, dass die Geisterjäger sichtbare Ausatmungen sowohl vor der Kamera als auch persönlich sehen, sobald die Temperatur niedrig genug ist. Dies kann als Beweis dafür dienen, dass ein Thermometer aktiv ist, wobei darauf zu achten ist, dass der \"Atem\" nicht mit dem Rauch eines Räucherstäbchen verwechselt wird.",
   "freezing.temperatures.ghosts":
-      "Banshee | Demon | Mare | Phantom | Wraith | Yurei",
-  "ghost.event.description": "Have a member of your team witness a Ghost Event",
+  "Banshee | Dämon | Mare | Phantom | Gespenst | Yurei",
+  "ghost.event.description":
+  "Lassen Sie ein Teammitglied Zeuge eines Geister Events werden.",
   "ghost.event.details":
-      "A Ghost Event refers to any event in which the ghost manifests outside of a hunt. This includes visual appearances, voices, closing doors, and turning off light switches.",
+  "Ein Geisterereignis bezieht sich auf jedes Ereignis, bei dem sich der Geist außerhalb einer Jagd manifestiert. Dies umfasst visuelle Erscheinungen, Stimmen, das Schließen von Türen und das Ausschalten von Lichtschaltern.",
   "ghost.orbs.description1":
-      "Ghost Orbs are a type of Evidence which are used to help determine which type of Ghost is haunting the location.",
+  "Geisterorbs sind eine Art von Beweis, mit deren Hilfe ermittelt werden kann, welche Art von Geist den Ort heimgesucht hat.",
   "ghost.orbs.howitworks1":
-      "They are emitted in the Ghost Room, and look like very small yellow orbs that glide across the screen, generally one at a time. They can be seen on the computer screen using a Video Camera or a Head Mounted Camera with night vision. Depending on the haunting location, ghost orbs at times can be detected from the outdoors before entering a building and initiating the Setup Phase countdown.",
-  "ghost.orbs.ghosts": "Jinn | Mare | Phantom | Poltergeist | Shade | Yurei",
-  "ghost.photo.description": "Capture a photo of the Ghost",
+  "Sie werden im Geisterraum ausgestrahlt und sehen aus wie sehr kleine gelbe Kugeln, die im Allgemeinen einzeln über den Bildschirm fliegen. Sie können mit einer Videokamera oder einer am Kopf montierten Kamera mit Nachtsicht auf dem Computerbildschirm angezeigt werden. Abhängig vom Treffpunkt können Geisterorbs manchmal von außen erkannt werden, bevor Sie ein Gebäude betreten und den Countdown für die Einrichtungsphase starten.",
+  "ghost.orbs.ghosts": "Dschinn | Mare | Phantom | Poltergeist | Shade | Yurei",
+  "ghost.photo.description": "Machen Sie ein Foto vom Geist.",
   "ghost.photo.details":
-      "Use the Photo Camera to get photo of the Ghost. The Camera will flash a light twice the size of the regular flashlight with 3 times the range of the Glow Stick. It can take pictures through walls, doors, garage doors, windows, and almost all surfaces if the lens is able to clip through it.",
+  "Verwenden Sie die Fotokamera, um ein Foto des Geistes zu machen. Die Kamera hat einen Blitz welcher doppelt so hell ist wie die normale Taschenlampe und dreimal so groß ist wie die Reichweite des Leuchtstabs. Es kann Bilder durch Wände, Türen, Garagentore, Fenster und fast alle Oberflächen aufnehmen, wenn man in der Lage ist das Objektiv durch diese zu klemmen (in VR sehr einfach).",
   "ghost.writing.description1":
-      "Ghost Writing is Evidence used to determine which ghost is haunting the location. It can be obtained by using a Ghost Writing Book.",
+  "Geisterbuch ist ein Beweis, der verwendet wird, um zu bestimmen, welcher Geist den Ort heimsucht.",
   "ghost.writing.howitworks1":
-      "If Ghost Writing is a piece of evidence, the ghost has a 5-in-12 chance to interact with the Ghost Writing Book. You can increase the Ghost Activity in the room to increase the chance of this occuring.",
+  "Wenn Geisterbruch ein Beweisstück ist, hat der Geist eine 5zu12 Chance, mit dem Geisterbuch zu interagieren. Sie können die Geisteraktivität im Raum erhöhen, um die Wahrscheinlichkeit zu erhöhen, dass dies auftritt.",
   "ghost.writing.howitworks2":
-      "Taking a photograph of the Ghost Writing Book after it has been written in with a Photo Camera will count as an Interaction for Photo Evidence.",
-  "ghost.writing.ghosts": "Demon | Oni | Revenant | Shade | Spirit | Yurei",
+  "Das Fotografieren des Geisterbuches nach dem Einschreiben mit einer Fotokamera gilt als Interaktion bei den Fotobeweisen.",
+  "ghost.writing.ghosts": "Dämon | Oni | Revenant | Shade | Spirit | Yurei",
   "jinn.description1":
-      "The Jinn is one of twelve types of Ghosts in Phasmophobia. It is a territorial ghost that will attack when threatened. It has also been known to travel at significant speed during Hunts.",
+  "Dschinn ist einer der zwöf Geister in Phasmophobia. Er ist ein territorialer Geist, der angreift, wenn er bedroht wird. Es ist auch bekannt, dass er während der Jagd schneller wird.",
   "jinn.description2":
-      "Jinns tend to interact with electronics more than any other ghost. They may cause phones to ring, radios to activate, TV's to turn on, or car alarms to go off more often. This also extends to light switches, which may cause unsure investigators to confuse a Jinn for a Mare or Poltergeist; although Mares also have the power to turn lights off, they will not often turn lights back on as Jinn do, and Poltergeists will likely disturb more general objects that aren't light switches such as doors.",
+  "Dschinns interagieren mehr mit der Elektronik als die anderen Geister. Sie können Telefone klingeln lassen, Radios aktivieren, Fernseher einschalten oder Autoalarme häufiger auslösen. Dies gilt auch für Lichtschalter, die dazu führen können, dass unsichere Ermittler einen Dschinn mit einem Mare oder einem Poltergeist verwechseln. Obwohl Mare auch die Möglichkeit haben, das Licht auszuschalten, schalten sie das Licht nicht oft wieder ein, wie es der Dschinn tut, und Poltergeistern stören eher allgemeinere Objekte, die keine Lichtschalter sind, wie z. B. Türen.",
   "jinn.strength":
-      "A Jinn will travel at a faster speed if its victim is far away.",
+  "Ein Dschinn bewegt sich schneller wenn sein Opfer weit weg ist.",
   "jinn.weakness":
-      "Turning off the location's power source will prevent the Jinn from using its ability.",
-  "jinn.evidences": "EMF Level 5 | Ghost Orb | Spirit Box",
+  "Dem Ort seinen STrom zu entziehen hindert den Dschinn am nutzen seiner Fähigkeiten.",
+  "jinn.evidences": "EMF Level 5 | Geisterorb | Geisterbox",
   "low.temperature.description":
-      "Detect a room below 10 Celsius or 50 Fahrenheit with a Thermometer.",
+  "Finde einen Raum unter 10 Grad Celsius mit einem Thermometer.",
   "low.temperature.details":
-      "The Thermometer reads the temperature by casting a 6-metre ray in the direction the player is facing, making it a directional tool. The recorded temperature fluctuates within a range of ±2 degrees, both for Celsius and Fahrenheit.",
+  "Das Thermometer liest die Temperatur, indem es einen 6 Meter Strahl in die Richtung wirft, in die der Spieler schaut, was es zu einem Richtungswerkzeug macht. Die aufgezeichnete Temperatur schwankt innerhalb eines Bereichs von ± 2 Grad, sowohl für Celsius als auch für Fahrenheit.",
   "mare.description1":
-      "The Mare is one of twelve types of Ghosts in Phasmophobia. It is the source of all nightmares, making it most powerful in the dark. Mares have a higher chance of initiating hunts when players are in darkness, especially if the lights are turned off in the ghost room. It tends to turn lights and the fuse box off more than any other ghost type when active, although if a ghost switches lights back on, it is much more likely to be a Poltergeist or Jinn. An active Mare stalking low-sanity players have the capacity to initiate hunts within mere moments of each other, allowing them to rival even Demons in aggression.",
+  "Der Mare ist einer von zwölf Arten von Geistern in Phasmophobia. Ein Mare ist die Quelle von allen Albträumen, SIe wirs bei Nacht am stärksten. Es wird erzählt, dass eine Mare den Verstand von Menschen kontrollieren kann. Mare haben eine höhere Chance, bei Dunkelheit Jagden zu starten, insbesondere wenn die Lichter im Geisterraum ausgeschaltet sind. Es neigt dazu, Lichter und den Sicherungskasten mehr auszuschalten als jeder andere Geistertyp, wenn es aktiv ist. Wenn ein Geist das Licht wieder einschaltet, ist es jedoch viel wahrscheinlicher, dass es sich um einen Poltergeist oder Dschinn handelt. Ein aktiver Mare, die Spieler mit geringer geistiger Gesundheit verfolgt, hat die Fähigkeit, innerhalb weniger Augenblicke Jagden zu starten, sodass sie sogar mit Dämonen in Aggression konkurrieren können.",
   "mare.strength":
-      "Increased chance to attack in the dark. As such, it will do what it can to achieve this, such as turning off lights and tripping the fuse box.",
-  "mare.weakness": "Turning the lights on will lower its chance to attack.",
-  "mare.evidences": "Freezing Temperatures | Ghost Orb | Spirit Box",
-  "motion.sensor.description": "Detect a Ghosts presence with a Motion Sensor",
+  "Eine Mare hat ine erhöte Chance anzugreifen wenn Sie sich im Dunkeln aufhalten.",
+  "mare.weakness":
+  "SChaltet man die Lichter um eine Mare ein ist die Chance angegriffen zu werden eher gering.",
+  "mare.evidences": "Gefriertemperaturen | Geisterorb | Geisterbox",
+  "motion.sensor.description":
+  "Erkennen Sie die Anwesenheit eines Geistes mit einem Bewegungssensors.",
   "motion.sensor.details":
-      "The Motion Sensor is a purchasable support item. It is the most expensive piece of equipment in the game, costing \$100, but it can be very handy when tracking the movement of the Ghost, providing a visual and audio cue when the ghost moves through it. The Motion Sensor also displays on the Site Map, allowing for the Ghost's movement to be detected from the safety of the Van.",
+  "Der Bewegungssensor ist ein käuflicher Helfer. Es ist das teuerste Gerät im Spiel und kostet 100\$. Es kann jedoch sehr praktisch sein, wenn Sie die Bewegung des Geistes verfolgen und einen visuellen und akustischen Hinweis geben, wenn sich der Geist durch das Spiel bewegt. Der Bewegungssensor wird auch auf der Sitemap angezeigt, sodass die Bewegung des Geistes aus der Sicherheit des Vans verfolgt werden kann.",
   "oni.description1":
-      "The Oni is one of twelve types of Ghosts in Phasmophobia. It is similar to the Demon, and as such, is much more active and aggressive when players are grouped together, with a higher chance to initiate hunts. This can make players confuse it with a Demon provided they continue to remain close together the entire mission and never separating. However, this power also works against it; it is one of the most active ghosts in the game, and will more readily give up evidence to a group of investigators, which can make for generous and swift investigations if an Oni is quick to reveal the necessary evidence.",
+  "Der Oni ist einer der zwöf Geister in Phasmophobia. Oni's sind Verwandte des Dämons und besitzen unglaubliche Stärke. Gerüchten zufolge sind die aktiver in der Nähe ihres Opfers. Dies kann dazu führen, dass Spieler es mit einem Dämon verwechseln, vorausgesetzt, sie bleiben während der gesamten Mission nahe beieinander und trennen sich nie. Diese Kraft wirkt jedoch auch dagegen. Es ist einer der aktivsten Geister im Spiel und gibt Beweise leichter an eine Gruppe von Ermittlern weiter. Dies kann zu großzügigen und schnellen Ermittlungen führen, wenn ein Oni die erforderlichen Beweise schnell preisgibt.",
   "oni.description2":
-      "Unlike with most other ghost types, splitting up is the best method of defense when searching for an Oni, as it much less active while players are alone. Though this can be a disadvantageous strategy, particularly if the ghost is revealed to be a Banshee, it can also allow players to find the Ghost Room quicker, as well as keep them from huddling together in hiding spaces during hunts.",
+  "Anders als bei den meisten anderen Geistertypen ist das Aufteilen die beste Verteidigungsmethode bei der Suche nach einem Oni, da es viel weniger aktiv ist, wenn die Spieler alleine sind. Dies kann zwar eine nachteilige Strategie sein, insbesondere wenn sich herausstellt, dass der Geist ein Banshee ist, aber es kann den Spielern auch ermöglichen, den Geisterraum schneller zu finden und zu verhindern, dass sie sich während der Jagd in Verstecken zusammenkauern.",
   "oni.description3":
-      "The Oni is also described as being extremely strong, and it will throw objects around the room with great force when interacting with them. However, these objects are not dangerous to the hunters or their sanity unlike those thrown by Poltergeists.",
+  "Der Oni wird auch als extrem stark beschrieben und wirft Objekte mit großer Kraft durch den Raum, wenn er mit ihnen interagiert. Diese Gegenstände sind jedoch im Gegensatz zu denen, die von Poltergeisten geworfen werden, für die Jäger und ihre geistige Gesundheit nicht gefährlich.",
   "oni.strength":
-      "Oni are more active when people are nearby and have been seen moving objects at great speed.",
+  "Oni's bewegen Objekte mit großer Geschwindigkeit und sind aktiver wenn Leute in der Nähe sind.",
   "oni.weakness":
-      "Being more active will make the Oni easier to find and identify.",
-  "oni.evidences": "EMF Level 5 | Ghost Writing | Spirit Box",
+  "Durch ihre hohe Aktivitätsrate sind Oni's leichter zu erkennen.",
+  "oni.evidences": "EMF Level 5 | Geisterbuch | Geisterbox",
   "phantom.description1":
-      "A Phantom is a Ghost that can possess the living, most commonly summoned by a Ouija Board. It also induces fear into those around it.",
+  "Ein Phantom ist ein Geist, der von den Lebenden Besitzt ergreifen kann. Meistens beschworen durch das Ouijaboard. Verursacht Angst in den Menschen um ihn herum.",
   "phantom.description2":
-      "Phantoms are one of the 12 types of Ghosts that can be encountered in Phasmophobia, and the third one described in the Journal. Contrary to popular belief, the Phantom cannot possess ghost-hunters after using a Ouija Board.",
+  "Der Phantom ist einer der zwölf Geister in Phasmophobia. Entgegen der landläufigen Meinung kann das Phantom nach Verwendung eines Ouija Boards keinen Besitz der Geisterjäger erlangen.",
   "phantom.strength":
-      "Looking at a Phantom will considerably drop your Sanity. This refers to any visible manifestations of the Phantom, including during a Hunt.",
+  "Senkt ihren Verstand stark wenn Sie das Phantom anschauen.",
   "phantom.weakness":
-      "Taking a photo of the Phantom will make it temporarily disappear. This, however, will not stop a Hunt.",
-  "phantom.evidences": "EMF Level 5 | Freezing Temperatures | Ghost Orb",
+  "Fotografieren Sie das Phantom, verschwindet es temporär.",
+  "phantom.evidences": "EMF Level 5 | Gefriertemperaturen | Geisterorb",
   "poltergeist.description1":
-      "One of the most famous Ghosts, a Poltergeist, also known as a noisy ghost can manipulate objects around it to spread fear into it's victims.",
+  "Einer der berühmtesten Geister. Ein Poltergeist ist bekannt als ein Wesen das laut ist und Objekte um sich herum manippuliert um seinen Opfern Angst einzujagen.",
   "poltergeist.description2":
-      "Poltergeists are one of the 12 types of ghosts that can be encountered in Phasmophobia.",
+  "Der Poltergeist ist einer der zwölf Geister in Phasmophobia.",
   "poltergeist.strength":
-      "A Poltergeist is capable of influencing more objects at once than any other Ghosts, and is capable of shutting multiple doors at once.",
+  "Ein Poltergeist kann viele Objekte auf einmal werfen.",
   "poltergeist.weakness":
-      "A Poltergeist is almost ineffective in an empty room.",
-  "poltergeist.evidences": "Ghost Orb | Fingerprints | Spirit Box",
+  "Ein Poltergeist ist in einem leeren Raum fast ineffektiv.",
+  "poltergeist.evidences": "Geisterorb | Fingerabdrücke | Geisterbox",
   "revenant.description1":
-      "The Revenant is one of twelve Ghost types in Phasmophobia. It is a slow, but violent ghost that will attack indiscriminately. It is said to travel at higher speeds when hunting.",
+  "Der Revenant ist einer der zwölf Geister in Phasmophobia. Er ist langsam, aber attackiert heftig und wahllos. Gerüchten zufolge ist ein Revenant schneller, wenn er jemanden jagt.",
   "revenant.description2":
-      "Unlike other Ghosts, who will often have a specific target selected when starting a Hunt they will hone in on, Revenants can freely switch targets if there is another player that is closer by - and especially one that is in plain view and available, making its goal of killing players more convenient.",
-  "revenant.strength":
-      "A Revenant will travel at a significantly faster speed when hunting a victim. Additionally, the Revenant can freely switch whoever it is targeting during a Hunt.",
+  "Im Gegensatz zu anderen Geistern, bei denen beim Starten einer Jagd, auf die sie sich konzentrieren, häufig ein bestimmtes Ziel ausgewählt wird, kann der Revenant die Ziele frei wechseln, wenn sich ein anderer Spieler in der Nähe befindet. Insbesondere einer, der in Sichtweite und verfügbar ist und dessen Ziel, den Spieler bequemer zu töten, einfacher erreichbar ist.",
+  "revenant.strength": "Wird schneller wenn er seine Opfer jagt.",
   "revenant.weakness":
-      "Hiding from the Revenant will cause it to move very slowly.",
-  "revenant.evidences": "EMF Level 5 | Fingerprints | Ghost Writing",
-  "salt.footprint.description": "Get a Ghost to walk through Salt.",
+  "Versteckt man sich vor dem Revenant, bewegt er sich sehr langsam.",
+  "revenant.evidences": "EMF Level 5 | Fingerabdrücke | Geisterbuch",
+  "salt.footprint.description": "Lasse einen Geist durch Salz laufen.",
   "salt.footprint.details":
-      "A ghost can only step in salt every 10 seconds, and will not step in salt during the Hunt. If a Wraith comes into contact with salt, it will stop attacking immediately, at the cost of permanently increasing Ghost Activity.",
+  "Ein Geist kann nur alle 10 Sekunden in Salz treten und wird während der Jagd nicht in Salz treten. Wenn ein Gespenst mit Salz in Kontakt kommt, hört er sofort auf anzugreifen, auf Kosten einer dauerhaften Erhöhung der Geisteraktivität.",
   "shade.description1":
-      "Noted as being shy ghosts, Shades lower their activity in the presence of multiple investigators. Because of its temperament, it can be harder to find Ghost Activity when sticking together. However, like all ghosts in the game, the Shade is more likely to hunt when the players' Sanity is low.",
+  "Der Shade ist bekannt als ein schüchterner Geist. Wenn mehrere Menschen zusammen sind, werden alle paranormalen Aktivitäten gestoppt. Aufgrund seines Temperaments kann es schwieriger sein, Geisteraktivität zu finden, wenn man zusammenhält. Wie alle Geister im Spiel ist es jedoch wahrscheinlicher, dass der Shade jagt, wenn die geistige Gesundheit der Spieler niedrig ist.",
   "shade.description2":
-      "If a Shade is already hunting, it will prefer to target players that are alone. The Shade follows the general definition of \"alone\", in the sense of a player being in a room on their own, even if other players are physically close.",
+  "Wenn ein Shade bereits jagt, zieht er es vor, Spieler zu wählen, die alleine sind. Der Shade folgt der allgemeinen Definition von \"allein\" im Sinne eines Spielers, der sich alleine in einem Raum befindet, selbst wenn andere Spieler physisch in der Nähe sind.",
   "shade.strength":
-      "As a shy ghost, a Shade will rarely perform actions in the presence of two or more people, making it harder to detect.",
+  "Schüchtern zu sein bedeutet es wird schwerer den Geist zu entdecken.",
   "shade.weakness":
-      "Conversely, a Shade will rarely start a Hunt when players are grouped together.",
-  "shade.evidences": "EMF Level 5 | Ghost Orb | Ghost Writing",
+  "Der Geist wird nicht jagen wenn mehrere Menschen zusammen sind.",
+  "shade.evidences": "EMF Level 5 | Geisterorb | Geisterbuch",
   "smudge.sticks.description":
-      "Cleanse the area near the Ghost using Smudge Sticks",
+  "Reinigen Sie den Bereich in der Nähe des Geistes mit Räucherstäbchen.",
   "smudge.sticks.details":
-      "The smudge sticks will begin to smoke for roughly 15 seconds, and if the Ghost is within 6 meters, Ghost Activity will be increased marginally and the Ghost won't be able to enter a hunt for 90 seconds (180 for Spirit). This won't stop an active hunt. The smudge sticks will function both while in hand or on the floor.",
+  "Die Räucherstäbchen beginnen ungefähr 15 Sekunden lang zu rauchen. Wenn sich der Geist innerhalb von 6 Metern befindet, wird die Geisteraktivität geringfügig erhöht und der Geist kann 90 Sekunden lang keine Jagd starten (180 beim Spirit). Dies wird eine aktive Jagd nicht stoppen. Die Räucherstäbchen funktionieren sowohl in der Hand als auch auf dem Boden.",
   "spirit.description1":
-      "A Spirit is the most common Ghost you will come across however it is still very powerful and dangerous. They are usually discovered at one of their hunting grounds after an unexplained death.",
+  "Der Spirit ist eine der gewöhnlichsten Geisterarten, jedoch ist er sehr stark und gefährlich. SIe werden für gewöhnlich in einem Gebiet gefunden in dem der Tod einer Person unaufgeklärt blieb.",
   "spirit.strength":
-      "The spirit has no discernible strengths, however it is known to increase its hunting as your sanity drops.",
+  "Der Geist hat keine erkennbaren Stärken, es ist jedoch bekannt, dass er seine Jagd verstärkt, wenn Ihre geistige Gesundheit sinkt.",
   "spirit.weakness":
-      "Using Smudge Sticks on a Spirit will stop it attacking for 120 seconds instead of 90.",
-  "spirit.evidences": "Ghost Writing | Fingerprints | Spirit Box",
+  "Kann vorübergehend gestoppt werden, indem man den Geisterraum ausräuchert.",
+  "spirit.evidences": "Geisterbuch | Fingerabdrücke | Geisterbox",
   "spirit.box.description1":
-      "The Spirit Box is a piece of Equipment, as well as a type of Evidence, that can be used to ask the Ghost questions to get more information. Only certain Ghosts will respond via the Spirit Box, which can be used as Evidence when identifying the Ghost.",
+  "Die Geisterbox ist ein Gerät sowie eine Art Beweis, mit dem die Geisterfragen gestellt werden können, um weitere Informationen zu erhalten. Nur bestimmte Geister antworten über die Geisterbox, die als Beweis für die Identifizierung des Geistes verwendet werden kann.",
   "spirit.box.howitworks1":
-      "To use the Spirit Box, you must be in the same room as the Ghost, or within 3 meters if not in the same room, for it to answer. The lights must be off; additionally, shy ghosts will require you to be the only person in the room (although they will sometimes respond when a group is entering a room due to initially only detecting one player).",
+  "Um die Geisterbox verwenden zu können, müssen Sie sich im selben Raum wie der Geist befinden oder innerhalb von 3 Metern, wenn nicht im selben Raum, damit er antworten kann. Das Licht muss aus sein. Bei schüchternen Geistern müssen Sie außerdem die einzige Person im Raum sein (obwohl sie manchmal reagieren, wenn eine Gruppe einen Raum betritt, weil zunächst nur ein Spieler erkannt wird).",
   "spirit.box.howitworks2":
-      "The Spirit Box will work if thrown on the ground as long as it is left on and you are within range to ask questions and hear the responses. Sometimes, Ghosts respond to Spirit Boxes placed on the ground without players directly trying to get a response with voice commands. While Ghosts can hear when you are talking no matter what, you must be using proximity chat for the Spirit Box to hear you.",
+  "Die Geisterbox funktioniert, wenn sie auf den Boden geworfen wird, solange sie eingeschaltet bleibt und Sie sich in Reichweite befinden, um Fragen zu stellen und die Antworten zu hören. Manchmal reagieren Geister auf Geisterboxen, die auf dem Boden platziert sind, ohne dass Spieler direkt versuchen, eine Antwort mit Sprachbefehlen zu erhalten. Während Geister hören können, wann Sie sprechen, müssen Sie den Proximity-Chat verwenden, damit die Geisterbox Sie hört.",
   "spirit.box.howitworks3":
-      "Note that there is evidence that the Spirit Box might work in any location, but the person asking the questions must be near the Ghost. Some ghost hunters have suggested that using broadcast (global chat) to ask questions can work from any location.",
-  "spirit.box.howitworks4": "Difficulty Questions",
+  "Beachten Sie, dass es Hinweise darauf gibt, dass die Geisterbox an jedem Ort funktioniert, die Person, die die Fragen stellt, sich jedoch in der Nähe des Geistes befinden muss. Einige Geisterjäger haben vorgeschlagen, dass die Verwendung von Broadcast (globaler Chat) zum Stellen von Fragen von jedem Ort aus funktionieren sollte.",
+  "spirit.box.howitworks4": "Allgemeine Fragen",
   "spirit.box.howitworks5":
-      "What do you want? | Why are you here? | Do you want to hurt us? | Are you angry? | Do you want us here? | Shall we leave? | Should we leave? | Do you want us to leave? | What should we do? | Can we help? | Is anything wrong? | Are you friendly?",
-  "spirit.box.howitworks6": "Location questions",
+  "Was willst du? | Warum bist du hier? | Willst du uns verletzen? | Bist du wütend? | Willst du uns hier? | Sollen wir gehen? | Sollten wir gehen? | Was sollen wir machen? | Können wir helfen? | Bist du nett?",
+  "spirit.box.howitworks6": "Ortbezogene Fragen",
   "spirit.box.howitworks7":
-      "Where are you? | Are you close? | Can you show yourself? | Give us a sign. | Let us know you are here. | Show yourself. | Can you talk? | Speak to us. | Are you here? | Are you with us? | Anybody with us? | Is anyone here? | Anybody in the room? | Anybody here? | Is there a spirit here? | Is there a Ghost here? | What is your location?",
-  "spirit.box.howitworks8": "Age questions",
+  "Wo bist du? | Bist du nah? | Kannst du dich zeigen? | Gib uns ein Zeichen? | Lass uns wissen, ob du hier bist? | Zeig dich? | Kannst du sprechen? | Sprich uns an? | Bist du hier? | Bist du bei uns? | Irgendjemand bei uns? | Ist hier jemand? | Jemand im Raum? | Jemand hier? | Gibt es einen Gespenst hier? | Gibt es einen Geist hier? | Wo bist du?",
+  "spirit.box.howitworks8": "Fragen zum Alter",
   "spirit.box.howitworks9":
-      "How old are you? | How young are you? | What is your age? | When were you born? | Are you a child? | Are you old? | Are you young?",
-  "spirit.box.howitworks10": "Personal questions",
+  "Wie alt bist du? | Wie jung bist du? | Was ist dein Alter? | Wann wurdest du geboren? | Bist du ein Kind? | Bist du alt? | Bist du jung?",
+  "spirit.box.howitworks10": "Persönliche Fragen",
   "spirit.box.howitworks11":
-      "Are you a girl? | Are you a boy? | Are you male? | Are you female? | Who are you? | What are you? | Who is this? | Who are we talking to? | Who am I talking to? | Hello? | What is your name? | Can you give me your name? | What is your gender? | What gender? | Are you male or female? | Are you a man? | Are you a woman?",
+  "Bist du ein Mädchen? | Bist du ein Junge? | Bist du männlich? | Bist du weiblich? | Wer bist du? | Was bist du? | Wer ist da? | Mit wem sprechen wir? | Mit wem spreche ich? | Hallo? | Wie heißt du? | Sag mir deinen Namen? | Was ist dein Geschlecht? | Welches Geschlecht? | Bist du männlich oder weiblich? | Bist du ein Mann? | Bist du eine Frau?",
   "spirit.box.ghosts":
-      "Demon | Jinn | Mare | Oni | Poltergeist | Spirit | Wraith",
+  "Dämon | Dschinn | Mare | Oni | Poltergeist | Spirit | Gespenst",
   "wraith.description1":
-      "A Wraith is one of the most dangerous Ghosts you will find. It is also the only known ghost that has the ability of flight and has sometimes been known to travel through walls.",
+  "Ein Gespenst ist einer der gefährlichsten Geister die Sie finden werden. Er ist auch bekannt dafür fliegen und durch Wände gehen zu können.",
   "wraith.description2":
-      "Wraiths are one of the twelve types of Ghosts that can be encountered in Phasmophobia, and the second one described in the Journal. It is best known for being able to \"fly\", causing it to not produce footsteps when moving (for the most part), and most dangerously can see through doors, closets, and lockers when Hunting players, demanding either more creative hiding spots or very fast feet.",
+  "Ein Gespenst ist einer von zwölf Geistern in Phasmophobia. Es ist dafür bekannt, dass es in der Lage ist zu \"fliegen\", was dazu führt, dass es beim Bewegen (größtenteils) keine Schritte erzeugt, und am auch durch Türen, Schränke und Schließfächer sehen kann, wenn es Spieler jagt, die somit ein kreativeres Verstecken fordern.",
   "wraith.strength":
-      "Wraiths almost never touch the ground, meaning footprint sounds are rare to non-existant. It can travel through walls and doors without opening them. Wraiths will however leave footprints in salt if stepped in.",
+  "Ein Gespenst berührt nue den Boden wodurch er nicht durch Fußabdrücke gefunden werden kann.",
   "wraith.weakness":
-      "Wraiths have a toxic reaction to Salt. If a Wraith comes into contact with a pile of salt, it will immediately cease attacking.",
-  "wraith.evidences": "Fingerprints | Freezing Temperatures | Spirit Box",
+  "Giftige Reaktion zu Salz. Wenn ein Gespenst mit einem Salzhaufen in Kontakt kommt, hört er sofort auf anzugreifen.",
+  "wraith.evidences": "Fingerabdrücke | Gefriertemperaturen | Geisterbox",
   "yurei.description1":
-      "The Yurei is one of twelve types of ghosts in Phasmophobia. It is a ghost that has returned to the physical world, usually for the purpose of revenge or hatred. Although it does not have any implicit bonuses to its ability to Hunt, its main distinction is its constant attack on the hunters' Sanity; if hunters are careless with their Sanity, it will become aggressive very quickly.",
+  "Der Yurei ist einer der zwölf Geister in Phasmophobia. Er ist ein Geist, der aus Gründen des Hasses oder einer unerfüllten Rache in die physische Welt zurückkehrte. Obwohl es keine impliziten Boni für seine Jagdfähigkeit hat, ist sein Hauptunterschied sein ständiger Angriff auf die geistige Gesundheit der Jäger. Wenn Jäger sorglos mit ihrer geistigen Gesundheit umgehen, wird der Geist sehr schnell aggressiv.",
   "yurei.strength":
-      "Yurei have been known to have a stronger effect on people's Sanity.",
+  "Yurei's haben einen starken Einfluss auf den Geisteszustand von Menschen.",
   "yurei.weakness":
-      "Using Smudge Sticks on the Yurei's Ghost Room will cause it to not wander around the location for ~90 seconds.",
-  "yurei.evidences": "Freezing Temperatures | Ghost Orb | Ghost Writing",
+  "Wenn Sie den Raum des Yurei ausräuchern, wird er für längere Zeit (~90 Sekunden) seine Bewegung einstellen.",
+  "yurei.evidences": "Gefriertemperaturen | Geisterorb | Geisterbuch",
   "about.description":
-      "The Phasmophobia Assistant app is a tool to help Phasmophobia players on their journey. The application does not need internet access or extra access. This project is open source and has no monetary intent. This is for the Fasmophobia community.",
-  "enjoy.phasmophobia": "Enjoy Phasmophobia Assistant!",
+  "Die Phasmophobia Assistant App ist ein Tool, das Phasmophobia-Spielern auf ihrer Reise hilft. Die Anwendung benötigt keinen Internetzugang oder zusätzlichen Zugang. Dieses Projekt ist Open Source und hat keine finanzielle Absicht. Dies ist für die Fasmophobia-Community.",
+  "enjoy.phasmophobia": "Viel Spaß mit dem Phasmophobia Assistant!",
   "support.contact": "SUPPORT CONTACT",
-  "discard.evidence": "Discard evidence (not recomended)",
-  "enable.discard.evidence.long.press": "Enable to discard evidences manually using long press.",
-  "cant.select.discarded.evidence": "You can't select a discarded evidence.",
-  "cant.discard.selected.evidence": "You can't discard a selected evidence.",
-  "no.ghosts.found": "No ghosts found.",
-  "cant.discard.evidence": "You can't discard this evidence.",
-  "cant.select.evidence": "You can't select this evidence.",
-  "cant.change.evidence": "You cannot change this evidence.",
+  "discard.evidence": "Beweise verwerfen (nicht empfohlen)",
+  "enable.discard.evidence.long.press":
+  "Aktivieren Sie diese Option, um Beweise durch langes drücken manuell durch zu verwerfen.",
+  "cant.select.discarded.evidence": "Kann keine verworfenen Beweise auswählen.",
+  "cant.discard.selected.evidence":
+  "Kann einen ausgewählten Beweis nicht verwerfen.",
+  "no.ghosts.found": "Keinen Geist gefunden.",
+  "cant.discard.evidence": "Kann diesen Beweis nicht verwerfen.",
+  "cant.select.evidence": "Kann diesen Beweis nicht auswählen.",
+  "cant.change.evidence": "Kann diesen Beweis nicht ändern.",
 };

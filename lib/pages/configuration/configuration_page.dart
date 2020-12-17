@@ -122,7 +122,7 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
       items: <String>[
         "ENGLISH",
         "PORTUGUESE",
-//        "GERMANY",
+        "GERMANY",
         "SPANISH",
 //        "POLISH",
         "RUSSIAN",
