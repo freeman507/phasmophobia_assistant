@@ -21,7 +21,7 @@ const Map<String, String> russian = {
   "selected": "Выбрано",
   "discarded": "Отброшено",
   "spirit": "Дух",
-  "wraith": "Призрак",
+  "wraith": "Moиpaж",
   "phantom": "Фантом",
   "poltergeist": "Полтергейст",
   "banshee": "Банши",
