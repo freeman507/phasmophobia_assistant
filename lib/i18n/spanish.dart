@@ -279,7 +279,7 @@ const Map<String, String> spanish = {
   "enjoy.phasmophobia": "¡Disfruta del Fasmofobia Assistant!",
   "support.contact": "CONTACTO DE SOPORTE",
   "amateur": "Aficionado",
-  "intermediate": "Intermedíario",
+  "intermediate": "Intermedio",
   "discard.evidence": "Desechar las pruebas (no se recomienda)",
   "enable.discard.evidence.long.press":
   "Permite descartar las pruebas usando el tacto largo.",
