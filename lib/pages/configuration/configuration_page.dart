@@ -33,7 +33,7 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
                   child: Text(i("save")),
                   onPressed: () {
                     saveLanguage(dropdownValue.toLowerCase());
-                    saveConfig(enableDiscardEvidence);
+                    saveLanguageConfiguration(enableDiscardEvidence);
                     showDialog(
                       context: context,
                       builder: (_) => buildAlertDialog(),

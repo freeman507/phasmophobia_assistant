@@ -7,10 +7,12 @@ import 'package:phasmophobiaassistant/pages/evidences/evidences_page.dart';
 import 'package:phasmophobiaassistant/pages/objectives/objectives_page.dart';
 
 class MainTab extends StatelessWidget {
+  Map<String, dynamic> lastStateApp = Map();
 
   Future<void> loadSettings() async {
     await loadLanguage();
-    await loadConfig();
+    await loadLanguageConfiguration();
+    await loadMissionState(lastStateApp);
   }
 
   @override
@@ -71,8 +73,8 @@ class MainTab extends StatelessWidget {
         ),
         body: TabBarView(
           children: <Widget>[
-            ObjectivesPage(),
-            EvidencesPage(),
+            ObjectivesPage(lastStateApp),
+            EvidencesPage(lastStateApp),
           ],
         ),
       ),

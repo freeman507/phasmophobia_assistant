@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:phasmophobiaassistant/config/config.dart';
 import 'package:phasmophobiaassistant/i18n/i18n.dart';
 import 'package:phasmophobiaassistant/models/CrucifixObjective.dart';
 import 'package:phasmophobiaassistant/models/DirtWater.dart';
@@ -16,8 +17,12 @@ import 'package:phasmophobiaassistant/widgets/timer_text.dart';
 enum SingingCharacter { amateur, intermediate }
 
 class ObjectivesPage extends StatefulWidget {
+  Map<String, dynamic> lastStateApp;
+
+  ObjectivesPage(this.lastStateApp);
+
   @override
-  _ObjectivesPageState createState() => _ObjectivesPageState();
+  _ObjectivesPageState createState() => _ObjectivesPageState(this.lastStateApp);
 }
 
 class _ObjectivesPageState extends State<ObjectivesPage>
@@ -31,6 +36,8 @@ class _ObjectivesPageState extends State<ObjectivesPage>
   TimerText timerText;
 
   SingingCharacter _character = SingingCharacter.amateur;
+
+  FocusNode _focusNode = FocusNode();
 
   bool emfReader = false,
       lowTemperature = false,
@@ -52,8 +59,40 @@ class _ObjectivesPageState extends State<ObjectivesPage>
       SMUDGE_STICKS = i("smudge.sticks"),
       SALT_FOOTPRINT = i("salt.footprint");
 
-  _ObjectivesPageState() {
+  _ObjectivesPageState(Map<String, dynamic> lastStateApp) {
+    loadInitialValues(lastStateApp);
     timerText = TimerText(stopwatch, 300000);
+  }
+
+  void loadInitialValues(Map<String, dynamic> lastStateApp) {
+    emfReader = lastStateApp['emfReader'] ?? false;
+    lowTemperature = lastStateApp['lowTemperature'] ?? false;
+    dirtWater = lastStateApp['dirtWater'] ?? false;
+    ghostPhoto = lastStateApp['ghostPhoto'] ?? false;
+    motionSensor = lastStateApp['motionSensor'] ?? false;
+    crucifix = lastStateApp['crucifix'] ?? false;
+    ghostEvent = lastStateApp['ghostEvent'] ?? false;
+    smudgeSticks = lastStateApp['smudgeSticks'] ?? false;
+    saltFootprint = lastStateApp['saltFootprint'] ?? false;
+    _textEditingController.text = lastStateApp['ghostName'] ?? "";
+    loadGhostRespond(lastStateApp);
+    loadDifficult(lastStateApp);
+  }
+
+  void loadDifficult(Map<String, dynamic> lastStateApp) {
+    _character = lastStateApp['difficult'] == "intermediate"
+        ? SingingCharacter.intermediate
+        : SingingCharacter.amateur;
+  }
+
+  void loadGhostRespond(Map<String, dynamic> lastStateApp) {
+    if (lastStateApp['ghostRespond'] == "alone") {
+      _selections[0] = true;
+      _selections[1] = false;
+    } else if (lastStateApp['ghostRespond'] == "everyone") {
+      _selections[0] = false;
+      _selections[1] = true;
+    }
   }
 
   @override
@@ -72,6 +111,11 @@ class _ObjectivesPageState extends State<ObjectivesPage>
             padding: EdgeInsets.fromLTRB(10, 0, 0, 5),
             child: ListTile(
               title: TextField(
+                focusNode: _focusNode,
+                onEditingComplete: () {
+                  saveObjectiveState();
+                  _focusNode.unfocus();
+                },
                 controller: _textEditingController,
                 decoration: InputDecoration(labelText: i("ghost.name")),
               ),
@@ -86,6 +130,7 @@ class _ObjectivesPageState extends State<ObjectivesPage>
                   setState(() {
                     _selections = List.generate(2, (_) => false);
                     _selections[index] = true;
+                    saveObjectiveState();
                   });
                 },
               ),
@@ -200,6 +245,7 @@ class _ObjectivesPageState extends State<ObjectivesPage>
             value == SingingCharacter.amateur ? 300000 : 120000;
       },
     );
+    saveObjectiveState();
   }
 
   List<Widget> buildTimeButtons() {
@@ -294,7 +340,9 @@ class _ObjectivesPageState extends State<ObjectivesPage>
     ghostEvent = false;
     smudgeSticks = false;
     saltFootprint = false;
+    _character = SingingCharacter.amateur;
     handleStopButton();
+    saveObjectiveState();
   }
 
   void changeObjectiveState(String objective) {
@@ -317,6 +365,32 @@ class _ObjectivesPageState extends State<ObjectivesPage>
     } else if (objective == SALT_FOOTPRINT) {
       saltFootprint = !saltFootprint;
     }
+    saveObjectiveState();
+  }
+
+  void saveObjectiveState() {
+    String ghostRespond = "";
+    if (_selections[0]) {
+      ghostRespond = "alone";
+    } else if (_selections[1]) {
+      ghostRespond = "everyone";
+    }
+    saveMissionState({
+      "emfReader": emfReader,
+      "lowTemperature": lowTemperature,
+      "dirtWater": dirtWater,
+      "ghostPhoto": ghostPhoto,
+      "motionSensor": motionSensor,
+      "crucifix": crucifix,
+      "ghostEvent": ghostEvent,
+      "smudgeSticks": smudgeSticks,
+      "saltFootprint": saltFootprint,
+      "ghostName": _textEditingController.text,
+      "ghostRespond": ghostRespond,
+      "difficult": _character == SingingCharacter.intermediate
+          ? "intermediate"
+          : "amateur",
+    });
   }
 
   void handlePlayButton() {

@@ -209,16 +209,33 @@ class EvidenceController {
     String evidencesSelected = verifyEvidencesSelected();
     String evidencesDiscarded = verifyEvidencesDiscarded();
     ghosts = defineGhost(evidencesSelected, evidencesDiscarded);
+    saveEvidences();
     return ghosts.isNotEmpty;
   }
 
+  void saveEvidences() {
+    Map<String, bool> map = new Map();
+    map['emfSelected'] = emfSelected;
+    map['fingerprintsSelected'] = fingerprintsSelected;
+    map['temperatureSelected'] = temperatureSelected;
+    map['orbSelected'] = orbSelected;
+    map['writingSelected'] = writingSelected;
+    map['spiritBoxSelected'] = spiritBoxSelected;
+    map['emfDiscarded'] = emfDiscarded;
+    map['fingerprintsDiscarded'] = fingerprintsDiscarded;
+    map['temperatureDiscarded'] = temperatureDiscarded;
+    map['orbDiscarded'] = orbDiscarded;
+    map['writingDiscarded'] = writingDiscarded;
+    map['spiritBoxDiscarded'] = spiritBoxDiscarded;
+    saveMissionState(map);
+  }
+
   String defineGhost(String evidencesSelected, String evidencesDiscarded) {
-    List<String> selectedEvidencesList = evidencesSelected.isNotEmpty
-        ? evidencesSelected.split(" ")
-        : [];
+    List<String> selectedEvidencesList =
+        evidencesSelected.isNotEmpty ? evidencesSelected.split(" ") : [];
 
     List<Ghost> possibleGhostsList =
-    filterSelectedGhosts(getAllGhosts(), selectedEvidencesList);
+        filterSelectedGhosts(getAllGhosts(), selectedEvidencesList);
 
     if (enableDiscardEvidence) {
       List<String> selectedDiscardedList = evidencesDiscarded.split(" ");
@@ -228,7 +245,7 @@ class EvidenceController {
     }
 
     List<String> possibleEvidences =
-    determinePossibleEvidences(possibleGhostsList);
+        determinePossibleEvidences(possibleGhostsList);
 
     if (possibleGhostsList.isNotEmpty) {
       discardEvidences(possibleEvidences);
@@ -453,7 +470,8 @@ class EvidenceController {
     orbDiscarded = orbSelected;
     writingDiscarded = writingSelected;
     spiritBoxDiscarded = spiritBoxSelected;
+    saveEvidences();
     ghosts =
-        "spirit | wraith | phantom | poltergeist | banshee | jinn | mare | revenant | shade | demon | yurei | oni";
+    "spirit | wraith | phantom | poltergeist | banshee | jinn | mare | revenant | shade | demon | yurei | oni";
   }
 }

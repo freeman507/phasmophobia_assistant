@@ -27,13 +27,43 @@ import 'package:phasmophobiaassistant/pages/evidence_detail/evidence_detail_page
 import 'package:phasmophobiaassistant/pages/ghost_detail/ghost_detail_page.dart';
 
 class EvidencesPage extends StatefulWidget {
+  Map<String, dynamic> lastStateApp;
+
+  EvidencesPage(this.lastStateApp);
+
   @override
-  _EvidencesPageState createState() => _EvidencesPageState();
+  _EvidencesPageState createState() => _EvidencesPageState(lastStateApp);
 }
 
 class _EvidencesPageState extends State<EvidencesPage>
     with AutomaticKeepAliveClientMixin<EvidencesPage> {
   EvidenceController evidenceController = new EvidenceController();
+
+  _EvidencesPageState(Map<String, dynamic> lastStateApp) {
+    evidenceController.emfSelected = lastStateApp["emfSelected"] ?? false;
+    evidenceController.fingerprintsSelected =
+        lastStateApp["fingerprintsSelected"] ?? false;
+    evidenceController.temperatureSelected =
+        lastStateApp["temperatureSelected"] ?? false;
+    evidenceController.orbSelected = lastStateApp["orbSelected"] ?? false;
+    evidenceController.writingSelected =
+        lastStateApp["writingSelected"] ?? false;
+    evidenceController.spiritBoxSelected =
+        lastStateApp["spiritBoxSelected"] ?? false;
+
+    evidenceController.emfDiscarded = lastStateApp["emfDiscarded"] ?? false;
+    evidenceController.fingerprintsDiscarded =
+        lastStateApp["fingerprintsDiscarded"] ?? false;
+    evidenceController.temperatureDiscarded =
+        lastStateApp["temperatureDiscarded"] ?? false;
+    evidenceController.orbDiscarded = lastStateApp["orbDiscarded"] ?? false;
+    evidenceController.writingDiscarded =
+        lastStateApp["writingDiscarded"] ?? false;
+    evidenceController.spiritBoxDiscarded =
+        lastStateApp["spiritBoxDiscarded"] ?? false;
+
+    evidenceController.verifyGhost();
+  }
 
   @override
   bool get wantKeepAlive => true;
