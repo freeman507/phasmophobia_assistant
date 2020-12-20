@@ -16,8 +16,10 @@ import 'package:phasmophobiaassistant/widgets/timer_text.dart';
 
 enum SingingCharacter { amateur, intermediate }
 
+const FIVE_MINUTES = 300000, TWO_MINUTES = 120000;
+
 class ObjectivesPage extends StatefulWidget {
-  Map<String, dynamic> lastStateApp;
+  final Map<String, dynamic> lastStateApp;
 
   ObjectivesPage(this.lastStateApp);
 
@@ -49,19 +51,19 @@ class _ObjectivesPageState extends State<ObjectivesPage>
       smudgeSticks = false,
       saltFootprint = false;
 
-  var EMF_READER = i("emf.reader"),
-      LOW_TEMPERATURE = i("below.10c.50f"),
-      DIRT_WATER = i("dirt.water"),
-      SENSOR = i("motion.sensor"),
-      CRUCIFIX = i("crucifix"),
-      GHOST_PHOTO = i("ghost.photo"),
-      GHOST_EVENT = i("ghost.event"),
-      SMUDGE_STICKS = i("smudge.sticks"),
-      SALT_FOOTPRINT = i("salt.footprint");
+  var emfReaderText = i("emf.reader"),
+      lowTemperatureText = i("below.10c.50f"),
+      dirtWaterText = i("dirt.water"),
+      sensorText = i("motion.sensor"),
+      crucifixText = i("crucifix"),
+      ghostPhotoText = i("ghost.photo"),
+      ghostEventText = i("ghost.event"),
+      smudgeSticksTExt = i("smudge.sticks"),
+      saltFootprintText = i("salt.footprint");
 
   _ObjectivesPageState(Map<String, dynamic> lastStateApp) {
     loadInitialValues(lastStateApp);
-    timerText = TimerText(stopwatch, 300000);
+    timerText = TimerText(stopwatch, FIVE_MINUTES);
   }
 
   void loadInitialValues(Map<String, dynamic> lastStateApp) {
@@ -100,6 +102,7 @@ class _ObjectivesPageState extends State<ObjectivesPage>
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return ListView(
       children: <Widget>[
         Card(
@@ -142,23 +145,23 @@ class _ObjectivesPageState extends State<ObjectivesPage>
           child: Table(
             children: [
               TableRow(children: [
-                buildObjectiveItem(EMF_READER, emfReader),
-                buildObjectiveItem(LOW_TEMPERATURE, lowTemperature),
+                buildObjectiveItem(emfReaderText, emfReader),
+                buildObjectiveItem(lowTemperatureText, lowTemperature),
               ]),
               TableRow(children: [
-                buildObjectiveItem(DIRT_WATER, dirtWater),
-                buildObjectiveItem(GHOST_PHOTO, ghostPhoto),
+                buildObjectiveItem(dirtWaterText, dirtWater),
+                buildObjectiveItem(ghostPhotoText, ghostPhoto),
               ]),
               TableRow(children: [
-                buildObjectiveItem(SENSOR, motionSensor),
-                buildObjectiveItem(CRUCIFIX, crucifix),
+                buildObjectiveItem(sensorText, motionSensor),
+                buildObjectiveItem(crucifixText, crucifix),
               ]),
               TableRow(children: [
-                buildObjectiveItem(GHOST_EVENT, ghostEvent),
-                buildObjectiveItem(SMUDGE_STICKS, smudgeSticks),
+                buildObjectiveItem(ghostEventText, ghostEvent),
+                buildObjectiveItem(smudgeSticksTExt, smudgeSticks),
               ]),
               TableRow(children: [
-                buildObjectiveItem(SALT_FOOTPRINT, saltFootprint),
+                buildObjectiveItem(saltFootprintText, saltFootprint),
                 Container(),
               ]),
             ],
@@ -241,8 +244,8 @@ class _ObjectivesPageState extends State<ObjectivesPage>
     setState(
       () {
         _character = value;
-        timerText.duration =
-            value == SingingCharacter.amateur ? 300000 : 120000;
+        timerText = TimerText(stopwatch,
+            value == SingingCharacter.amateur ? FIVE_MINUTES : TWO_MINUTES);
       },
     );
     saveObjectiveState();
@@ -302,23 +305,23 @@ class _ObjectivesPageState extends State<ObjectivesPage>
   void goToObjectiveDetail(String nameObjective) {
     Objective objective;
 
-    if (nameObjective == EMF_READER) {
+    if (nameObjective == emfReaderText) {
       objective = EmfReaderObjective();
-    } else if (nameObjective == LOW_TEMPERATURE) {
+    } else if (nameObjective == lowTemperatureText) {
       objective = LowTemperature();
-    } else if (nameObjective == DIRT_WATER) {
+    } else if (nameObjective == dirtWaterText) {
       objective = DirtWater();
-    } else if (nameObjective == GHOST_PHOTO) {
+    } else if (nameObjective == ghostPhotoText) {
       objective = GhostPhoto();
-    } else if (nameObjective == SENSOR) {
+    } else if (nameObjective == sensorText) {
       objective = MotionSensorObjective();
-    } else if (nameObjective == CRUCIFIX) {
+    } else if (nameObjective == crucifixText) {
       objective = CrucifixObjective();
-    } else if (nameObjective == GHOST_EVENT) {
+    } else if (nameObjective == ghostEventText) {
       objective = GhostEvent();
-    } else if (nameObjective == SMUDGE_STICKS) {
+    } else if (nameObjective == smudgeSticksTExt) {
       objective = SmudgeSticksObjective();
-    } else if (nameObjective == SALT_FOOTPRINT) {
+    } else if (nameObjective == saltFootprintText) {
       objective = SaltFootprint();
     }
 
@@ -346,23 +349,23 @@ class _ObjectivesPageState extends State<ObjectivesPage>
   }
 
   void changeObjectiveState(String objective) {
-    if (objective == EMF_READER) {
+    if (objective == emfReaderText) {
       emfReader = !emfReader;
-    } else if (objective == LOW_TEMPERATURE) {
+    } else if (objective == lowTemperatureText) {
       lowTemperature = !lowTemperature;
-    } else if (objective == DIRT_WATER) {
+    } else if (objective == dirtWaterText) {
       dirtWater = !dirtWater;
-    } else if (objective == GHOST_PHOTO) {
+    } else if (objective == ghostPhotoText) {
       ghostPhoto = !ghostPhoto;
-    } else if (objective == SENSOR) {
+    } else if (objective == sensorText) {
       motionSensor = !motionSensor;
-    } else if (objective == CRUCIFIX) {
+    } else if (objective == crucifixText) {
       crucifix = !crucifix;
-    } else if (objective == GHOST_EVENT) {
+    } else if (objective == ghostEventText) {
       ghostEvent = !ghostEvent;
-    } else if (objective == SMUDGE_STICKS) {
+    } else if (objective == smudgeSticksTExt) {
       smudgeSticks = !smudgeSticks;
-    } else if (objective == SALT_FOOTPRINT) {
+    } else if (objective == saltFootprintText) {
       saltFootprint = !saltFootprint;
     }
     saveObjectiveState();
@@ -413,8 +416,8 @@ class _ObjectivesPageState extends State<ObjectivesPage>
     setState(() {
       stopwatch.reset();
       stopwatch.stop();
-      timerText.duration =
-          _character == SingingCharacter.amateur ? 300000 : 120000;
+      timerText = TimerText(stopwatch,
+          _character == SingingCharacter.amateur ? FIVE_MINUTES : TWO_MINUTES);
     });
   }
 }

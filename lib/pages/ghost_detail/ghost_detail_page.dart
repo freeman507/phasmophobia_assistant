@@ -5,7 +5,7 @@ import 'package:phasmophobiaassistant/models/Ghost.dart';
 import 'package:phasmophobiaassistant/widgets/detail_page.dart';
 
 class GhostDetailPage extends DetailPage {
-  Ghost _ghost;
+  final Ghost _ghost;
 
   GhostDetailPage(this._ghost);
 

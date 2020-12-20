@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:phasmophobiaassistant/i18n/i18n.dart';
 import 'package:phasmophobiaassistant/models/Evidence.dart';
 import 'package:phasmophobiaassistant/widgets/detail_page.dart';
-
 class EvidenceDetailPage extends DetailPage {
-  Evidence _evidence;
+  final Evidence _evidence;
 
   EvidenceDetailPage(this._evidence);
 

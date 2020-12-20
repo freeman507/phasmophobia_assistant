@@ -27,7 +27,7 @@ import 'package:phasmophobiaassistant/pages/evidence_detail/evidence_detail_page
 import 'package:phasmophobiaassistant/pages/ghost_detail/ghost_detail_page.dart';
 
 class EvidencesPage extends StatefulWidget {
-  Map<String, dynamic> lastStateApp;
+  final Map<String, dynamic> lastStateApp;
 
   EvidencesPage(this.lastStateApp);
 
@@ -70,30 +70,31 @@ class _EvidencesPageState extends State<EvidencesPage>
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return Container(
       margin: EdgeInsets.fromLTRB(0, 15, 0, 0),
       child: ListView(
         children: <Widget>[
-          BuildEvidenceItem(Icons.signal_cellular_alt, evidenceController.emf,
+          buildEvidenceItem(Icons.signal_cellular_alt, evidenceController.emf,
               evidenceController.emfSelected, evidenceController.emfDiscarded),
-          BuildEvidenceItem(
+          buildEvidenceItem(
               Icons.fingerprint,
               evidenceController.fingerprints,
               evidenceController.fingerprintsSelected,
               evidenceController.fingerprintsDiscarded),
-          BuildEvidenceItem(
+          buildEvidenceItem(
               Icons.thermostat_outlined,
               evidenceController.temperature,
               evidenceController.temperatureSelected,
               evidenceController.temperatureDiscarded),
-          BuildEvidenceItem(Icons.wb_sunny, evidenceController.orbs,
+          buildEvidenceItem(Icons.wb_sunny, evidenceController.orbs,
               evidenceController.orbSelected, evidenceController.orbDiscarded),
-          BuildEvidenceItem(
+          buildEvidenceItem(
               Icons.menu_book,
               evidenceController.writing,
               evidenceController.writingSelected,
               evidenceController.writingDiscarded),
-          BuildEvidenceItem(
+          buildEvidenceItem(
               Icons.radio,
               evidenceController.spiritBox,
               evidenceController.spiritBoxSelected,
@@ -126,7 +127,7 @@ class _EvidencesPageState extends State<EvidencesPage>
       child: Wrap(
         spacing: 5,
         alignment: WrapAlignment.center,
-        children: BuildGhostChips(),
+        children: buildGhostChips(),
       ),
     );
   }
@@ -173,7 +174,7 @@ class _EvidencesPageState extends State<EvidencesPage>
     );
   }
 
-  List<Widget> BuildGhostChips() {
+  List<Widget> buildGhostChips() {
     var chips = <Widget>[];
     if (evidenceController.ghosts.isNotEmpty) {
       evidenceController.ghosts.split("|").forEach((ghost) {
@@ -192,7 +193,7 @@ class _EvidencesPageState extends State<EvidencesPage>
     return chips;
   }
 
-  Card BuildEvidenceItem(
+  Card buildEvidenceItem(
       IconData iconData, String evidence, bool selected, bool discarded) {
     var color = Colors.black12;
     if (discarded) {
@@ -328,7 +329,7 @@ class _EvidencesPageState extends State<EvidencesPage>
   }
 
   void showSnackBar(String message, BuildContext context) {
-    Scaffold.of(context).showSnackBar(
+    ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text(
           message,

@@ -3,44 +3,25 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 class TimerText extends StatefulWidget {
+  final int duration;
 
   final Stopwatch stopwatch;
 
-  int _duration;
+  const TimerText(this.stopwatch, this.duration);
 
-  TimerTextState _timerTextState;
-
-  TimerText(this.stopwatch, this._duration) {
-    _timerTextState = new TimerTextState(stopwatch, _duration);
-  }
-
-  set duration(int value) {
-    _duration = value;
-    _timerTextState.duration = value;
-  }
-
-  TimerTextState createState() => _timerTextState;
+  TimerTextState createState() => TimerTextState();
 }
 
 class TimerTextState extends State<TimerText> {
 
   Timer timer;
-  final Stopwatch stopwatch;
-  int _duration;
 
-
-  TimerTextState(this.stopwatch, this._duration) {
+  TimerTextState() {
     timer = new Timer.periodic(new Duration(milliseconds: 30), callback);
   }
 
-  set duration(int value) {
-    setState(() {
-      _duration = value;
-    });
-  }
-
   void callback(Timer timer) {
-    if (stopwatch.isRunning) {
+    if (widget.stopwatch.isRunning) {
       setState(() {
 
       });
@@ -49,19 +30,21 @@ class TimerTextState extends State<TimerText> {
 
   @override
   Widget build(BuildContext context) {
-    final TextStyle timerTextStyle = const TextStyle(fontSize: 24.0, fontFamily: "Open Sans");
+    final TextStyle timerTextStyle = const TextStyle(
+        fontSize: 24.0, fontFamily: "Open Sans");
 
-    var time = _duration - stopwatch.elapsedMilliseconds;
+    var time = widget.duration - widget.stopwatch.elapsedMilliseconds;
 
     if (time <= 0) {
-      stopwatch.stop();
-      stopwatch.reset();
+      widget.stopwatch.stop();
+      widget.stopwatch.reset();
       time = 0;
     }
 
     String formattedTime = format(time);
 
-    return new Text(formattedTime, style: timerTextStyle, textAlign: TextAlign.center,);
+    return new Text(
+      formattedTime, style: timerTextStyle, textAlign: TextAlign.center,);
   }
 
   String format(int milliseconds) {

@@ -6,8 +6,15 @@ import 'package:phasmophobiaassistant/pages/configuration/configuration_page.dar
 import 'package:phasmophobiaassistant/pages/evidences/evidences_page.dart';
 import 'package:phasmophobiaassistant/pages/objectives/objectives_page.dart';
 
-class MainTab extends StatelessWidget {
-  Map<String, dynamic> lastStateApp = Map();
+class MainTab extends StatefulWidget {
+  @override
+  _MainTabState createState() => _MainTabState();
+}
+
+class _MainTabState extends State<MainTab> {
+  final Map<String, dynamic> lastStateApp = Map();
+
+  Key scaffoldKey;
 
   Future<void> loadSettings() async {
     await loadLanguage();
@@ -35,6 +42,7 @@ class MainTab extends StatelessWidget {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
+        key: scaffoldKey,
         appBar: AppBar(
           title: Image.asset("assets/background.png"),
           actions: <Widget>[

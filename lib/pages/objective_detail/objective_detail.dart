@@ -4,7 +4,7 @@ import 'package:phasmophobiaassistant/models/Objective.dart';
 import 'package:phasmophobiaassistant/widgets/detail_page.dart';
 
 class ObjectiveDetail extends DetailPage {
-  Objective _objective;
+  final Objective _objective;
 
   ObjectiveDetail(this._objective);
 
