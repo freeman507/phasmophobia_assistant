@@ -29,60 +29,61 @@ class ObjectivesPage extends StatefulWidget {
 
 class _ObjectivesPageState extends State<ObjectivesPage>
     with AutomaticKeepAliveClientMixin<ObjectivesPage> {
-  Stopwatch stopwatch = new Stopwatch();
+  Stopwatch _stopwatch = new Stopwatch();
 
   List<bool> _selections = List.generate(2, (_) => false);
 
   TextEditingController _textEditingController = TextEditingController();
 
-  TimerText timerText;
+  TimerText _timerText;
 
-  SingingCharacter _character = SingingCharacter.amateur;
+  SingingCharacter _difficult = SingingCharacter.amateur;
 
   FocusNode _focusNode = FocusNode();
 
-  bool emfReader = false,
-      lowTemperature = false,
-      dirtWater = false,
-      ghostPhoto = false,
-      motionSensor = false,
-      crucifix = false,
-      ghostEvent = false,
-      smudgeSticks = false,
-      saltFootprint = false;
+  bool _emfReader = false,
+      _lowTemperature = false,
+      _dirtWater = false,
+      _ghostPhoto = false,
+      _motionSensor = false,
+      _crucifix = false,
+      _ghostEvent = false,
+      _smudgeSticks = false,
+      _saltFootprint = false;
 
-  var emfReaderText = i("emf.reader"),
-      lowTemperatureText = i("below.10c.50f"),
-      dirtWaterText = i("dirt.water"),
-      sensorText = i("motion.sensor"),
-      crucifixText = i("crucifix"),
-      ghostPhotoText = i("ghost.photo"),
-      ghostEventText = i("ghost.event"),
-      smudgeSticksTExt = i("smudge.sticks"),
-      saltFootprintText = i("salt.footprint");
+  String _emfReaderText = i("emf.reader"),
+      _lowTemperatureText = i("below.10c.50f"),
+      _dirtWaterText = i("dirt.water"),
+      _sensorText = i("motion.sensor"),
+      _crucifixText = i("crucifix"),
+      _ghostPhotoText = i("ghost.photo"),
+      _ghostEventText = i("ghost.event"),
+      _smudgeSticksTExt = i("smudge.sticks"),
+      _saltFootprintText = i("salt.footprint");
 
   _ObjectivesPageState(Map<String, dynamic> lastStateApp) {
     loadInitialValues(lastStateApp);
-    timerText = TimerText(stopwatch, FIVE_MINUTES);
+    _timerText = TimerText(_stopwatch,
+        _difficult == SingingCharacter.amateur ? FIVE_MINUTES : TWO_MINUTES);
   }
 
   void loadInitialValues(Map<String, dynamic> lastStateApp) {
-    emfReader = lastStateApp['emfReader'] ?? false;
-    lowTemperature = lastStateApp['lowTemperature'] ?? false;
-    dirtWater = lastStateApp['dirtWater'] ?? false;
-    ghostPhoto = lastStateApp['ghostPhoto'] ?? false;
-    motionSensor = lastStateApp['motionSensor'] ?? false;
-    crucifix = lastStateApp['crucifix'] ?? false;
-    ghostEvent = lastStateApp['ghostEvent'] ?? false;
-    smudgeSticks = lastStateApp['smudgeSticks'] ?? false;
-    saltFootprint = lastStateApp['saltFootprint'] ?? false;
+    _emfReader = lastStateApp['emfReader'] ?? false;
+    _lowTemperature = lastStateApp['lowTemperature'] ?? false;
+    _dirtWater = lastStateApp['dirtWater'] ?? false;
+    _ghostPhoto = lastStateApp['ghostPhoto'] ?? false;
+    _motionSensor = lastStateApp['motionSensor'] ?? false;
+    _crucifix = lastStateApp['crucifix'] ?? false;
+    _ghostEvent = lastStateApp['ghostEvent'] ?? false;
+    _smudgeSticks = lastStateApp['smudgeSticks'] ?? false;
+    _saltFootprint = lastStateApp['saltFootprint'] ?? false;
     _textEditingController.text = lastStateApp['ghostName'] ?? "";
     loadGhostRespond(lastStateApp);
     loadDifficult(lastStateApp);
   }
 
   void loadDifficult(Map<String, dynamic> lastStateApp) {
-    _character = lastStateApp['difficult'] == "intermediate"
+    _difficult = lastStateApp['difficult'] == "intermediate"
         ? SingingCharacter.intermediate
         : SingingCharacter.amateur;
   }
@@ -145,23 +146,23 @@ class _ObjectivesPageState extends State<ObjectivesPage>
           child: Table(
             children: [
               TableRow(children: [
-                buildObjectiveItem(emfReaderText, emfReader),
-                buildObjectiveItem(lowTemperatureText, lowTemperature),
+                buildObjectiveItem(_emfReaderText, _emfReader),
+                buildObjectiveItem(_lowTemperatureText, _lowTemperature),
               ]),
               TableRow(children: [
-                buildObjectiveItem(dirtWaterText, dirtWater),
-                buildObjectiveItem(ghostPhotoText, ghostPhoto),
+                buildObjectiveItem(_dirtWaterText, _dirtWater),
+                buildObjectiveItem(_ghostPhotoText, _ghostPhoto),
               ]),
               TableRow(children: [
-                buildObjectiveItem(sensorText, motionSensor),
-                buildObjectiveItem(crucifixText, crucifix),
+                buildObjectiveItem(_sensorText, _motionSensor),
+                buildObjectiveItem(_crucifixText, _crucifix),
               ]),
               TableRow(children: [
-                buildObjectiveItem(ghostEventText, ghostEvent),
-                buildObjectiveItem(smudgeSticksTExt, smudgeSticks),
+                buildObjectiveItem(_ghostEventText, _ghostEvent),
+                buildObjectiveItem(_smudgeSticksTExt, _smudgeSticks),
               ]),
               TableRow(children: [
-                buildObjectiveItem(saltFootprintText, saltFootprint),
+                buildObjectiveItem(_saltFootprintText, _saltFootprint),
                 Container(),
               ]),
             ],
@@ -181,7 +182,7 @@ class _ObjectivesPageState extends State<ObjectivesPage>
                     Radio(
                       value: SingingCharacter.amateur,
                       activeColor: Colors.blueAccent,
-                      groupValue: _character,
+                      groupValue: _difficult,
                       onChanged: radioButtonChange,
                     ),
                     Text(i("amateur")),
@@ -195,7 +196,7 @@ class _ObjectivesPageState extends State<ObjectivesPage>
                     Radio(
                       value: SingingCharacter.intermediate,
                       activeColor: Colors.blueAccent,
-                      groupValue: _character,
+                      groupValue: _difficult,
                       onChanged: radioButtonChange,
                     ),
                     Text(i("intermediate")),
@@ -213,7 +214,7 @@ class _ObjectivesPageState extends State<ObjectivesPage>
           child: Row(
             children: [
               Expanded(
-                child: timerText,
+                child: _timerText,
               ),
               Expanded(
                 child: Wrap(
@@ -243,8 +244,8 @@ class _ObjectivesPageState extends State<ObjectivesPage>
   void radioButtonChange(SingingCharacter value) {
     setState(
       () {
-        _character = value;
-        timerText = TimerText(stopwatch,
+        _difficult = value;
+        _timerText = TimerText(_stopwatch,
             value == SingingCharacter.amateur ? FIVE_MINUTES : TWO_MINUTES);
       },
     );
@@ -305,23 +306,23 @@ class _ObjectivesPageState extends State<ObjectivesPage>
   void goToObjectiveDetail(String nameObjective) {
     Objective objective;
 
-    if (nameObjective == emfReaderText) {
+    if (nameObjective == _emfReaderText) {
       objective = EmfReaderObjective();
-    } else if (nameObjective == lowTemperatureText) {
+    } else if (nameObjective == _lowTemperatureText) {
       objective = LowTemperature();
-    } else if (nameObjective == dirtWaterText) {
+    } else if (nameObjective == _dirtWaterText) {
       objective = DirtWater();
-    } else if (nameObjective == ghostPhotoText) {
+    } else if (nameObjective == _ghostPhotoText) {
       objective = GhostPhoto();
-    } else if (nameObjective == sensorText) {
+    } else if (nameObjective == _sensorText) {
       objective = MotionSensorObjective();
-    } else if (nameObjective == crucifixText) {
+    } else if (nameObjective == _crucifixText) {
       objective = CrucifixObjective();
-    } else if (nameObjective == ghostEventText) {
+    } else if (nameObjective == _ghostEventText) {
       objective = GhostEvent();
-    } else if (nameObjective == smudgeSticksTExt) {
+    } else if (nameObjective == _smudgeSticksTExt) {
       objective = SmudgeSticksObjective();
-    } else if (nameObjective == saltFootprintText) {
+    } else if (nameObjective == _saltFootprintText) {
       objective = SaltFootprint();
     }
 
@@ -334,39 +335,39 @@ class _ObjectivesPageState extends State<ObjectivesPage>
   void resetButton() {
     _textEditingController.text = "";
     _selections = List.generate(2, (_) => false);
-    emfReader = false;
-    lowTemperature = false;
-    dirtWater = false;
-    ghostPhoto = false;
-    motionSensor = false;
-    crucifix = false;
-    ghostEvent = false;
-    smudgeSticks = false;
-    saltFootprint = false;
-    _character = SingingCharacter.amateur;
+    _emfReader = false;
+    _lowTemperature = false;
+    _dirtWater = false;
+    _ghostPhoto = false;
+    _motionSensor = false;
+    _crucifix = false;
+    _ghostEvent = false;
+    _smudgeSticks = false;
+    _saltFootprint = false;
+    _difficult = SingingCharacter.amateur;
     handleStopButton();
     saveObjectiveState();
   }
 
   void changeObjectiveState(String objective) {
-    if (objective == emfReaderText) {
-      emfReader = !emfReader;
-    } else if (objective == lowTemperatureText) {
-      lowTemperature = !lowTemperature;
-    } else if (objective == dirtWaterText) {
-      dirtWater = !dirtWater;
-    } else if (objective == ghostPhotoText) {
-      ghostPhoto = !ghostPhoto;
-    } else if (objective == sensorText) {
-      motionSensor = !motionSensor;
-    } else if (objective == crucifixText) {
-      crucifix = !crucifix;
-    } else if (objective == ghostEventText) {
-      ghostEvent = !ghostEvent;
-    } else if (objective == smudgeSticksTExt) {
-      smudgeSticks = !smudgeSticks;
-    } else if (objective == saltFootprintText) {
-      saltFootprint = !saltFootprint;
+    if (objective == _emfReaderText) {
+      _emfReader = !_emfReader;
+    } else if (objective == _lowTemperatureText) {
+      _lowTemperature = !_lowTemperature;
+    } else if (objective == _dirtWaterText) {
+      _dirtWater = !_dirtWater;
+    } else if (objective == _ghostPhotoText) {
+      _ghostPhoto = !_ghostPhoto;
+    } else if (objective == _sensorText) {
+      _motionSensor = !_motionSensor;
+    } else if (objective == _crucifixText) {
+      _crucifix = !_crucifix;
+    } else if (objective == _ghostEventText) {
+      _ghostEvent = !_ghostEvent;
+    } else if (objective == _smudgeSticksTExt) {
+      _smudgeSticks = !_smudgeSticks;
+    } else if (objective == _saltFootprintText) {
+      _saltFootprint = !_saltFootprint;
     }
     saveObjectiveState();
   }
@@ -379,18 +380,18 @@ class _ObjectivesPageState extends State<ObjectivesPage>
       ghostRespond = "everyone";
     }
     saveMissionState({
-      "emfReader": emfReader,
-      "lowTemperature": lowTemperature,
-      "dirtWater": dirtWater,
-      "ghostPhoto": ghostPhoto,
-      "motionSensor": motionSensor,
-      "crucifix": crucifix,
-      "ghostEvent": ghostEvent,
-      "smudgeSticks": smudgeSticks,
-      "saltFootprint": saltFootprint,
+      "emfReader": _emfReader,
+      "lowTemperature": _lowTemperature,
+      "dirtWater": _dirtWater,
+      "ghostPhoto": _ghostPhoto,
+      "motionSensor": _motionSensor,
+      "crucifix": _crucifix,
+      "ghostEvent": _ghostEvent,
+      "smudgeSticks": _smudgeSticks,
+      "saltFootprint": _saltFootprint,
       "ghostName": _textEditingController.text,
       "ghostRespond": ghostRespond,
-      "difficult": _character == SingingCharacter.intermediate
+      "difficult": _difficult == SingingCharacter.intermediate
           ? "intermediate"
           : "amateur",
     });
@@ -398,26 +399,26 @@ class _ObjectivesPageState extends State<ObjectivesPage>
 
   void handlePlayButton() {
     setState(() {
-      if (!stopwatch.isRunning) {
-        stopwatch.start();
+      if (!_stopwatch.isRunning) {
+        _stopwatch.start();
       }
     });
   }
 
   void handlePauseButton() {
     setState(() {
-      if (stopwatch.isRunning) {
-        stopwatch.stop();
+      if (_stopwatch.isRunning) {
+        _stopwatch.stop();
       }
     });
   }
 
   void handleStopButton() {
     setState(() {
-      stopwatch.reset();
-      stopwatch.stop();
-      timerText = TimerText(stopwatch,
-          _character == SingingCharacter.amateur ? FIVE_MINUTES : TWO_MINUTES);
+      _stopwatch.reset();
+      _stopwatch.stop();
+      _timerText = TimerText(_stopwatch,
+          _difficult == SingingCharacter.amateur ? FIVE_MINUTES : TWO_MINUTES);
     });
   }
 }
