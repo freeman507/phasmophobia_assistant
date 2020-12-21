@@ -329,7 +329,7 @@ class _EvidencesPageState extends State<EvidencesPage>
   }
 
   void showSnackBar(String message, BuildContext context) {
-    ScaffoldMessenger.of(context).showSnackBar(
+    Scaffold.of(context).showSnackBar(
       SnackBar(
         content: Text(
           message,

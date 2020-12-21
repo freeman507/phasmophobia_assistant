@@ -33,13 +33,11 @@ class _ObjectivesPageState extends State<ObjectivesPage>
 
   List<bool> _selections = List.generate(2, (_) => false);
 
-  TextEditingController _textEditingController = TextEditingController();
+  TextEditingController _textEditingController = new TextEditingController();
 
   TimerText _timerText;
 
   SingingCharacter _difficult = SingingCharacter.amateur;
-
-  FocusNode _focusNode = FocusNode();
 
   bool _emfReader = false,
       _lowTemperature = false,
@@ -106,138 +104,156 @@ class _ObjectivesPageState extends State<ObjectivesPage>
     super.build(context);
     return ListView(
       children: <Widget>[
-        Card(
-          margin: EdgeInsets.fromLTRB(10, 10, 10, 5),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10.0),
+        buildGhostNameAndRespondCard(),
+        buildObjectiveTable(),
+        buildDifficultCard(),
+        buildTimerCard(),
+        buildClarButton(),
+      ],
+    );
+  }
+
+  Container buildClarButton() {
+    return Container(
+      margin: EdgeInsets.fromLTRB(15, 10, 15, 10),
+      child: RaisedButton(
+        //isExtended: true,
+        child: Text(i("clear")),
+        onPressed: () {
+          setState(() {
+            resetButton();
+          });
+        },
+      ),
+    );
+  }
+
+  Card buildTimerCard() {
+    return Card(
+      margin: EdgeInsets.fromLTRB(10, 10, 10, 5),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10.0),
+      ),
+      child: Row(
+        children: [
+          Expanded(
+            child: _timerText,
           ),
-          child: Padding(
-            padding: EdgeInsets.fromLTRB(10, 0, 0, 5),
-            child: ListTile(
-              title: TextField(
-                focusNode: _focusNode,
-                onEditingComplete: () {
-                  saveObjectiveState();
-                  _focusNode.unfocus();
-                },
-                controller: _textEditingController,
-                decoration: InputDecoration(labelText: i("ghost.name")),
-              ),
-              trailing: ToggleButtons(
-                children: <Widget>[
-                  Icon(Icons.person),
-                  Icon(Icons.people),
-                ],
-                isSelected: _selections,
-                borderRadius: BorderRadius.circular(30),
-                onPressed: (int index) {
-                  setState(() {
-                    _selections = List.generate(2, (_) => false);
-                    _selections[index] = true;
-                    saveObjectiveState();
-                  });
-                },
-              ),
+          Expanded(
+            child: Wrap(
+              alignment: WrapAlignment.center,
+              children: buildTimeButtons(),
             ),
           ),
-        ),
-        Container(
-          margin: EdgeInsets.fromLTRB(10, 5, 10, 5),
-          child: Table(
-            children: [
-              TableRow(children: [
-                buildObjectiveItem(_emfReaderText, _emfReader),
-                buildObjectiveItem(_lowTemperatureText, _lowTemperature),
-              ]),
-              TableRow(children: [
-                buildObjectiveItem(_dirtWaterText, _dirtWater),
-                buildObjectiveItem(_ghostPhotoText, _ghostPhoto),
-              ]),
-              TableRow(children: [
-                buildObjectiveItem(_sensorText, _motionSensor),
-                buildObjectiveItem(_crucifixText, _crucifix),
-              ]),
-              TableRow(children: [
-                buildObjectiveItem(_ghostEventText, _ghostEvent),
-                buildObjectiveItem(_smudgeSticksTExt, _smudgeSticks),
-              ]),
-              TableRow(children: [
-                buildObjectiveItem(_saltFootprintText, _saltFootprint),
-                Container(),
-              ]),
-            ],
-          ),
-        ),
-        Card(
-          margin: EdgeInsets.fromLTRB(10, 10, 10, 5),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10.0),
-          ),
-          child: Row(
-            children: [
-              Expanded(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Radio(
-                      value: SingingCharacter.amateur,
-                      activeColor: Colors.blueAccent,
-                      groupValue: _difficult,
-                      onChanged: radioButtonChange,
-                    ),
-                    Text(i("amateur")),
-                  ],
+        ],
+      ),
+    );
+  }
+
+  Card buildDifficultCard() {
+    return Card(
+      margin: EdgeInsets.fromLTRB(10, 10, 10, 5),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10.0),
+      ),
+      child: Row(
+        children: [
+          Expanded(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Radio(
+                  value: SingingCharacter.amateur,
+                  activeColor: Colors.blueAccent,
+                  groupValue: _difficult,
+                  onChanged: radioButtonChange,
                 ),
-              ),
-              Expanded(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Radio(
-                      value: SingingCharacter.intermediate,
-                      activeColor: Colors.blueAccent,
-                      groupValue: _difficult,
-                      onChanged: radioButtonChange,
-                    ),
-                    Text(i("intermediate")),
-                  ],
+                Text(i("amateur")),
+              ],
+            ),
+          ),
+          Expanded(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Radio(
+                  value: SingingCharacter.intermediate,
+                  activeColor: Colors.blueAccent,
+                  groupValue: _difficult,
+                  onChanged: radioButtonChange,
                 ),
-              ),
+                Text(i("intermediate")),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Container buildObjectiveTable() {
+    return Container(
+      margin: EdgeInsets.fromLTRB(10, 5, 10, 5),
+      child: Table(
+        children: [
+          TableRow(children: [
+            buildObjectiveItem(_emfReaderText, _emfReader),
+            buildObjectiveItem(_lowTemperatureText, _lowTemperature),
+          ]),
+          TableRow(children: [
+            buildObjectiveItem(_dirtWaterText, _dirtWater),
+            buildObjectiveItem(_ghostPhotoText, _ghostPhoto),
+          ]),
+          TableRow(children: [
+            buildObjectiveItem(_sensorText, _motionSensor),
+            buildObjectiveItem(_crucifixText, _crucifix),
+          ]),
+          TableRow(children: [
+            buildObjectiveItem(_ghostEventText, _ghostEvent),
+            buildObjectiveItem(_smudgeSticksTExt, _smudgeSticks),
+          ]),
+          TableRow(children: [
+            buildObjectiveItem(_saltFootprintText, _saltFootprint),
+            Container(),
+          ]),
+        ],
+      ),
+    );
+  }
+
+  Card buildGhostNameAndRespondCard() {
+    return Card(
+      margin: EdgeInsets.fromLTRB(10, 10, 10, 5),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10.0),
+      ),
+      child: Padding(
+        padding: EdgeInsets.fromLTRB(10, 0, 0, 5),
+        child: ListTile(
+          title: TextField(
+            controller: _textEditingController,
+            decoration: InputDecoration(labelText: i("ghost.name")),
+            onSubmitted: (value) {
+              saveObjectiveState();
+            },
+          ),
+          trailing: ToggleButtons(
+            children: <Widget>[
+              Icon(Icons.person),
+              Icon(Icons.people),
             ],
-          ),
-        ),
-        Card(
-          margin: EdgeInsets.fromLTRB(10, 10, 10, 5),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10.0),
-          ),
-          child: Row(
-            children: [
-              Expanded(
-                child: _timerText,
-              ),
-              Expanded(
-                child: Wrap(
-                  alignment: WrapAlignment.center,
-                  children: buildTimeButtons(),
-                ),
-              ),
-            ],
-          ),
-        ),
-        Container(
-          margin: EdgeInsets.fromLTRB(15, 10, 15, 10),
-          child: RaisedButton(
-            //isExtended: true,
-            child: Text(i("clear")),
-            onPressed: () {
+            isSelected: _selections,
+            borderRadius: BorderRadius.circular(30),
+            onPressed: (int index) {
               setState(() {
-                resetButton();
+                _selections = List.generate(2, (_) => false);
+                _selections[index] = true;
+                saveObjectiveState();
               });
             },
           ),
-        )
-      ],
+        ),
+      ),
     );
   }
 
