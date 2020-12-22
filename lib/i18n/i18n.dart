@@ -8,6 +8,8 @@ import 'package:phasmophobiaassistant/i18n/spanish.dart';
 import 'package:phasmophobiaassistant/i18n/ukrainian.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'greek.dart';
+
 String language = "";
 
 String i(String keyWord) {
@@ -29,6 +31,8 @@ String i(String keyWord) {
     result = searchWord(keyWord, result, russian);
   } else if (language == "ukranian") {
     result = searchWord(keyWord, result, ukranian);
+  } else if (language == "greek") {
+    result = searchWord(keyWord, result, greek);
   }
 
   return result;

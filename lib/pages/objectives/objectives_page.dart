@@ -108,12 +108,12 @@ class _ObjectivesPageState extends State<ObjectivesPage>
         buildObjectiveTable(),
         buildDifficultCard(),
         buildTimerCard(),
-        buildClarButton(),
+        buildClearButton(),
       ],
     );
   }
 
-  Container buildClarButton() {
+  Container buildClearButton() {
     return Container(
       margin: EdgeInsets.fromLTRB(15, 10, 15, 10),
       child: RaisedButton(
@@ -232,6 +232,7 @@ class _ObjectivesPageState extends State<ObjectivesPage>
         child: ListTile(
           title: TextField(
             controller: _textEditingController,
+            autocorrect: false,
             decoration: InputDecoration(labelText: i("ghost.name")),
             onSubmitted: (value) {
               saveObjectiveState();
