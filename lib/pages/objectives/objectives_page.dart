@@ -232,7 +232,7 @@ class _ObjectivesPageState extends State<ObjectivesPage>
         child: ListTile(
           title: TextField(
             controller: _textEditingController,
-            autocorrect: false,
+//            autocorrect: false,
             decoration: InputDecoration(labelText: i("ghost.name")),
             onSubmitted: (value) {
               saveObjectiveState();

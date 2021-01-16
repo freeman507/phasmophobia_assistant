@@ -1,6 +1,7 @@
 import 'package:phasmophobiaassistant/i18n/english.dart';
 import 'package:phasmophobiaassistant/i18n/french.dart';
 import 'package:phasmophobiaassistant/i18n/germany.dart';
+import 'package:phasmophobiaassistant/i18n/italian.dart';
 import 'package:phasmophobiaassistant/i18n/polish.dart';
 import 'package:phasmophobiaassistant/i18n/portuguese.dart';
 import 'package:phasmophobiaassistant/i18n/russian.dart';
@@ -33,6 +34,8 @@ String i(String keyWord) {
     result = searchWord(keyWord, result, ukranian);
   } else if (language == "greek") {
     result = searchWord(keyWord, result, greek);
+  } else if (language == "italian") {
+    result = searchWord(keyWord, result, italian);
   }
 
   return result;

@@ -54,6 +54,7 @@ const Map<String, String> spanish = {
   "russian": "Pусский",
   "ukranian": "Український",
   "greek": "Ελληνικά",
+  "italian": "Italiano",
   "restart.app":
   "Reinicie la aplicación para que surta efecto de acuerdo con los cambios.",
   "about": "Sobre",

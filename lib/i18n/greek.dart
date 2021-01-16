@@ -54,6 +54,7 @@ const Map<String, String> greek = {
   "russian": "Pусский",
   "ukranian": "Український",
   "greek": "Ελληνικά",
+  "italian": "Italiano",
   "restart.app": "Επανεκκινήστε την εφαρμογή για να ισχύσουν οι αλλαγές",
   "about": "Σχετικά",
   "content.reference": "Αναφορά Περιεχομένου",
