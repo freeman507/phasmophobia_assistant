@@ -32,6 +32,7 @@ class AboutPage extends DetailPage {
           buildText("Stefan Jaura - Translator"),
           buildText("Maria Xenitelli - Translator"),
           buildText("Namae Fury - Translator"),
+          buildText("Marina Schramm Jorge Schneider - Translator"),
           buildText(i("support.contact")),
           buildText("felipeszanella@gmail.com"),
           buildBackButton(context)

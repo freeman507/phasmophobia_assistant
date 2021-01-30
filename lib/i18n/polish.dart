@@ -55,6 +55,7 @@ const Map<String, String> polish = {
   "ukranian": "Український",
   "greek": "Ελληνικά",
   "italian": "Italiano",
+  "japanese": "日本語",
   "restart.app":
   "Restart the application to take effect according to the changes.",
   "about": "About",
