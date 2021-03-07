@@ -264,6 +264,7 @@ const Map<String, String> english = {
   "support.contact": "SUPPORT CONTACT",
   "amateur": "Amateur",
   "intermediate": "Intermediate",
+  "professional": "Professional",
   "discard.evidence": "Discard evidence (not recomended)",
   "enable.discard.evidence.long.press": "Enable to discard evidences manually using long press.",
   "cant.select.discarded.evidence": "You can't select a discarded evidence.",

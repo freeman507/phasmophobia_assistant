@@ -271,6 +271,7 @@ const Map<String, String> portuguese = {
   "support.contact": "CONTATO DE SUPORTE",
   "amateur": "Amador",
   "intermediate": "Intermediário",
+  "professional": "Profissional",
   "discard.evidence": "Descartar evidências (não recomendado)",
   "enable.discard.evidence.long.press": "Habilite para poder descartar evidências usando toque longo.",
   "cant.select.discarded.evidence": "Você não pode selecionar uma evidência descartada.",

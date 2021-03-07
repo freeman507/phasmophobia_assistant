@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:phasmophobiaassistant/config/config.dart';
 import 'package:phasmophobiaassistant/i18n/i18n.dart';
@@ -14,9 +15,11 @@ import 'package:phasmophobiaassistant/models/SmudgeSticksObjective.dart';
 import 'package:phasmophobiaassistant/pages/objective_detail/objective_detail.dart';
 import 'package:phasmophobiaassistant/widgets/timer_text.dart';
 
-enum SingingCharacter { amateur, intermediate }
+enum SingingCharacter { amateur, intermediate, professional }
 
-const FIVE_MINUTES = 300000, TWO_MINUTES = 120000;
+const FIVE_MINUTES = 300000,
+    TWO_MINUTES = 120000,
+    ZERO_MINUTES = 0;
 
 class ObjectivesPage extends StatefulWidget {
   final Map<String, dynamic> lastStateApp;
@@ -61,8 +64,13 @@ class _ObjectivesPageState extends State<ObjectivesPage>
 
   _ObjectivesPageState(Map<String, dynamic> lastStateApp) {
     loadInitialValues(lastStateApp);
-    _timerText = TimerText(_stopwatch,
-        _difficult == SingingCharacter.amateur ? FIVE_MINUTES : TWO_MINUTES);
+    int timer = ZERO_MINUTES;
+    if (_difficult == SingingCharacter.amateur) {
+      timer = FIVE_MINUTES;
+    } else if (_difficult == SingingCharacter.intermediate) {
+      timer = TWO_MINUTES;
+    }
+    _timerText = TimerText(_stopwatch, timer);
   }
 
   void loadInitialValues(Map<String, dynamic> lastStateApp) {
@@ -81,9 +89,17 @@ class _ObjectivesPageState extends State<ObjectivesPage>
   }
 
   void loadDifficult(Map<String, dynamic> lastStateApp) {
-    _difficult = lastStateApp['difficult'] == "intermediate"
-        ? SingingCharacter.intermediate
-        : SingingCharacter.amateur;
+    switch (lastStateApp['difficult']) {
+      case "intermediate":
+        _difficult = SingingCharacter.intermediate;
+        break;
+      case "professional":
+        _difficult = SingingCharacter.professional;
+        break;
+      default:
+        _difficult = SingingCharacter.amateur;
+        break;
+    }
   }
 
   void loadGhostRespond(Map<String, dynamic> lastStateApp) {
@@ -106,9 +122,20 @@ class _ObjectivesPageState extends State<ObjectivesPage>
       children: <Widget>[
         buildGhostNameAndRespondCard(),
         buildObjectiveTable(),
-        buildDifficultCard(),
         buildTimerCard(),
+        buildDificultButtons(),
         buildClearButton(),
+      ],
+    );
+  }
+
+  Wrap buildDificultButtons() {
+    return Wrap(
+      alignment: WrapAlignment.spaceEvenly,
+      children: [
+        buildDifficultOption(SingingCharacter.amateur),
+        buildDifficultOption(SingingCharacter.intermediate),
+        buildDifficultOption(SingingCharacter.professional),
       ],
     );
   }
@@ -134,58 +161,11 @@ class _ObjectivesPageState extends State<ObjectivesPage>
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10.0),
       ),
-      child: Row(
+      child: Wrap(
+        alignment: WrapAlignment.center,
+        spacing: 20,
         children: [
-          Expanded(
-            child: _timerText,
-          ),
-          Expanded(
-            child: Wrap(
-              alignment: WrapAlignment.center,
-              children: buildTimeButtons(),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Card buildDifficultCard() {
-    return Card(
-      margin: EdgeInsets.fromLTRB(10, 10, 10, 5),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10.0),
-      ),
-      child: Row(
-        children: [
-          Expanded(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Radio(
-                  value: SingingCharacter.amateur,
-                  activeColor: Colors.blueAccent,
-                  groupValue: _difficult,
-                  onChanged: radioButtonChange,
-                ),
-                Text(i("amateur")),
-              ],
-            ),
-          ),
-          Expanded(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Radio(
-                  value: SingingCharacter.intermediate,
-                  activeColor: Colors.blueAccent,
-                  groupValue: _difficult,
-                  onChanged: radioButtonChange,
-                ),
-                Text(i("intermediate")),
-              ],
-            ),
-          ),
+          buildTimeButtons(),
         ],
       ),
     );
@@ -198,22 +178,18 @@ class _ObjectivesPageState extends State<ObjectivesPage>
         children: [
           TableRow(children: [
             buildObjectiveItem(_emfReaderText, _emfReader),
-            buildObjectiveItem(_lowTemperatureText, _lowTemperature),
+            buildObjectiveItem(_ghostEventText, _ghostEvent),
           ]),
           TableRow(children: [
-            buildObjectiveItem(_dirtWaterText, _dirtWater),
             buildObjectiveItem(_ghostPhotoText, _ghostPhoto),
+            buildObjectiveItem(_saltFootprintText, _saltFootprint),
           ]),
           TableRow(children: [
             buildObjectiveItem(_sensorText, _motionSensor),
             buildObjectiveItem(_crucifixText, _crucifix),
           ]),
           TableRow(children: [
-            buildObjectiveItem(_ghostEventText, _ghostEvent),
             buildObjectiveItem(_smudgeSticksTExt, _smudgeSticks),
-          ]),
-          TableRow(children: [
-            buildObjectiveItem(_saltFootprintText, _saltFootprint),
             Container(),
           ]),
         ],
@@ -258,38 +234,92 @@ class _ObjectivesPageState extends State<ObjectivesPage>
     );
   }
 
-  void radioButtonChange(SingingCharacter value) {
+  void changeDifficult(SingingCharacter value) {
+    int time = ZERO_MINUTES;
+    if (value == SingingCharacter.intermediate) {
+      time = TWO_MINUTES;
+    } else if (value == SingingCharacter.amateur) {
+      time = FIVE_MINUTES;
+    }
     setState(
-      () {
+          () {
         _difficult = value;
-        _timerText = TimerText(_stopwatch,
-            value == SingingCharacter.amateur ? FIVE_MINUTES : TWO_MINUTES);
+        _timerText = TimerText(_stopwatch, time);
       },
     );
     saveObjectiveState();
   }
 
-  List<Widget> buildTimeButtons() {
-    return [
-      IconButton(
-        icon: Icon(Icons.play_arrow),
-        onPressed: () {
-          handlePlayButton();
-        },
+  Row buildTimeButtons() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        _timerText,
+        Wrap(
+          children: [
+            IconButton(
+              icon: Icon(Icons.play_arrow),
+              onPressed: () {
+                handlePlayButton();
+              },
+            ),
+            IconButton(
+              icon: Icon(Icons.pause),
+              onPressed: () {
+                handlePauseButton();
+              },
+            ),
+            IconButton(
+              icon: Icon(Icons.stop),
+              onPressed: () {
+                handleStopButton();
+              },
+            ),
+          ],
+        )
+      ],
+    );
+  }
+
+  Widget buildDifficultOption(SingingCharacter difficult) {
+    String text = getDifficultName(difficult);
+    return Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10.0),
       ),
-      IconButton(
-        icon: Icon(Icons.pause),
-        onPressed: () {
-          handlePauseButton();
-        },
+      child: AnimatedContainer(
+        decoration: BoxDecoration(
+          color: _difficult == difficult ? Colors.blueAccent : Colors.black12,
+          borderRadius: BorderRadius.circular(10),
+        ),
+        duration: Duration(seconds: 1),
+        child: InkWell(
+          onTap: () {
+            changeDifficult(difficult);
+          },
+          child: Container(
+            margin: EdgeInsets.all(15),
+            child: Text(i(text)),
+          ),
+        ),
       ),
-      IconButton(
-        icon: Icon(Icons.stop),
-        onPressed: () {
-          handleStopButton();
-        },
-      ),
-    ];
+    );
+  }
+
+  String getDifficultName(SingingCharacter difficult) {
+    String text = "";
+    switch (difficult) {
+      case SingingCharacter.amateur:
+        text = "amateur";
+        break;
+      case SingingCharacter.intermediate:
+        text = "intermediate";
+        break;
+      case SingingCharacter.professional:
+        text = "professional";
+        break;
+    }
+    return text;
   }
 
   Card buildObjectiveItem(String objective, bool selected) {
@@ -408,9 +438,7 @@ class _ObjectivesPageState extends State<ObjectivesPage>
       "saltFootprint": _saltFootprint,
       "ghostName": _textEditingController.text,
       "ghostRespond": ghostRespond,
-      "difficult": _difficult == SingingCharacter.intermediate
-          ? "intermediate"
-          : "amateur",
+      "difficult": getDifficultName(_difficult),
     });
   }
 

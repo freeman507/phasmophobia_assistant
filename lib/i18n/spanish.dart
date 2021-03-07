@@ -283,6 +283,7 @@ const Map<String, String> spanish = {
   "support.contact": "CONTACTO DE SOPORTE",
   "amateur": "Aficionado",
   "intermediate": "Intermedia",
+  "professional": "Profesional",
   "discard.evidence": "Desechar las pruebas (no se recomienda)",
   "enable.discard.evidence.long.press":
   "Permite descartar las pruebas usando el tacto largo.",

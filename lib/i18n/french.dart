@@ -280,6 +280,7 @@ const Map<String, String> french = {
   "support.contact": "CONTACT DE SUPPORT",
   "amateur": "Amateur",
   "intermediate": "Intermédiare",
+  "professional": "Professionnelle",
   "discard.evidence": "Rejeter les preuves (non recommandé)",
   "enable.discard.evidence.long.press":
   "Permettre d'éliminer les preuves manuellement en appuyant longuement.",

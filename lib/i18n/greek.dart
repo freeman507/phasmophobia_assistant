@@ -273,6 +273,7 @@ const Map<String, String> greek = {
   "support.contact": "ΥΠΟΣΤΗΡΙΞΗ ΕΠΙΚΟΙΝΩΝΙΑΣ",
   "amateur": "Εύκολη Δυσκολία",
   "intermediate": "Μεσσαία Δυσκολία",
+  "professional": "Επαγγελματίας",
   "discard.evidence": "Απόρριψη αποδεικτικών στοιχείων (δεν συνιστάται)",
   "enable.discard.evidence.long.press":
       "Για την ενεργοποίηση της απόρριψης αποδεικτικών στοιχείων χειροκίνητα χρησιμοποιήστε παρατεταμένο πάτημα.",

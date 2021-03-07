@@ -240,6 +240,7 @@ const Map<String, String> japanese = {
   "support.contact": "サポートの連絡先",
   "amateur": "アマチュア",
   "intermediate": "中級",
+  "professional": "プロフェッショナル",
   "discard.evidence": "証拠を破棄する（推奨されません）",
   "enable.discard.evidence.long.press": "長押しを使用して手動で証拠を破棄できるようにします",
   "cant.select.discarded.evidence": "破棄された証拠を選択することはできません",

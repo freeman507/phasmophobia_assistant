@@ -281,4 +281,5 @@ const Map<String, String> germany = {
   "cant.change.evidence": "Kann diesen Beweis nicht ändern.",
   "amateur": "Anfänger",
   "intermediate": "Fortgeschritten",
+  "professional": "Fachmann",
 };

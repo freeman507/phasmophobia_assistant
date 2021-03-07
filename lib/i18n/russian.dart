@@ -270,6 +270,7 @@ const Map<String, String> russian = {
   "support.contact": "ПОДДЕРЖКА КОНТАКТЫ",
   "amateur": "Любительское",
   "intermediate": "Средний",
+  "professional": "профессиональный",
   "discard.evidence": "Отбросить доказательства (не рекомендуется)",
   "enable.discard.evidence.long.press":
   "Включите удаление улик вручную с помощью длительного нажатия.",

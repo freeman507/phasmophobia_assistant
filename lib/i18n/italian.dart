@@ -276,6 +276,7 @@ const Map<String, String> italian = {
   "support.contact": "CONTATTO DI SUPPORTO",
   "amateur": "Dilettante",
   "intermediate": "Intermedio",
+  "professional": "Professionale",
   "discard.evidence": "Elimina la prova (non consigliato)",
   "enable.discard.evidence.long.press":
       "Permette di eliminare le prove manualmente con una pressione prolungata.",
