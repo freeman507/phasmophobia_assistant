@@ -295,4 +295,9 @@ const Map<String, String> spanish = {
   "cant.discard.evidence": "No puedes descartar esta evidencia.",
   "cant.select.evidence": "No puede seleccionar esta evidencia.",
   "cant.change.evidence": "No puedes cambiar esta evidencia.",
+  "candle": "Candle",
+  "parabolic.microphone": "Parabolic Microfone",
+  "scape.hunt": "Scape Hunt",
+  "smudge.sticks.hunt": "Smudge Sticks Hunt",
+  "sanity.bellow.25": "Sanity Bellow 25%",
 };

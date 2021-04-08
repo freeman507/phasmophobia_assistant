@@ -285,4 +285,9 @@ const Map<String, String> greek = {
   "cant.discard.evidence": "Δεν μπορείτε να απορρίψετε αυτό το στοιχείο.",
   "cant.select.evidence": "Δεν μπορείτε να επιλέξετε αυτό το στοιχείο.",
   "cant.change.evidence": "Δεν μπορείτε να αλλάξετε αυτό το στοιχείο.",
+  "candle": "Candle",
+  "parabolic.microphone": "Parabolic Microfone",
+  "scape.hunt": "Scape Hunt",
+  "smudge.sticks.hunt": "Smudge Sticks Hunt",
+  "sanity.bellow.25": "Sanity Bellow 25%",
 };

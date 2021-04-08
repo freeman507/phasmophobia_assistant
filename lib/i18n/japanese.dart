@@ -249,4 +249,9 @@ const Map<String, String> japanese = {
   "cant.discard.evidence": "この証拠を捨てることはできません",
   "cant.select.evidence": "この証拠を選択することはできません",
   "cant.change.evidence": "この証拠を変更することはできません",
+  "candle": "Candle",
+  "parabolic.microphone": "Parabolic Microfone",
+  "scape.hunt": "Scape Hunt",
+  "smudge.sticks.hunt": "Smudge Sticks Hunt",
+  "sanity.bellow.25": "Sanity Bellow 25%",
 };

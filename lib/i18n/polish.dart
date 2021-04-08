@@ -270,4 +270,9 @@ const Map<String, String> polish = {
   "cant.discard.evidence": "You can't discard this evidence.",
   "cant.select.evidence": "You can't select this evidence.",
   "cant.change.evidence": "You cannot change this evidence.",
+  "candle": "Candle",
+  "parabolic.microphone": "Parabolic Microfone",
+  "scape.hunt": "Scape Hunt",
+  "smudge.sticks.hunt": "Smudge Sticks Hunt",
+  "sanity.bellow.25": "Sanity Bellow 25%",
 };

@@ -282,4 +282,9 @@ const Map<String, String> russian = {
   "cant.discard.evidence": "Вы не можете отбросить это свидетельство.",
   "cant.select.evidence": "Вы не можете выбрать это доказательство.",
   "cant.change.evidence": "Вы не можете изменить это свидетельство.",
+  "candle": "Candle",
+  "parabolic.microphone": "Parabolic Microfone",
+  "scape.hunt": "Scape Hunt",
+  "smudge.sticks.hunt": "Smudge Sticks Hunt",
+  "sanity.bellow.25": "Sanity Bellow 25%",
 };

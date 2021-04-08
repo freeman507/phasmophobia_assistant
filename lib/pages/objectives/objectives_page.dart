@@ -50,7 +50,12 @@ class _ObjectivesPageState extends State<ObjectivesPage>
       _crucifix = false,
       _ghostEvent = false,
       _smudgeSticks = false,
-      _saltFootprint = false;
+      _saltFootprint = false,
+      _candle = false,
+      _parabolicMicrofone = false,
+      _scapeHunt = false,
+      _smudgeSticksHunt = false,
+      _sanityBellow25 = false;
 
   String _emfReaderText = i("emf.reader"),
       _lowTemperatureText = i("below.10c.50f"),
@@ -59,8 +64,13 @@ class _ObjectivesPageState extends State<ObjectivesPage>
       _crucifixText = i("crucifix"),
       _ghostPhotoText = i("ghost.photo"),
       _ghostEventText = i("ghost.event"),
-      _smudgeSticksTExt = i("smudge.sticks"),
-      _saltFootprintText = i("salt.footprint");
+      _smudgeSticksText = i("smudge.sticks"),
+      _saltFootprintText = i("salt.footprint"),
+      _candleText = i("candle"),
+      _parabolicMicrophoneText = i("parabolic.microphone"),
+      _scapeHuntText = i("scape.hunt"),
+      _smudgeSticksHuntText = i("smudge.sticks.hunt"),
+      _sanityBellow25Text = i("sanity.bellow.25");
 
   _ObjectivesPageState(Map<String, dynamic> lastStateApp) {
     loadInitialValues(lastStateApp);
@@ -83,6 +93,11 @@ class _ObjectivesPageState extends State<ObjectivesPage>
     _ghostEvent = lastStateApp['ghostEvent'] ?? false;
     _smudgeSticks = lastStateApp['smudgeSticks'] ?? false;
     _saltFootprint = lastStateApp['saltFootprint'] ?? false;
+    _candle = lastStateApp['candle'] ?? false;
+    _parabolicMicrofone = lastStateApp['parabolicMicrophone'] ?? false;;
+    _scapeHunt = lastStateApp['scapeHunt'] ?? false;;
+    _smudgeSticksHunt = lastStateApp['smudgeStickHunt'] ?? false;;
+    _sanityBellow25 = lastStateApp['sanityBellow25'] ?? false;;
     _textEditingController.text = lastStateApp['ghostName'] ?? "";
     loadGhostRespond(lastStateApp);
     loadDifficult(lastStateApp);
@@ -189,8 +204,16 @@ class _ObjectivesPageState extends State<ObjectivesPage>
             buildObjectiveItem(_crucifixText, _crucifix),
           ]),
           TableRow(children: [
-            buildObjectiveItem(_smudgeSticksTExt, _smudgeSticks),
-            Container(),
+            buildObjectiveItem(_smudgeSticksText, _smudgeSticks),
+            buildObjectiveItem(_candleText, _candle),
+          ]),
+          TableRow(children: [
+            buildObjectiveItem(_parabolicMicrophoneText, _parabolicMicrofone),
+            buildObjectiveItem(_scapeHuntText, _scapeHunt),
+          ]),
+          TableRow(children: [
+            buildObjectiveItem(_smudgeSticksHuntText, _smudgeSticksHunt),
+            buildObjectiveItem(_sanityBellow25Text, _sanityBellow25),
           ]),
         ],
       ),
@@ -351,7 +374,7 @@ class _ObjectivesPageState extends State<ObjectivesPage>
   }
 
   void goToObjectiveDetail(String nameObjective) {
-    Objective objective;
+    Objective objective = null;
 
     if (nameObjective == _emfReaderText) {
       objective = EmfReaderObjective();
@@ -367,16 +390,24 @@ class _ObjectivesPageState extends State<ObjectivesPage>
       objective = CrucifixObjective();
     } else if (nameObjective == _ghostEventText) {
       objective = GhostEvent();
-    } else if (nameObjective == _smudgeSticksTExt) {
+    } else if (nameObjective == _smudgeSticksText) {
       objective = SmudgeSticksObjective();
     } else if (nameObjective == _saltFootprintText) {
       objective = SaltFootprint();
     }
 
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => ObjectiveDetail(objective)),
-    );
+    if (objective != null) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => ObjectiveDetail(objective)),
+      );
+    } else {
+      showDialog(
+        context: context,
+        builder: (_) => buildAlertDialog(),
+        barrierDismissible: false,
+      );
+    }
   }
 
   void resetButton() {
@@ -391,6 +422,11 @@ class _ObjectivesPageState extends State<ObjectivesPage>
     _ghostEvent = false;
     _smudgeSticks = false;
     _saltFootprint = false;
+    _candle = false;
+    _parabolicMicrofone = false;
+    _scapeHunt = false;
+    _smudgeSticksHunt = false;
+    _sanityBellow25 = false;
     _difficult = SingingCharacter.amateur;
     handleStopButton();
     saveObjectiveState();
@@ -411,10 +447,20 @@ class _ObjectivesPageState extends State<ObjectivesPage>
       _crucifix = !_crucifix;
     } else if (objective == _ghostEventText) {
       _ghostEvent = !_ghostEvent;
-    } else if (objective == _smudgeSticksTExt) {
+    } else if (objective == _smudgeSticksText) {
       _smudgeSticks = !_smudgeSticks;
     } else if (objective == _saltFootprintText) {
       _saltFootprint = !_saltFootprint;
+    } else if (objective == _candleText) {
+      _candle = !_candle;
+    } else if (objective == _parabolicMicrophoneText) {
+      _parabolicMicrofone = !_parabolicMicrofone;
+    } else if (objective == _scapeHuntText) {
+      _scapeHunt = !_scapeHunt;
+    } else if (objective == _smudgeSticksHuntText) {
+      _smudgeSticksHunt = !_smudgeSticksHunt;
+    } else if (objective == _sanityBellow25Text) {
+      _sanityBellow25 = !_sanityBellow25;
     }
     saveObjectiveState();
   }
@@ -436,6 +482,11 @@ class _ObjectivesPageState extends State<ObjectivesPage>
       "ghostEvent": _ghostEvent,
       "smudgeSticks": _smudgeSticks,
       "saltFootprint": _saltFootprint,
+      "candle": _candle,
+      "parabolicMicrophone": _parabolicMicrofone,
+      "scapeHunt": _scapeHunt,
+      "smudgeStickHunt": _smudgeSticksHunt,
+      "sanityBellow25": _sanityBellow25,
       "ghostName": _textEditingController.text,
       "ghostRespond": ghostRespond,
       "difficult": getDifficultName(_difficult),
@@ -465,5 +516,20 @@ class _ObjectivesPageState extends State<ObjectivesPage>
       _timerText = TimerText(_stopwatch,
           _difficult == SingingCharacter.amateur ? FIVE_MINUTES : TWO_MINUTES);
     });
+  }
+
+  AlertDialog buildAlertDialog() {
+    return AlertDialog(
+      content: Text("Sorry, this content is not yet available."),
+      actions: <Widget>[
+        FlatButton(
+          child: Text("OK"),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+      ],
+      elevation: 24,
+    );
   }
 }

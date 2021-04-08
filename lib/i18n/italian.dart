@@ -286,4 +286,9 @@ const Map<String, String> italian = {
   "cant.discard.evidence": "Non puoi eliminare questa prova.",
   "cant.select.evidence": "Non puoi selezionare questa prova.",
   "cant.change.evidence": "Non puoi cambiare questa prova.",
+  "candle": "Candle",
+  "parabolic.microphone": "Parabolic Microfone",
+  "scape.hunt": "Scape Hunt",
+  "smudge.sticks.hunt": "Smudge Sticks Hunt",
+  "sanity.bellow.25": "Sanity Bellow 25%",
 };
